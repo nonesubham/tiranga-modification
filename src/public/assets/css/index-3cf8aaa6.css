@@ -13,3 +13,8 @@
     background: linear-gradient(90deg, #D9AD82 0%, #B1835A 100%) !important;
     
 }
+.ar-1px-b:after {
+   
+    border-bottom: .01333rem solid #dbdbdb !important;
+   
+}
