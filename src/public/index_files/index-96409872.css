@@ -4,3 +4,7 @@
     background: url(/png/navbar.png) no-repeat center center / cover;
     
 }
+body {
+    height: auto;
+    background-color: #9195A3 !important;
+}

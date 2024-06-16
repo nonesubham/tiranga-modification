@@ -7862,3 +7862,60 @@ ul {
     color: #768096 !important;
     font-size: .37333rem;
 }
+.mian .selectBox .pay-box .list .li.action[data-v-67caa467] {
+    color: #fff;
+}
+.van-button--default {
+    border: none;
+    color: #ffffff;
+    background: -webkit-linear-gradient(90deg, #D9AD82 0%, #B1835A 100%);
+    background: linear-gradient(90deg, #D9AD82 0%, #B1835A 100%);
+}
+.mian .selectBox .pay-box .list .li[data-v-67caa467] {
+    margin-bottom: .26667rem;
+    padding: .26667rem;
+    text-align: center;
+    width: 30%;
+    background: linear-gradient(90deg, #D9AD82 0%, #B1835A 100%);
+    margin-right: .26667rem;
+    height: 1.06667rem;
+    line-height: .53333rem;
+    border-radius: .13333rem;
+    font-size: .4rem;
+    color: #1E2637;
+}
+.mian .selectBox .pay-box .box[data-v-67caa467] {
+    height: 1.06667rem;
+    background: #F7F8FF !important;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    color: #B1835A !important;
+}
+.van-cell {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    padding: .26667rem .42667rem;
+    overflow: hidden;
+    color: #323233;
+    font-size: .37333rem;
+    line-height: .64rem;
+    background-color: #F7F8FF !important;
+}
+.van-field__control {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    color: #B1835A !important;
+    line-height: inherit;
+    text-align: left;
+    background-color: transparent;
+    border: 0;
+    resize: none;
+}
