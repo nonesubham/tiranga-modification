@@ -35,3 +35,13 @@
     left: -.06667rem;
     top: .18667rem;
 }
+.Recharge__container-intro__lists .item p[data-v-832238e6] {
+    text-align: left;
+    position: relative;
+    padding-left: .33333rem;
+    font-weight: 400;
+    font-size: .32rem;
+    color: #768096 !important;
+    line-height: .53333rem;
+    margin: .2rem 0;
+}
