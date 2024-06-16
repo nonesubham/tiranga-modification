@@ -7836,3 +7836,29 @@ ul {
     position: absolute;
     bottom: 4px;
 }
+.mian[data-v-67caa467] {
+    padding-bottom: 1.6rem;
+    background-color: #F7F8FF !important;
+}
+.mian .selectBox .colorBox[data-v-67caa467] {
+    background: #F7F8FF !important;
+}
+.mian .selectBox .txtBox[data-v-67caa467] {
+    background-color: #F7F8FF;
+    z-index: 99;
+    margin-top: -.8rem;
+    border-radius: .26667rem .26667rem 0 0;
+    padding: .26667rem .53333rem;
+    position: relative;
+}
+.mian .selectBox .pay-box[data-v-67caa467] {
+    padding: 0 .53333rem;
+    color: #768096 !important;
+}
+.mian .selectBox .pay-box .list .item.action .name[data-v-67caa467], .mian .selectBox .pay-box .list .item.action .txt[data-v-67caa467] {
+    color: #fff !important;
+}
+.mian .selectBox .pay-box .list .item .name[data-v-67caa467] {
+    color: #768096 !important;
+    font-size: .37333rem;
+}
