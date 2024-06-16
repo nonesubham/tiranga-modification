@@ -36,8 +36,8 @@
 
 
 .tab.inactive {
-background: rgb(55, 73, 146);
-    box-shadow: rgb(67, 87, 167) 0px -0.08rem 0.10667rem inset;
+background: #F7F8FF;
+border-bottom: .05333rem solid #E1E1E1 !important;
     
 }
 
@@ -113,11 +113,23 @@ background: rgb(55, 73, 146);
                 margin-left: 15vw;
             }
          }
+         .tab.active {
+    background: #F7F8FF;
+    color: #B1835A;
+    border-bottom: .05333rem solid #B1835A !important;
+}
+.login__container .login_container-tab .tab .font30[data-v-8752c961] {
+    font-size: .4rem;
+    color: #B1835A !important;
+    
+    white-space: inherit !important;
+    margin-top: .21333rem;
+}
     </style>
 </head>
 
 <body style="font-size: 12px">
-    <div id="app" data-v-app="" style="background: #22275b">
+    <div id="app" data-v-app="" style="background: #F7F8FF">
       <div data-v-1690b988="" class="ar-loading-view" style="display: none; --7688837a: &#39;Roboto&#39;, &#39;Inter&#39;, sans-serif;">
         <div data-v-1690b988="" class="loading-wrapper">
           <div data-v-1690b988="" class="loading-animat">
@@ -226,7 +238,7 @@ background: rgb(55, 73, 146);
       </div>
       <div data-v-8752c961="" class="login__container" style="--7688837a: &#39;Roboto&#39;, &#39;Inter&#39;, sans-serif;">
         <div data-v-58c5e826="" data-v-8752c961="" class="navbar">
-          <div data-v-58c5e826="" class="navbar-fixed" style="background: rgb(43 50 112);">
+          <div data-v-58c5e826="" class="navbar-fixed" style="background: linear-gradient(90deg, #D9AD82 0%, #B1835A 100%) !important;">
             <div data-v-58c5e826="" class="navbar__content">
               <div data-v-58c5e826="" class="navbar__content-left" onclick="location.href='/home'">
                 <i data-v-58c5e826="" class="van-badge__wrapper van-icon van-icon-arrow-left">
@@ -263,7 +275,7 @@ background: rgb(55, 73, 146);
         </div>
         <div data-v-8752c961="" class="login_container-tab">
           <div data-v-8752c961="" class="tab active">
-            <img data-v-93f53084="" src="./assets/png/phoneactive-945fdef4.png"
+            <img data-v-93f53084="" src="./svg/phone.svg"
                   class="phoneInput__container-label__icon">
             <div data-v-8752c961="" class="font30 phonefont30active">
             Log in with phone
@@ -271,9 +283,9 @@ background: rgb(55, 73, 146);
           </div>
 
           <div data-v-8752c961="" class="tab inactive">
-            <img data-v-93f53084="" src="./assets/png/email-d0012b12.png"
+            <img data-v-93f53084="" src="./SVG/MAIL.SVG"
                   class="phoneInput__container-label__icon">
-            <div data-v-8752c961="" class="font30 phonefont30active" style="color:#759fde">
+            <div data-v-8752c961="" class="font30 phonefont30active" style="color:#768096 !important;">
             Email Login
             </div>
           </div>
@@ -284,7 +296,7 @@ background: rgb(55, 73, 146);
             <div data-v-0ce8d964="" data-v-8752c961="" class="signIn__container">
               <div data-v-93f53084="" data-v-0ce8d964="" class="phoneInput__container">
                 <div data-v-93f53084="" class="phoneInput__container-label">
-                  <img data-v-93f53084="" src="./assets/png/cellphone-35529171.png"
+                  <img data-v-93f53084="" src="./svg/phone.svg"
                   class="phoneInput__container-label__icon">
                   <span data-v-93f53084="">
                     Phone number
@@ -301,14 +313,14 @@ background: rgb(55, 73, 146);
                     </div>
                     
                   </div>
-                  <input data-v-93f53084="" style="background: #323a7c" type="text" name="username" placeholder="Please enter the phone number"
+                  <input data-v-93f53084="" style="background: #fff" type="text" name="username" placeholder="Please enter the phone number"
                   autocomplete="on" required>
                 </div>
               </div>
               <div data-v-57d49070="" data-v-0ce8d964="" class="passwordInput__container">
                 <div data-v-57d49070="" class="passwordInput__container-label">
                   <img data-v-57d49070="" class="passwordInput__container-label__icon" data-origin="https://www.bigdaddygame2.com/assets/png/password-b827c2b3.png"
-                  src="./assets/png/forgetpassword-bd783446.png">
+                  src="./png/password.png">
                   <span data-v-57d49070="">
                     Password
                   </span>
@@ -316,7 +328,7 @@ background: rgb(55, 73, 146);
                 <div data-v-57d49070="" class="passwordInput__container-input">
                   <input data-v-57d49070="" id="passwordfield" type="password" placeholder="Password"
                   maxlength="32" autocomplete="on" required>
-                  <img data-v-57d49070="" id="eyeicon" src="./index_files/eyeInvisible-2fa5c152.png"
+                  <img data-v-57d49070="" id="eyeicon" src="https://bigmumbai4.com/assets/png/eyeInvisible-821d9d16.png"
                   class="eye" onclick="showPass()">
                 </div>
               </div>
@@ -662,10 +674,10 @@ background: rgb(55, 73, 146);
           var y = document.getElementById("eyeicon");
           if (x.type === "password") {
             x.type = "text";
-            y.src="./index_files/eyeVisible-7bc1c956.png";
+            y.src="https://bigmumbai4.com/assets/png/eyeVisible-09720f5f.png";
           } else {
             x.type = "password";
-            y.src="./index_files/eyeInvisible-2fa5c152.png";
+            y.src="https://bigmumbai4.com/assets/png/eyeInvisible-821d9d16.png";
           }
         }
     </script>
