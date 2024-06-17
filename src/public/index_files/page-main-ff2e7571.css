@@ -64,3 +64,26 @@
     font-size: .4rem;
     color: #1E2637 !important;
 }
+.customer-container-header-belly img[data-v-28fadbec] {
+    width: 100%;
+    background-size: cover;
+    margin: 0;
+}
+.content-item[data-v-6a5413fb] {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    width: auto;
+    height: 1.46667rem;
+    background: #fff !important;
+    border-radius: .13333rem;
+    margin-top: .4rem;
+    color: #1E2637 !important;
+    padding: .13333rem .33333rem .13333rem .32rem;
+}
