@@ -109,6 +109,53 @@
     padding: .4rem .29333rem .42667rem .26667rem;
     margin-bottom: .4rem;
 }
+.mian .selectBox .pay-box .list .li.action[data-v-67caa467] {
+    margin-bottom: .26667rem;
+    padding: .26667rem;
+    text-align: center;
+    width: 30%;
+    background: linear-gradient(90deg, #D9AD82 0%, #B1835A 100%) !important;
+    margin-right: .26667rem;
+    height: 1.06667rem;
+    line-height: .53333rem;
+    border-radius: .13333rem;
+    font-size: .4rem;
+    color: #fff !important;
+}
+.mian .selectBox .pay-box .list .li[data-v-67caa467] {
+    margin-bottom: .26667rem;
+    padding: .26667rem;
+    text-align: center;
+    width: 30%;
+    margin-right: .26667rem;
+    height: 1.06667rem;
+    line-height: .53333rem;
+    border-radius: .13333rem;
+    font-size: .4rem;
+    color: #1E2637;
+    margin-bottom: .26667rem;
+    margin-right: .4rem;
+    width: calc((100% - .8rem) / 3);
+    border: .01333rem solid #E1E1E1 !important;
+    padding: .16rem 0;
+    border-radius: .13333rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    gap: .13333rem;
+    color: #B1835A !important;
+    background: #FFF !important;
+}
 
 </style>
 
@@ -395,8 +442,8 @@
                             <!-- Quick Money Amount Options -->
                             <div id="quick_money_options" data-v-67caa467=""
                                 class="list m-t-10 c-row c-row-between c-flex-warp">
-                                <div data-v-67caa467="" data-money="300" class="li action">
-                                   <span data-v-67caa467="" class="number">₹300</span>
+                                <div data-v-67caa467="" data-money="₹300" class="li action" id="inr_input">
+                                    <span data-v-67caa467="" class="number">₹300</span>
                                 </div>
                                 <div data-v-67caa467="" data-money="500" class="li">
                                     <span data-v-67caa467="" class="number">₹500</span>
@@ -550,22 +597,22 @@
 
         const QuickMoneyForRegular = `
             <div data-v-67caa467="" data-money="300" class="li action">
-                <span data-v-67caa467="" class="number">300</span>
+                <span data-v-67caa467="" class="number">₹ 300</span>
             </div>
             <div data-v-67caa467="" data-money="500" class="li">
-                <span data-v-67caa467="" class="number">500</span>
+                <span data-v-67caa467="" class="number">₹ 500</span>
             </div>
             <div data-v-67caa467="" data-money="1000" class="li">
-                <span data-v-67caa467="" class="number">1K</span>
+                <span data-v-67caa467="" class="number">₹ 1K</span>
             </div>
             <div data-v-67caa467="" data-money="10000" class="li">
-                <span data-v-67caa467="" class="number">10K</span>
+                <span data-v-67caa467="" class="number">₹ 10K</span>
             </div>
             <div data-v-67caa467="" data-money="100000" class="li">
-                <span data-v-67caa467="" class="number">100K</span>
+                <span data-v-67caa467="" class="number">₹ 100K</span>
             </div>
             <div data-v-67caa467="" data-money="1000000" class="li">
-                <span data-v-67caa467="" class="number">1M</span>
+                <span data-v-67caa467="" class="number">₹ 1M</span>
             </div>
         `
 

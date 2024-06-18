@@ -139,8 +139,54 @@
         border-radius: 15px;
         }
         
-        
-        
+        .navbar[data-v-106b99c8] {
+    background: linear-gradient(90deg, #D9AD82 0%, #B1835A 100%) !important;
+}
+#app {
+    color: #F7F8FF !important;
+}
+.mian[data-v-3966082f] {
+    background-color: #F7F8FF !important;
+}
+.mian .box[data-v-3966082f] {
+    padding: .4rem;
+    background: #F7F8FF;
+}
+.mian .box .list[data-v-3966082f] {
+    background: #F7F8FF !important;
+    border-radius: 0rem;
+    overflow: hidden;
+    color: #1E2637 !important;
+}
+
+.mian .box .list .item .number[data-v-3966082f], .mian .box .list .item .time[data-v-3966082f] {
+    font-size: .32rem;
+    color: #1E2637 !important;
+}
+.item.c-row.c-row-between.m-b-10 {
+    border: 1px solid #B1835A;
+    border-radius: 15px;
+    color: #1E2637;
+}
+.mian .box .list .item[data-v-4e585e69] {
+    padding: 0.26667rem 0.4rem;
+    border: 1px solid #B1835A;
+    border-radius: 15px;
+}
+.ar_select {
+    position: fixed;
+    top: .93333rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translate(-50%);
+    width: 100%;
+    max-width: 10rem;
+    -webkit-user-select: none;
+    user-select: none;
+    z-index: 100;
+    padding: 0 .29333rem;
+    background-color: #F7F8FF !important;
+}
         
     </style>
 </head>
@@ -157,6 +203,7 @@
                 <div data-v-106b99c8="" class="navbar-title">Transaction History</div>
                 <div data-v-106b99c8="" class="navbar-right"></div>
             </div>
+            
             <div data-v-3966082f="" class="box">
                 <div data-v-3966082f="" class="list m-b-20">
                     <div data-v-3966082f="" role="feed" class="van-list">
@@ -167,9 +214,10 @@
                     </div>
                 </div>
             </div>
-            
+         
             
             <div data-v-3966082f="" class="box">
+
                 <div data-v-3966082f="" class="list m-b-20">
                     <div data-v-3966082f="" role="feed" class="van-list">
 
@@ -183,8 +231,7 @@
             </div>
             
          
-         
-            
+          
             
     <!-- Add jQuery or any other necessary scripts -->
 
@@ -230,7 +277,7 @@
                     <div data-v-3966082f="" class="item c-row c-row-between m-b-10">
                     
                         <div data-v-3966082f="">
-                        <span style="color:red" >Deposit</span>
+                        <span style="color:#B1835A" >Deposit</span>
                             <div data-v-3966082f="" class="number c-row">
                                 ${data.id_order}
                                 <div data-v-3966082f="" class="m-l-10 tag-read van-image" data-clipboard-text="${data.id_order}" style="width: 18px; height: 15px;"><img src="/images/copy.png" class="van-image__img" /></div>
@@ -238,7 +285,7 @@
                             <div data-v-3966082f="">
                                 <div data-v-3966082f="" class="money action m-b-10 m-t-10">
                                     <!---->
-                                    <span data-v-3966082f="">₹ ${data.money}.00</span>
+                                    <span data-v-3966082f="" style="color:#B1835A;">₹ ${data.money}.00</span>
                                 </div>
                             </div>
                             <div data-v-3966082f="" class="time">${timerJoin(data.time)}</div>
@@ -261,7 +308,7 @@
                 return `
                     <div data-v-4e585e69="" class="item">
                             <div data-v-4e585e69="">
-                            <span style="color:#2cff2c" >Withdraw</span>
+                            <span style="color:#B1835A" >Withdraw</span>
                                 <div data-v-4e585e69="" class="tit c-row c-row-between c-row-middle">
                                     <div data-v-4e585e69="" class="c-row c-row-between c-row-middle">
                                         <span data-v-4e585e69="" class="c-row c-row-between c-row-middle">
@@ -277,7 +324,7 @@
                                         <div data-v-4e585e69="">
                                             <!---->
                                             <div data-v-4e585e69="" class="number green"><!---->
-                                                <span data-v-4e585e69="" style="color:red" >₹ ${data.money}.00</span>
+                                                <span data-v-4e585e69="" style="color:#B1835A" >₹ ${data.money}.00</span>
                                             </div>
                                             <!---->
                                         </div>
