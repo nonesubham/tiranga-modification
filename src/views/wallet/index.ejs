@@ -323,6 +323,38 @@ h3.money {
 span {
     color: #768096;
 }
+.balancedata {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 0.26667rem;
+    text-align: center;
+    color: #fff;
+}
+p.total{
+  font-size: 0.4rem;
+  font-weight: 500;
+}
+html {
+    background-color: #9195A3 !important;
+}
+.recycleBtnD {
+    width: 100%;
+    text-align: center;
+    margin-bottom: .4rem;
+}
+button.recycleBtn {
+    width: 100%;
+    height: .93333rem;
+    color: #fff;
+    font-size: .4rem;
+    font-weight: 600;
+    letter-spacing: .016rem;
+    border: none;
+    border-radius: 1.06667rem;
+    background: linear-gradient(90deg, #D9AD82 0%, #B1835A 100%);
+}
+
     </style>
 </head>
 
@@ -339,7 +371,7 @@ span {
                 <div data-v-106b99c8="" class="navbar-right" onclick="location.href='/keFuMenu'">
                     <div data-v-7b283485="" data-v-106b99c8="" class="c-row">
                         <i class="fa-fade fa center" style="color: #FFF">
-                            <img data-v-7b283485="" data-v-106b99c8="" src="/images/audio.webp" class="audio">
+                            <img data-v-7b283485="" data-v-106b99c8="" src="/png/moneywallet.png" class="audio">
                         </i>
                     </div>
                 </div>
@@ -358,7 +390,7 @@ span {
                   
                   <div data-v-7b283485="" class="money" style="color: white; font-size: 0.6rem; font-weight: 400; margin-top: 8px;">
                       <!---->
-                      <div data-v-7b283485="">₹<span data-v-7b283485="" class="p-l-10">Loading...</span>
+                      <div data-v-7b283485="">₹<span data-v-7b283485="" class="p-l-10" style="color:#fff;">Loading...</span>
                       </div>
                   </div>
                   
@@ -367,7 +399,8 @@ span {
               <div data-v-7b283485="" class="c-row balanceMoney c-row-middle-center">
                 <p style="color: white; margin-top: 12px;">Total Balance</p></div>
                     <!--<div data-v-7b283485="" class="name"></div>-->
-                    
+                    <div data-v-0dabd3fc="" class="balancedata"><div data-v-0dabd3fc="" class="balancebox"><p data-v-7b283485="" class="p-l-10" >0</p><p data-v-0dabd3fc="">Total amount</p></div><div data-v-0dabd3fc=""><p data-v-0dabd3fc="" class="total">0</p><p data-v-0dabd3fc="">Total deposit amount</p></div></div>
+ 
                 </div>
                 <div data-v-7b283485="" class="wallet-box">
                     <div data-v-7b283485="" class="box">
@@ -389,10 +422,10 @@ span {
                                     </linearGradient>
                                   </defs>
                                   <path class="van-circle__layer" d="M 550 550 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
-                                  style="fill: none; stroke: rgb(255, 255, 255); stroke-width: 100px;">
+                                  style="fill: none; stroke: #B1835A !important; stroke-width: 100px;">
                                   </path>
                                   <path d="M 550 550 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
-                                  class="van-circle__hover" stroke="url(#van-circle-0)" style="stroke: url(&quot;#van-circle-0&quot;); stroke-width: 101px; stroke-linecap: butt; stroke-dasharray: 0px, 3140px;">
+                                  class="van-circle__hover" stroke="#B1835A" style="stroke: #B1835A !important ; stroke-width: 101px; stroke-linecap: butt; stroke-dasharray: 0px, 3140px;">
                                   </path>
                                 </svg>
                                 <div class="van-circle__text">
@@ -437,17 +470,19 @@ span {
                             </div>
                           </div>
 
-
+                          <div data-v-0dabd3fc="" class="recycleBtnD"><button data-v-0dabd3fc="" class="recycleBtn">Main wallet transfer</button></div>
 
 
 
                           <div data-v-0dabd3fc="" class="userDetail">
-                            <div data-v-0dabd3fc="" class="uniquedivdata">
-                              <div data-v-0dabd3fc="" class="imgD">
+                            
+                            <div data-v-0dabd3fc="" class="uniquedivdata" data-url="wallet/recharge">
+                              <div data-v-0dabd3fc="" class="imgD" >
                                 <img data-v-0dabd3fc="" src="/png/depositwallet.png" class="imgclass">
                               </div>
                               <center><p class="ptxt">Deposit</p></center>
                             </div>
+                         
                             <div data-v-0dabd3fc="">
                               <div data-v-0dabd3fc="" class="imgD">
                                 <img data-v-0dabd3fc="" src="/png/withdrawwallet.png" class="imgclass">
@@ -469,10 +504,35 @@ span {
                             </div>
 
                     </div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const selectBoxes = document.querySelectorAll('.uniquedivdata');
 
+    selectBoxes.forEach(box => {
+        box.addEventListener('click', () => {
+            
+            selectBoxes.forEach(otherBox => {
+                if (otherBox !== box) {
+                    otherBox.classList.remove('selected');
+                }
+            });
+
+            
+            box.classList.toggle('selected');
+
+            
+            const url = box.dataset.url;
+            if (url) {
+                window.location.href = url; 
+            }
+        });
+    });
+});
+
+</script>
 
                     <div data-v-be467d1a="" class="gameList">
-                        <div data-v-be467d1a="" class="box" style="">
+                        <div data-v-be467d1a="" class="selectbox" style="">
                           <h3 data-v-be467d1a="" class="money">
                             0.00
                           </h3>
@@ -480,7 +540,7 @@ span {
                             Lottery
                           </span>
                         </div>
-                        <div data-v-be467d1a="" class="box" style="">
+                        <div data-v-be467d1a="" class="selectbox" style="">
                           <h3 data-v-be467d1a="" class="money">
                             0.00
                           </h3>
@@ -488,7 +548,7 @@ span {
                             TB_Chess
                           </span>
                         </div>
-                        <div data-v-be467d1a="" class="box" style="">
+                        <div data-v-be467d1a="" class="selectbox" style="">
                           <h3 data-v-be467d1a="" class="money">
                             0.00
                           </h3>
@@ -496,7 +556,7 @@ span {
                             Wickets9
                           </span>
                         </div>
-                        <div data-v-be467d1a="" class="box" style="">
+                        <div data-v-be467d1a="" class="selectbox" style="">
                           <h3 data-v-be467d1a="" class="money">
                             0.00
                           </h3>
@@ -504,7 +564,7 @@ span {
                             JILI
                           </span>
                         </div>
-                        <div data-v-be467d1a="" class="box" style="">
+                        <div data-v-be467d1a="" class="selectbox" style="">
                           <h3 data-v-be467d1a="" class="money">
                             0.00
                           </h3>
@@ -512,7 +572,7 @@ span {
                             PG
                           </span>
                         </div>
-                        <div data-v-be467d1a="" class="box" style="">
+                        <div data-v-be467d1a="" class="selectbox" style="">
                           <h3 data-v-be467d1a="" class="money">
                             0.00
                           </h3>
@@ -520,7 +580,7 @@ span {
                             DG
                           </span>
                         </div>
-                        <div data-v-be467d1a="" class="box" style="">
+                        <div data-v-be467d1a="" class="selectbox" style="">
                           <h3 data-v-be467d1a="" class="money">
                             0.00
                           </h3>
@@ -528,7 +588,7 @@ span {
                             SaBa
                           </span>
                         </div>
-                        <div data-v-be467d1a="" class="box" style="">
+                        <div data-v-be467d1a="" class="selectbox" style="">
                           <h3 data-v-be467d1a="" class="money">
                             0.00
                           </h3>
@@ -536,7 +596,7 @@ span {
                             MG
                           </span>
                         </div>
-                        <div data-v-be467d1a="" class="box" style="">
+                        <div data-v-be467d1a="" class="selectbox" style="">
                           <h3 data-v-be467d1a="" class="money">
                             0.00
                           </h3>
@@ -544,7 +604,7 @@ span {
                             JDB
                           </span>
                         </div>
-                        <div data-v-be467d1a="" class="box" style="">
+                        <div data-v-be467d1a="" class="selectbox" style="">
                           <h3 data-v-be467d1a="" class="money">
                             0.00
                           </h3>
@@ -552,7 +612,7 @@ span {
                             CQ9
                           </span>
                         </div>
-                        <div data-v-be467d1a="" class="box" style="">
+                        <div data-v-be467d1a="" class="selectbox" style="">
                           <h3 data-v-be467d1a="" class="money">
                             0.00
                           </h3>
@@ -560,7 +620,7 @@ span {
                             TB
                           </span>
                         </div>
-                        <div data-v-be467d1a="" class="box" style="">
+                        <div data-v-be467d1a="" class="selectbox" style="">
                           <h3 data-v-be467d1a="" class="money">
                             0.00
                           </h3>
@@ -568,7 +628,7 @@ span {
                             EVO_Video
                           </span>
                         </div>
-                        <div data-v-be467d1a="" class="box" style="">
+                        <div data-v-be467d1a="" class="selectbox" style="">
                           <h3 data-v-be467d1a="" class="money">
                             0.00
                           </h3>
@@ -576,7 +636,7 @@ span {
                             AG_Video
                           </span>
                         </div>
-                        <div data-v-be467d1a="" class="box" style="">
+                        <div data-v-be467d1a="" class="selectbox" style="">
                           <h3 data-v-be467d1a="" class="money">
                             0.00
                           </h3>
@@ -584,7 +644,7 @@ span {
                             Card365
                           </span>
                         </div>
-                        <div data-v-be467d1a="" class="box" style="">
+                        <div data-v-be467d1a="" class="selectbox" style="">
                           <h3 data-v-be467d1a="" class="money">
                             0.00
                           </h3>
@@ -592,7 +652,7 @@ span {
                             V8Card
                           </span>
                         </div>
-                        <div data-v-be467d1a="" class="box" style="">
+                        <div data-v-be467d1a="" class="selectbox" style="">
                           <h3 data-v-be467d1a="" class="money">
                             0.00
                           </h3>
@@ -601,8 +661,38 @@ span {
                           </span>
                         </div>
                       </div>
+<style>
+  .selectbox.selected { /* Style for when it's clicked */
+    background: linear-gradient(90deg, #D9AD82 0%, #B1835A 100%); 
+    .money {
+        color: white; 
+    }
+    span {
+    color: #fff;
+}
+}
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const selectBoxes = document.querySelectorAll('.selectbox');  
+
+    selectBoxes.forEach(box => {  
+        box.addEventListener('click', () => {
+           
+            selectBoxes.forEach(otherBox => {
+                if (otherBox !== box) { 
+                    otherBox.classList.remove('selected');
+                }
+            });
+
+            
+            box.classList.toggle('selected'); 
+        });
+    });
+});
 
 
+</script>
 
 
 
@@ -644,7 +734,10 @@ span {
                 $('.balance .item:eq(1) div:eq(1)').text("₹" + response.totalWithdraw + ".00");
             }
         });
+  
+
     </script>
+    
 </body>
 
 </html>
