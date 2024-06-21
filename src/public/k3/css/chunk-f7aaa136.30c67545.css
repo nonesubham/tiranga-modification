@@ -30,3 +30,9 @@
         box-shadow: 0 -.05333rem .16rem #92a7ff inset !important;
         border-radius: .26667rem;
 }
+.game[data-v-03b808c2] {
+    background-color: #F7F8FF;
+}
+.game-head[data-v-03b808c2] {
+    padding: 0rem 0rem 1.86667rem;
+}
