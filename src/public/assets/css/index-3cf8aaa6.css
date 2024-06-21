@@ -38,3 +38,6 @@ body {
     background: -webkit-linear-gradient(90deg, #D9AD82 0%, #B1835A 100%);
     background: linear-gradient(90deg, #D9AD82 0%, #B1835A 100%);
 }
+#app {
+    background: #F7F8FF !important;
+}
