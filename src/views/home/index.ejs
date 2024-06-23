@@ -49,6 +49,22 @@
     -webkit-animation: warn-c10b67fb 1.5s ease-out 0s infinite;
     animation: warn-c10b67fb 1.5s ease-out 0s infinite;
 }
+
+@keyframes warn-c10b67fb{
+  0% {
+    -webkit-transform: scale(.5);
+    transform: scale(.5);
+    opacity: 1;
+}
+30% {
+    opacity: 1;
+}
+100% {
+    -webkit-transform: scale(1.4);
+    transform: scale(1.4);
+    opacity: 0;
+}
+}
         </style>
     </head>
    
@@ -2705,7 +2721,7 @@
                                         <svg data-v-17ed3a84="" class="svg-icon icon-notification">
                                             <use xlink:href="#icon-notification"></use>
                                         </svg>
-                                        <div data-v-c10b67fb="" data-v-17ed3a84="" class="point point-flicker point" style="color:#FB5B5B;"></div>
+                                        <div data-v-c10b67fb="" data-v-17ed3a84="" class="point point-flicker point"></div>
                                     </div>
                                     <svg data-v-17ed3a84="" class="svg-icon icon-down down down">
                                         <use xlink:href="#icon-down"></use>
@@ -3093,7 +3109,13 @@
                         <div data-v-254f4c39="" class="driver"></div>
                         <div data-v-254f4c39="" class="rank_list"></div>
                     </div>
+                    <div class="van-overlay" style="z-index: 2001;"><!----></div>
+                    <div role="dialog" tabindex="0" class="van-popup van-popup--center van-dialog" style="z-index: 2001;"><!----><div class="van-dialog__content"><div data-v-17ed3a84="" class="promptHeader">Notification</div><div data-v-17ed3a84="" class="promptContent"><p style="text-align: left;"><br><img src="https://ossimg.Big-Mumadmin888.com/bigmumbai/editor/editor_20240615210607ftbx.png" style="width: 320px;"></p></div><div data-v-17ed3a84="" class="promptBtn">Confirm</div></div><div class="van-hairline--top van-dialog__footer"><!----><!----></div><!----></div>
+                    <div data-v-c0caae78="" data-v-17ed3a84="" class="dialog inactive"><div data-v-c0caae78="" class="dialog__container" role="dialog" tabindex="0"><div data-v-c0caae78="" class="dialog__container-img"><img data-v-c0caae78="" alt="" class="" data-origin="/assets/png/superjackpotHome-72bbeb43.png" src="/assets/png/superjackpotHome-72bbeb43.png"></div><div data-v-c0caae78="" class="dialog__container-title"><h1 data-v-c0caae78="">Congratulation</h1></div><div data-v-c0caae78="" class="dialog__container-content"><div data-v-17ed3a84="" class="Laundry-Con"><div data-v-17ed3a84="" class="Laundry-Con_tip">Get 【Super Jackpot】!</div><div data-v-17ed3a84="" class="Landty-Con-tips">Visit the [Super Jackpot] page to claim your reward</div></div></div><div data-v-c0caae78="" class="dialog__container-footer"><!--v-if--><button data-v-c0caae78="">OK</button></div></div><div data-v-c0caae78="" class="dialog__outside"></div></div>
+
+
                 </div>
+                
                 <!-- 长龙-->
                 <div data-v-0ac3de13="" data-v-17ed3a84="" class="changlongEnter changlong"></div>
                 <!--下载PWA应用-->
@@ -3102,27 +3124,7 @@
                 <!--v-if-->
                 <!---->
                 <!---->
-                <div data-v-c0caae78="" data-v-17ed3a84="" class="dialog inactive">
-                    <div data-v-c0caae78="" class="dialog__container" role="dialog" tabindex="0">
-                        <div data-v-c0caae78="" class="dialog__container-img">
-                            <img data-v-c0caae78="" alt="" class="" data-origin="assets/png/superjackpotHome-72bbeb43.png" src="/assets/png/superjackpotHome-72bbeb43.png">
-                        </div>
-                        <div data-v-c0caae78="" class="dialog__container-title">
-                            <h1 data-v-c0caae78="">Congratulation</h1>
-                        </div>
-                        <div data-v-c0caae78="" class="dialog__container-content">
-                            <div data-v-17ed3a84="" class="Laundry-Con">
-                                <div data-v-17ed3a84="" class="Laundry-Con_tip">Get 【Super Jackpot】!</div>
-                                <div data-v-17ed3a84="" class="Landty-Con-tips">Visit the [Super Jackpot] page to claim your reward</div>
-                            </div>
-                        </div>
-                        <div data-v-c0caae78="" class="dialog__container-footer">
-                            <!--v-if-->
-                            <button data-v-c0caae78="">OK</button>
-                        </div>
-                    </div>
-                    <div data-v-c0caae78="" class="dialog__outside"></div>
-                </div>
+                
             </div>
             <!--online custom service-->
             <div class="customer" id="customerId" style="--f13b4d11-currentFontFamily: 'Roboto', 'Inter', sans-serif; --f6a705e1-currentFontFamily: bahnschrift;">
@@ -3329,6 +3331,7 @@
             <!---->
             <!---->
         </div>
+
         
         <amino-inspect></amino-inspect>
         <deepl-input-controller></deepl-input-controller>
@@ -3337,18 +3340,7 @@
 
     
 
-  <script>
-
-    document.addEventListener("DOMContentLoaded", function() {
-        setTimeout(function() {
-            // Hide the loading screen
-            document.getElementById("loading-screen").style.display = "none";
-            // Show the main content
-            document.getElementById("main-content").style.display = "block";
-        }, 2000); // 2000 milliseconds = 2 seconds
-    });
-    
-      </script>
+ 
       
       
       
@@ -3609,6 +3601,6 @@
         });
       });
       </script>
-    
+
   </body>
 </html>
