@@ -1022,7 +1022,7 @@ button.shareBtn {
             $temp.remove();
         }
     </script>
-    <!-- <script>
+   <script>
         var limit = 15;
         var start = 0;
         var action = 'inactive';
@@ -1059,7 +1059,143 @@ button.shareBtn {
                 }, 1200);
             }
         });
-    </script> -->
+    </script> 
+    <script>
+        $(document).ready(function () {
+            function alertMess(text, sic) {
+                $('body').append(
+                    `
+					<div data-v-1dcba851="" class="msg">
+						<div data-v-1dcba851="" class="msg-content v-enter-active v-enter-to" style=""> ${text} </div>
+					</div>
+					`
+                );
+                setTimeout(() => {
+                    $('.msg .msg-content').removeClass('v-enter-active v-enter-to');
+                    $('.msg .msg-content').addClass('v-leave-active v-leave-to');
+                    setTimeout(() => {
+                        $('.msg').remove();
+                    }, 100);
+                    sic.removeClass('block-click');
+                }, 1000);
+            }
+            $('.btn-box .btn').click(function (e) {
+                e.preventDefault();
+                $(this).addClass('block-click');
+                alertMess('Copy successful', $(this));
+                navigator.clipboard.writeText($(this).attr('data-clipboard-text'));
+            });
+        });
+    </script>
+    <script>
+        function RosesRender(datas) {
+            let html = datas.map((e) => {
+                let html = '';
+                return html += `<div data-v-7c8bbbf4="" class="bd van-row">
+                        <div data-v-7c8bbbf4="" class="c-tc van-ellipsis van-col van-col--6">Lvl ${e.level}</div>
+                        <div data-v-7c8bbbf4="" class="c-tc van-col van-col--4">${e.f1}%</div>
+                        <div data-v-7c8bbbf4="" class="c-tc van-col van-col--4">${e.f2}%</div>
+                        <div data-v-7c8bbbf4="" class="c-tc van-col van-col--5">${e.f3}%</div>
+                        <div data-v-7c8bbbf4="" class="c-tc van-col van-col--5">${e.f4}%</div>
+                    </div>`;
+            });
+            $('.table:eq(1) .box').append(html);
+
+            $('.table:eq(1) .box').append(`
+                <div data-v-7c8bbbf4="" class="bd van-row">
+                    <div data-v-7c8bbbf4="" class="c-tc fw van-col van-col--6">...</div>
+                    <div data-v-7c8bbbf4="" class="c-tc fw van-col van-col--4">...</div>
+                    <div data-v-7c8bbbf4="" class="c-tc fw van-col van-col--4">...</div>
+                    <div data-v-7c8bbbf4="" class="c-tc fw van-col van-col--5">...</div>
+                    <div data-v-7c8bbbf4="" class="c-tc fw van-col van-col--5">...</div>
+                </div>
+                `);
+        }
+        $.ajax({
+            type: "POST",
+            url: "/api/webapi/promotion",
+            data: {
+
+            },
+            dataType: "json",
+            success: function (response) {
+                $('.Loading').fadeOut(0);
+                $('#f1').text(response.invite.f1);
+                $('#f1_today').text(response.invite.f1_today);
+                const f1Count = response.invite.f1_today;
+                console.log(f1Count);
+                $('#f_all_today').text(response.invite.f_all_today);
+                $('#f_total').text(response.invite.total_f);
+
+                $('#roses_f1').text("Direct Commission: " + response.invite.roses_f1);
+                $('#roses_f').text("Team Commission: " + response.invite.roses_f);
+                $('#roses_all').text(response.invite.roses_all);
+                $('#roses_today').text(response.invite.roses_today);
+                $('#invite_code').text(window.location.hostname + `/register?r_code=${response.info[0].code}`);
+
+                if (response.status === false) return location.href = '/home';
+                RosesRender(response.level);
+                $('.btn-box .btn:eq(0)').attr('data-clipboard-text', response.info[0].code);
+                $('.btn-box .btn:eq(1)').attr('data-clipboard-text', window.location.hostname + `/register?r_code=${response.info[0].code}`);
+                var qrcode = new QRCode("qrcode");
+                $('#qrcode').attr('title', window.location.hostname + `/register?r_code=${response.info[0].code}`)
+                function makeCode() {
+                    qrcode.makeCode(window.location.hostname + `/register?r_code=${response.info[0].code}`);
+                }
+
+                makeCode();
+            }
+        });
+
+        function copy(selector) {
+            var $temp = $("<div>");
+            $("body").append($temp);
+            $temp.attr("contenteditable", true)
+                .html($(selector).html()).select()
+                .on("focus", function () { document.execCommand('selectAll', false, null); })
+                .focus();
+            document.execCommand("copy");
+            $temp.remove();
+        }
+    </script>
+  <script>
+        var limit = 15;
+        var start = 0;
+        var action = 'inactive';
+        function load_country_data(limit, start) {
+            $.ajax({
+                url: "/api/webapi/promotion",
+                method: "POST",
+                data: {
+                    limit: limit,
+                    start: start
+                },
+                cache: false,
+                success: function(data) {
+                    if (giai_doan == '') {
+                        $('.van-list__finished-text').text("No more data");
+                        action = 'active';
+                    } else {
+                        $('.van-list__finished-text').html('<div data-v-7d40872f="" class="order-content"><div role="feed" class="van-list" aria-busy="true"><div class="van-list__loading"><div class="van-loading van-loading--circular"><span class="van-loading__spinner van-loading__spinner--circular" style="width: 16px; height: 16px;"><svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span><span class="van-loading__text">Loading...</span></div></div><div class="van-list__placeholder"></div></div></div>');
+                        action = "inactive";
+                    }
+                }
+            });
+        }
+        if (action == 'inactive') {
+            action = 'active';
+            load_country_data(limit, start);
+        }
+        $(window).scroll(function() {
+            if ($(window).scrollTop() + $(window).height() > $(".main").height() && action == 'inactive') {
+                action = 'active';
+                start = start + limit;
+                setTimeout(function() {
+                    load_country_data(limit, start);
+                }, 1200);
+            }
+        });
+    </script> 
 </body>
 
 </html>

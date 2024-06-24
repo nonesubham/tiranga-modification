@@ -44,11 +44,11 @@ const initWebRouter = (app) => {
 
     router.get('/keFuMenu', middlewareController, homeController.keFuMenu);
 
-    router.get('/mian', middlewareController, homeController.mianPage);
+    router.get('/account', middlewareController, homeController.mianPage);
 
     router.get('/about', middlewareController, homeController.aboutPage);
     router.get('/redenvelopes', middlewareController, homeController.redenvelopes);
-    router.get('/mian/forgot', middlewareController, homeController.forgot);
+    router.get('/account/forgot', middlewareController, homeController.forgot);
     router.get('/newtutorial', homeController.newtutorial);
     router.get('/about/privacyPolicy', middlewareController, homeController.privacyPolicy);
     router.get('/about/riskAgreement', middlewareController, homeController.riskAgreement);
