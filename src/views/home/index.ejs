@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <link rel="manifest" href="manifest.bigmumbai.json?version=1.1">
         <title>BigMumbai</title>
-        <script type="module" crossorigin="" src="assets/js/index-f6a54d3d.js"></script>
+        
         <link rel="modulepreload" crossorigin="" href="assets/js/modules-7f822252.js">
         <link rel="modulepreload" crossorigin="" href="assets/js/native/index-20830f47.js">
         <link rel="modulepreload" crossorigin="" href="assets/js/en-93cdab10.js">
@@ -32,6 +32,12 @@
         <link rel="stylesheet" href="assets/css/page-home-6f5a1508.css">
         <script src="chrome-extension://pbcpfbcibpcbfbmddogfhcijfpboeaaf/inject.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+        <style>
+            /* Hide Mini games section by default */
+            .game_container.mini_games {
+              display: none;
+            }
+          </style>
         
     </head>
    
@@ -2699,14 +2705,92 @@
                     </div>
                 </div>
                 <!--v-if-->
+                <div data-v-cbf8511f="" data-v-17ed3a84="" class="login_tip"><div data-v-cbf8511f="" class="tip"><div data-v-cbf8511f="">Welcome to BigMumbai</div><div data-v-cbf8511f="">Start Your Super Jackpot Journey</div></div><div data-v-cbf8511f="" class="btn_box"><div data-v-cbf8511f="" class="login" onClick="window.location='/login';">Log in</div><div data-v-cbf8511f="" class="register" onClick="window.location='/register';">Register</div></div></div>
                 <!-- 头部轮播图 -->
-               <div data-v-3ad7aed7="" data-v-17ed3a84="" class="swiper_box">
-                <div data-v-3ad7aed7="" class="swiper swiper-initialized swiper-horizontal my-swipe swiper-backface-hidden">
-                    <div class="swiper-wrapper" style="transform: translate3d(-2988px, 0px, 0px); transition-duration: 0ms;">
-                        <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active swiper-slide-duplicate" data-swiper-slide-index="5" style="width: 100%; margin-right: 20px;">
-                            <img data-v-3ad7aed7="" class="ar-lazyload" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/banner/Banner_20240611214701wov4.png"></div><div data-v-3ad7aed7="" class="swiper-slide swiper-slide-duplicate-next" data-swiper-slide-index="0" style="width: 100%; margin-right: 20px;"><img data-v-3ad7aed7="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/banner/Banner_20240611214710howj.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/banner/Banner_20240611214710howj.png"></div><div data-v-3ad7aed7="" class="swiper-slide" data-swiper-slide-index="1" style="width: 100%; margin-right: 20px;"><img data-v-3ad7aed7="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/banner/Banner_20240611214729tep8.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/banner/Banner_20240611214729tep8.png"></div><div data-v-3ad7aed7="" class="swiper-slide" data-swiper-slide-index="2" style="width: 100%; margin-right: 20px;"><img data-v-3ad7aed7="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/banner/Banner_20240611214734tm29.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/banner/Banner_20240611214734tm29.png"></div><div data-v-3ad7aed7="" class="swiper-slide" data-swiper-slide-index="3" style="width: 100%; margin-right: 20px;"><img data-v-3ad7aed7="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/banner/Banner_20240611214739x19p.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/banner/Banner_20240611214739x19p.png"></div><div data-v-3ad7aed7="" class="swiper-slide swiper-slide-prev" data-swiper-slide-index="4" style="width: 100%; margin-right: 20px;"><img data-v-3ad7aed7="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/banner/Banner_20240611214745qu26.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/banner/Banner_20240611214745qu26.png"></div><div data-v-3ad7aed7="" class="swiper-slide swiper-slide-active" data-swiper-slide-index="5" style="width: 100%; margin-right: 20px;"><img data-v-3ad7aed7="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/banner/Banner_20240611214701wov4.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/banner/Banner_20240611214701wov4.png"></div><div class="swiper-slide swiper-slide-duplicate swiper-slide-next swiper-slide-duplicate" data-swiper-slide-index="0" style="width: 100%; margin-right: 20px;"><img data-v-3ad7aed7="" class="ar-lazyload" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/banner/Banner_20240611214710howj.png"></div></div><!----><!----><!----></div><!--v-if-->
-                      
-                            
+                 <style>
+                    .swiper_box .my-swipe img[data-v-3ad7aed7] {
+    width: 100%;
+    height: 100%;
+    border-radius: .26667rem;
+    -webkit-filter: var(--BoxShadowColor-35);
+    filter: var(--BoxShadowColor-35);
+}
+                 </style>
+                <div data-v-3ad7aed7="" data-v-17ed3a84="" class="swiper_box">
+                    <div data-v-3ad7aed7="" class="swiper swiper-initialized swiper-horizontal my-swipe swiper-backface-hidden">
+                        <div class="swiper-wrapper" style="transform: translate3d(-2988px, 0px, 0px); transition-duration: 0ms;">
+                            <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active swiper-slide-duplicate" data-swiper-slide-index="5" style="width: 100%; margin-right: 20px;">
+                                <img data-v-3ad7aed7="" class="ar-lazyload" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/banner/Banner_20240611214701wov4.png">
+                            </div>
+                            <div data-v-3ad7aed7="" class="swiper-slide swiper-slide-duplicate-next" data-swiper-slide-index="0" style="width: 100%; margin-right: 20px;">
+                                <img data-v-3ad7aed7="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/banner/Banner_20240611214710howj.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/banner/Banner_20240611214710howj.png">
+                            </div>
+                            <div data-v-3ad7aed7="" class="swiper-slide" data-swiper-slide-index="1" style="width: 100%; margin-right: 20px;">
+                                <img data-v-3ad7aed7="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/banner/Banner_20240611214729tep8.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/banner/Banner_20240611214729tep8.png">
+                            </div>
+                            <div data-v-3ad7aed7="" class="swiper-slide" data-swiper-slide-index="2" style="width: 100%; margin-right: 20px;">
+                                <img data-v-3ad7aed7="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/banner/Banner_20240611214734tm29.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/banner/Banner_20240611214734tm29.png">
+                            </div>
+                            <div data-v-3ad7aed7="" class="swiper-slide" data-swiper-slide-index="3" style="width: 100%; margin-right: 20px;">
+                                <img data-v-3ad7aed7="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/banner/Banner_20240611214739x19p.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/banner/Banner_20240611214739x19p.png">
+                            </div>
+                            <div data-v-3ad7aed7="" class="swiper-slide swiper-slide-prev" data-swiper-slide-index="4" style="width: 100%; margin-right: 20px;">
+                                <img data-v-3ad7aed7="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/banner/Banner_20240611214745qu26.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/banner/Banner_20240611214745qu26.png">
+                            </div>
+                            <div data-v-3ad7aed7="" class="swiper-slide swiper-slide-active" data-swiper-slide-index="5" style="width: 100%; margin-right: 20px;">
+                                <img data-v-3ad7aed7="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/banner/Banner_20240611214701wov4.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/banner/Banner_20240611214701wov4.png">
+                            </div>
+                            <div class="swiper-slide swiper-slide-duplicate swiper-slide-next swiper-slide-duplicate" data-swiper-slide-index="0" style="width: 100%; margin-right: 20px;">
+                                <img data-v-3ad7aed7="" class="ar-lazyload" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/banner/Banner_20240611214710howj.png">
+                            </div>
+                        </div>
+                        <!---->
+                        <!---->
+                        <!---->
+                    </div>
+                    <!--v-if-->
+                    <script>
+window.addEventListener('load', () => {
+    const slideContainer = document.querySelector('.swiper-wrapper'); 
+    const slides = document.querySelectorAll('.swiper-slide');      
+    let slideWidth = slides[0].offsetWidth + 20;  
+    let currentSlide = 0; 
+
+    // Add transition property to slideContainer
+    slideContainer.style.transition = 'transform 0.5s ease-in-out'; 
+
+    function showSlide(n) {
+        currentSlide = (n + slides.length) % slides.length; 
+        slideContainer.style.transform = `translateX(-${currentSlide * slideWidth}px)`; 
+
+        slides.forEach((slide, index) => {
+            const img = slide.querySelector('img');
+            if (!img.src && index === currentSlide) { 
+                img.src = img.dataset.origin;
+            }
+        });
+    }
+
+    function nextSlide() {
+        showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+        showSlide(currentSlide - 1);
+    }
+
+    // Auto-slide every 3 seconds (adjust as needed)
+    setInterval(nextSlide, 5000);
+
+    // Event listeners for manual sliding (optional)
+    // ... add buttons or swipe events here if you want
+
+    // Show initial slide
+    showSlide(currentSlide);
+});
+
+
+                    </script>
                 </div>
                 <div data-v-17ed3a84="" class="whiteGLing"></div>
                 <!-- 滚动通知栏 -->
@@ -2749,8 +2833,13 @@
                             </div>
                         </div>
                     </div>
+                    <style>
+                        .game_container.action{
+                            display: none;
+                        }
+                    </style>
                     
-                    <div data-v-f52c66fe="" data-v-17ed3a84="" class="game_container">
+                    <div data-v-f52c66fe="" data-v-17ed3a84="" class="game_container" id="gameLottery">
                         <div data-v-f52c66fe="" class="game_title">Lottery</div>
                         <div data-v-f52c66fe="" class="van-tabs van-tabs--card lottery_tabbar">
                             <div class="van-tabs__wrap">
@@ -2787,74 +2876,74 @@
                         </div>
                         <div data-v-f52c66fe="" class="driver"></div>
                         <div data-v-13364130="" data-v-f52c66fe="" class="lottery_container">
-                            <div data-v-13364130="" class="lotterySlotItem wingo">
+                            <div data-v-13364130="" class="lotterySlotItem wingo" onClick="window.location='/win';">
                                 <img data-v-13364130="" src="assets/png/wingo1-26adecc4.png" alt="">
                                 <div data-v-13364130="">Win Go 1Min</div>
                             </div>
                             <div data-v-13364130="" class="lotterySlotItem wingo">
-                                <img data-v-13364130="" src="assets/png/wingo2-7620426f.png" alt="">
+                                <img data-v-13364130="" src="assets/png/wingo2-7620426f.png" alt="" onClick="window.location='/win/3';">
                                 <div data-v-13364130="">Win Go 3Min</div>
                             </div>
-                            <div data-v-13364130="" class="lotterySlotItem wingo">
+                            <div data-v-13364130="" class="lotterySlotItem wingo" onClick="window.location='/win/5';">
                                 <img data-v-13364130="" src="assets/png/wingo3-af2ecabf.png" alt="">
                                 <div data-v-13364130="">Win Go 5Min</div>
                             </div>
-                            <div data-v-13364130="" class="lotterySlotItem wingo">
+                            <div data-v-13364130="" class="lotterySlotItem wingo" onClick="window.location='/win/10';">
                                 <img data-v-13364130="" src="assets/png/wingo4-c325a189.png" alt="">
                                 <div data-v-13364130="">Win Go 10Min</div>
                             </div>
-                            <div data-v-13364130="" class="lotterySlotItem d5">
+                            <div data-v-13364130="" class="lotterySlotItem d5" onClick="window.location='/5d';">
                                 <img data-v-13364130="" src="assets/png/d55-92bf4299.png" alt="">
                                 <div data-v-13364130="">5D 1Min</div>
                             </div>
-                            <div data-v-13364130="" class="lotterySlotItem d5">
+                            <div data-v-13364130="" class="lotterySlotItem d5" onClick="window.location='/5d';">
                                 <img data-v-13364130="" src="assets/png/d56-381350f2.png" alt="">
                                 <div data-v-13364130="">5D 3Min</div>
                             </div>
-                            <div data-v-13364130="" class="lotterySlotItem d5">
+                            <div data-v-13364130="" class="lotterySlotItem d5" onClick="window.location='/5d';">
                                 <img data-v-13364130="" src="assets/png/d57-59e91e51.png" alt="">
                                 <div data-v-13364130="">5D 5Min</div>
                             </div>
-                            <div data-v-13364130="" class="lotterySlotItem d5">
+                            <div data-v-13364130="" class="lotterySlotItem d5" onClick="window.location='/5d';">
                                 <img data-v-13364130="" src="assets/png/d58-b02f0617.png" alt="">
                                 <div data-v-13364130="">5D 10Min</div>
                             </div>
-                            <div data-v-13364130="" class="lotterySlotItem k3">
+                            <div data-v-13364130="" class="lotterySlotItem k3" onClick="window.location='/k3';">
                                 <img data-v-13364130="" src="assets/png/k39-707408c6.png" alt="">
                                 <div data-v-13364130="">K3 1Min</div>
                             </div>
-                            <div data-v-13364130="" class="lotterySlotItem k3">
+                            <div data-v-13364130="" class="lotterySlotItem k3" onClick="window.location='/k3';">
                                 <img data-v-13364130="" src="assets/png/k310-1fc41fc4.png" alt="">
                                 <div data-v-13364130="">K3 3Min</div>
                             </div>
-                            <div data-v-13364130="" class="lotterySlotItem k3">
+                            <div data-v-13364130="" class="lotterySlotItem k3" onClick="window.location='/k3';">
                                 <img data-v-13364130="" src="assets/png/k311-2acf4e28.png" alt="">
                                 <div data-v-13364130="">K3 5Min</div>
                             </div>
-                            <div data-v-13364130="" class="lotterySlotItem k3">
+                            <div data-v-13364130="" class="lotterySlotItem k3" onClick="window.location='/k3';">
                                 <img data-v-13364130="" src="assets/png/k312-126dcbfe.png" alt="">
                                 <div data-v-13364130="">K3 10Min</div>
                             </div>
-                            <div data-v-13364130="" class="lotterySlotItem trx">
+                            <div data-v-13364130="" class="lotterySlotItem trx" onClick="window.location='/win';">
                                 <img data-v-13364130="" src="assets/png/trx13-30f132be.png" alt="">
                                 <div data-v-13364130="">Trx Win Go 1Min</div>
                             </div>
-                            <div data-v-13364130="" class="lotterySlotItem trx">
+                            <div data-v-13364130="" class="lotterySlotItem trx" onClick="window.location='/win/3';">
                                 <img data-v-13364130="" src="assets/png/trx14-af832a85.png" alt="">
                                 <div data-v-13364130="">Trx Win Go 3Min</div>
                             </div>
-                            <div data-v-13364130="" class="lotterySlotItem trx">
+                            <div data-v-13364130="" class="lotterySlotItem trx" onClick="window.location='/win/5';">
                                 <img data-v-13364130="" src="assets/png/trx15-5500af52.png" alt="">
                                 <div data-v-13364130="">Trx Win Go 5Min</div>
                             </div>
-                            <div data-v-13364130="" class="lotterySlotItem trx">
+                            <div data-v-13364130="" class="lotterySlotItem trx" onClick="window.location='/win/10';">
                                 <img data-v-13364130="" src="assets/png/trx16-27318f43.png" alt="">
                                 <div data-v-13364130="">Trx Win Go 10Min</div>
                             </div>
                         </div>
                     </div>
-                    <div data-v-f52c66fe="" data-v-17ed3a84="" class="game_container">
-                        <div data-v-f52c66fe="" class="game_title">Mini games</div>
+                    <div data-v-f52c66fe="" data-v-17ed3a84="" class="game_container action" id="gameMiniGames">
+                      <div data-v-f52c66fe="" class="game_title">Mini games</div>
                         <!--v-if-->
                         <div data-v-f52c66fe="" class="driver"></div>
                         <!--v-if-->
@@ -2935,7 +3024,32 @@
                         <!--v-if-->
                         <!-- <OtherGameItem :gameList="gameList[currentMenu]" :game-type="currentMenu" v-if="getType === 2" /> -->
                     </div>
-                
+                <script>
+  // Get the menu items and game containers
+  const menuItems = document.querySelectorAll('.gamen_item');
+    const gameContainers = document.querySelectorAll('.game_container');
+
+    // Add click event listeners to each menu item
+    menuItems.forEach(item => {
+        item.addEventListener('click', function() {
+            // Remove 'active' class from all menu items
+            menuItems.forEach(menu => menu.classList.remove('active'));
+            // Add 'active' class to the clicked menu item
+            item.classList.add('active');
+
+            // Toggle 'active' class on game containers based on the clicked menu item
+            const itemName = item.querySelector('span').textContent.trim();
+            gameContainers.forEach(container => {
+                if (container.id === `game${itemName.replace(/\s+/g, '')}`) {
+                    container.classList.add('active');
+                } else {
+                    container.classList.remove('active');
+                }
+            });
+        });
+    });
+
+                </script>
                     <script>
                         document.addEventListener("DOMContentLoaded", function() {
                             // Function to check if an element is in viewport
@@ -3038,8 +3152,8 @@
                                         <img data-v-84514e8e="" data-img="assets/png/avatar-ea3b8ee9.png" class="ar-lazyload" data-origin="">
                                     </div>
                                     <div data-v-84514e8e="">
-                                        <img data-v-84514e8e="" class="ar-lazyload" data-origin="assets/png/crown1-3912fd85.png">
-                                        <img data-v-84514e8e="" class="ar-lazyload" data-origin="assets/png/place1-fe39c3f3.png">
+                                        <img data-v-84514e8e="" class="ar-lazyload" data-origin="assets/png/crown1-3912fd85.png" src="assets/png/crown1-3912fd85.png">
+                                        <img data-v-84514e8e="" class="ar-lazyload" data-origin="assets/png/place1-fe39c3f3.png" src="assets/png/place1-fe39c3f3.png">
                                     </div>
                                     <span data-v-84514e8e="">No ***ata</span>
                                     <span data-v-84514e8e="">₹0.00</span>
@@ -3049,19 +3163,19 @@
                                         <img data-v-84514e8e="" data-img="assets/png/avatar-ea3b8ee9.png" class="ar-lazyload" data-origin="">
                                     </div>
                                     <div data-v-84514e8e="">
-                                        <img data-v-84514e8e="" class="ar-lazyload" data-origin="assets/png/crown2-c8aced52.png">
-                                        <img data-v-84514e8e="" class="ar-lazyload" data-origin="assets/png/place2-8189be28.png">
+                                        <img data-v-84514e8e="" class="ar-lazyload" data-origin="assets/png/crown2-c8aced52.png" src="assets/png/crown2-c8aced52.png">
+                                        <img data-v-84514e8e="" class="ar-lazyload" data-origin="assets/png/place2-8189be28.png" src="assets/png/place2-8189be28.png">
                                     </div>
                                     <span data-v-84514e8e="">No ***ata</span>
                                     <span data-v-84514e8e="">₹0.00</span>
                                 </div>
                                 <div data-v-84514e8e="" class="dailyProfitRank__content-topThree__item" style="order: 3; top: -30px;">
                                     <div data-v-84514e8e="" style="background: url(&quot;assets/png/border3-cfec4a7d.png&quot;) center center / 100% 100% no-repeat;">
-                                        <img data-v-84514e8e="" data-img="assets/png/avatar-ea3b8ee9.png" class="ar-lazyload" data-origin="">
+                                        <img data-v-84514e8e="" data-img="assets/png/avatar-ea3b8ee9.png" class="ar-lazyload" data-origin="" src="assets/png/avatar-ea3b8ee9.png">
                                     </div>
                                     <div data-v-84514e8e="">
-                                        <img data-v-84514e8e="" class="ar-lazyload" data-origin="/assets/png/crown3-2ca02146.png">
-                                        <img data-v-84514e8e="" class="ar-lazyload" data-origin="/assets/png/place3-d9b0be38.png">
+                                        <img data-v-84514e8e="" class="ar-lazyload" data-origin="/assets/png/crown3-2ca02146.png" src="/assets/png/crown3-2ca02146.png ">
+                                        <img data-v-84514e8e="" class="ar-lazyload" data-origin="/assets/png/place3-d9b0be38.png" src="/assets/png/place3-d9b0be38.png">
                                     </div>
                                     <span data-v-84514e8e="">No ***ata</span>
                                     <span data-v-84514e8e="">₹0.00</span>
@@ -3119,28 +3233,28 @@
                     <!--v-if-->
                     <span data-v-6ab3f23e="">Home</span>
                 </div>
-                <div data-v-6ab3f23e="" class="tabbar__container-item">
+                <div data-v-6ab3f23e="" class="tabbar__container-item" onClick="window.location='/activity';">
                     <svg data-v-6ab3f23e="" class="svg-icon icon-activity">
                         <use xlink:href="#icon-activity"></use>
                     </svg>
                     <!--v-if-->
                     <span data-v-6ab3f23e="">Activity</span>
                 </div>
-                <div data-v-6ab3f23e="" class="tabbar__container-item">
+                <div data-v-6ab3f23e="" class="tabbar__container-item" onClick="window.location='/promotion';">
                     <svg data-v-6ab3f23e="" class="svg-icon icon-promotion">
                         <use xlink:href="#icon-promotion"></use>
                     </svg>
                     <div data-v-6ab3f23e="" class="promotionBg"></div>
                     <span data-v-6ab3f23e="">Promotion</span>
                 </div>
-                <div data-v-6ab3f23e="" class="tabbar__container-item">
+                <div data-v-6ab3f23e="" class="tabbar__container-item" onClick="window.location='/wallet';">
                     <svg data-v-6ab3f23e="" class="svg-icon icon-wallet">
                         <use xlink:href="#icon-wallet"></use>
                     </svg>
                     <!--v-if-->
                     <span data-v-6ab3f23e="">Wallet</span>
                 </div>
-                <div data-v-6ab3f23e="" class="tabbar__container-item">
+                <div data-v-6ab3f23e="" class="tabbar__container-item" onClick="window.location='/mian';">
                     <svg data-v-6ab3f23e="" class="svg-icon icon-main">
                         <use xlink:href="#icon-main"></use>
                     </svg>
@@ -3315,5 +3429,18 @@
         
         <amino-inspect></amino-inspect>
         <deepl-input-controller></deepl-input-controller>
+        <script>
+            window.addEventListener('load', () => {
+    const images = document.querySelectorAll('img[data-img], img[data-origin]');
+
+    images.forEach(img => {
+        if (img.dataset.img) {
+            img.src = img.dataset.img;
+        } else if (img.dataset.origin) {
+            img.src = img.dataset.origin;
+        }
+    });
+});
+        </script>
     </body>
 </html>
