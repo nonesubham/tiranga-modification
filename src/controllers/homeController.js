@@ -185,6 +185,9 @@ const mianPage = async (req, res) => {
 const aboutPage = async (req, res) => {
     return res.render("member/about/index.ejs");
 }
+const language = async (req, res) => {
+    return res.render("member/language.ejs");
+}
 
 const recordsalary = async (req, res) => {
     return res.render("member/about/recordsalary.ejs");
@@ -296,4 +299,5 @@ module.exports = {
     recordsalary,
     getSalaryRecord,
     transactionhistoryPage,
+    language,
 }

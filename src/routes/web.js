@@ -89,6 +89,7 @@ const initWebRouter = (app) => {
     router.get('/recordsalary', middlewareController, homeController.recordsalary);
     router.get('/getrecord', middlewareController, homeController.getSalaryRecord);
     router.get('/about', middlewareController, homeController.aboutPage);
+    router.get('/account/language', middlewareController, homeController.language);
     router.get('/redenvelopes', middlewareController, homeController.redenvelopes);
     router.get('/mian/forgot', middlewareController, homeController.forgot);
     router.get('/newtutorial', homeController.newtutorial);
