@@ -42,6 +42,7 @@ const initWebRouter = (app) => {
     router.get('/sports', middlewareController, homeController.sportsPage);
     router.get('/popular', middlewareController, homeController.popularPage);
     router.get('/apiconnect', middlewareController, homeController.apiconnectPage);
+    router.get('/gamestatistic', homeController.gamestatPage);
     
 
 
@@ -90,11 +91,15 @@ const initWebRouter = (app) => {
     router.get('/getrecord', middlewareController, homeController.getSalaryRecord);
     router.get('/about', middlewareController, homeController.aboutPage);
     router.get('/account/language', middlewareController, homeController.language);
+    router.get('/account/setting', middlewareController, homeController.settingaccount);
+    router.get('/account/BetRecords', middlewareController, homeController.BetRecords);
+    router.get('/account/GameStats', middlewareController, homeController.GameStats);
     router.get('/redenvelopes', middlewareController, homeController.redenvelopes);
     router.get('/mian/forgot', middlewareController, homeController.forgot);
     router.get('/newtutorial', homeController.newtutorial);
     router.get('/about/privacyPolicy', middlewareController, homeController.privacyPolicy);
     router.get('/about/riskAgreement', middlewareController, homeController.riskAgreement);
+    
 
     router.get('/myProfile', middlewareController, homeController.myProfilePage);
 

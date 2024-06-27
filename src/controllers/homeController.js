@@ -12,6 +12,9 @@ const homePage = async (req, res) => {
 const activityPage = async (req, res) => {
     return res.render("checkIn/activity.ejs");
 }
+const GameStats = async (req, res) => {
+    return res.render("member/gamestats.ejs");
+}
 
 const slotjiliPage = async (req, res) => {
     return res.render("home/slotjili.ejs");
@@ -19,6 +22,9 @@ const slotjiliPage = async (req, res) => {
 
 const apiconnectPage = async (req, res) => {
     return res.render("home/apiconnect.ejs");
+}
+const BetRecords = async (req, res) => {
+    return res.render("member/gamerecord.ejs");
 }
 
 const popularPage = async (req, res) => {
@@ -55,6 +61,9 @@ const slotagPage = async (req, res) => {
 
 const lotteryPage = async (req, res) => {
     return res.render("home/lottery.ejs");
+}
+const settingaccount = async (req, res) => {
+    return res.render("member/setting.ejs");
 }
 
 
@@ -188,7 +197,9 @@ const aboutPage = async (req, res) => {
 const language = async (req, res) => {
     return res.render("member/language.ejs");
 }
-
+const gamestatPage = async (req, res) => {
+    return res.render("member/gamestatpage.ejs");
+}
 const recordsalary = async (req, res) => {
     return res.render("member/about/recordsalary.ejs");
 }
@@ -300,4 +311,9 @@ module.exports = {
     getSalaryRecord,
     transactionhistoryPage,
     language,
+    gamestatPage,
+    settingaccount,
+    BetRecords,
+    GameStats,
+
 }
