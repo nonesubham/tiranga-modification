@@ -15,6 +15,15 @@ const activityPage = async (req, res) => {
 const GameStats = async (req, res) => {
     return res.render("member/gamestats.ejs");
 }
+const noticePage = async (req, res) => {
+    return res.render("member/notice.ejs");
+}
+const notificationPage = async (req, res) => {
+    return res.render("member/notification.ejs");
+}
+const feedbackPage = async (req, res) => {
+    return res.render("member/feedback.ejs");
+}
 
 const slotjiliPage = async (req, res) => {
     return res.render("home/slotjili.ejs");
@@ -315,5 +324,7 @@ module.exports = {
     settingaccount,
     BetRecords,
     GameStats,
-
+    notificationPage,
+    feedbackPage,
+    noticePage,
 }

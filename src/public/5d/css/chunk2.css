@@ -33,4 +33,112 @@
         box-shadow: 0 -.05333rem .16rem #92a7ff inset !important;
         border-radius: .26667rem;
     
+}.game[data-v-42f27458] {
+    background-color: #F7F8FF !important;
+}.game-head[data-v-42f27458] {
+    padding: .4rem .4rem 1.86667rem;
+    background: linear-gradient(90deg, #D9AD82 0%, #B1835A 100%) !important;
+    border-bottom-left-radius: 1.53333rem ;
+    border-bottom-right: 1.53333rem ;
+}.game-betting .content[data-v-42f27458] {
+    width: calc(100% - 0.57222rem);
+    margin: 0.34667rem auto 0;
+    background-color: #fff;
+    padding: 0.42667rem 0.29333rem 0.45333rem;
+    border-radius: 0.26667rem 0.26667rem 0.26667rem 0.26667rem;
+}.game-betting .content .page-box .period-span>span[data-v-42f27458] {
+    color: #1E2637 !important;
+    font-size: .58667rem;
+} .game-betting .tab[data-v-42f27458] {
+    margin: 0 0.4rem;
+    background-color: #1e234d;
+    border-radius: 0.26667rem;
+    background: #F6F6F6 !important;
+}.game-betting .content .page-box .period-span .li-item[data-v-42f27458] {
+    width: 0.53333rem;
+    height: 0.8rem;
+    line-height: .8rem;
+    margin-left: 0.12rem;
+    background: #F6F6F6 !important;
+    border-radius: 0.05333rem;
+    color: #B1835A !important;
+    font-weight: 700;
+    font-size: .48rem;
+    text-align: center;
+    padding: 0 0.13333rem;
+}.game-betting .content .page-box .last-round .round-num[data-v-42f27458] {
+    position: relative;
+    height: 0.93333rem;
+    width: 0.93333rem;
+    line-height: .93333rem;
+    background: #F6F6F6;
+    border: 0.01333rem solid #A6A9AE;
+    font-size: .34667rem;
+    color: #1E2637;
+    border-radius: 50%;
+    text-align: center;
+}.game-betting .content .page-box .last-round .round-num.red[data-v-42f27458] {
+    color: #fff !important;
+    background: #B1835A !important;
+}.slot-inner[data-v-42f27458] {
+    display: inline-block;
+    height: 3.09333rem;
+    margin-top: 0.48rem;
+    background: #00B977 !important;
+    border-radius: 0.18667rem;
+    position: relative;
+    padding: 0.26667rem;
+}.d5-slot-box[data-v-42f27458]:after {
+    right: 0;
+    top: 50% !important;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    border-left: 0.53333rem solid transparent;
+    border-right: 0.53333rem solid #00B977 !important;
+}.slot-inner[data-v-42f27458]:after, .slot-inner[data-v-42f27458]:before {
+    content: "";
+    display: block;
+    width: 0.13333rem;
+    height: 0.69333rem;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background: #008B59;
+    z-index: 0;
+}.d5-slot-box[data-v-42f27458]:before {
+    left: 0;
+    top: 50% !important;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    border-right: 0.53333rem solid transparent;
+    border-left: 0.53333rem solid #00B977 !important;
+}.game-list .tab .li .txt.action[data-v-42f27458] {
+    background: linear-gradient(90deg, #D9AD82 0%, #B1835A 100%) !important;
+}.game-list .tab .li .txt[data-v-42f27458] {
+    display: block;
+    height: 1.06667rem;
+    line-height: 1.06667rem;
+    text-align: center;
+    width: 100%;
+    border-radius: 0.21333rem;
+    overflow: hidden;
+    background: #fff !important;
+    color: #768096 !important;
+}.bet-box .d5-bet-type[data-v-42f27458] {
+    width: 1.06667rem;
+    height: 1.06667rem;
+    line-height: 1.06667rem;
+    background: linear-gradient(90deg, #CCCEDC 15.38%, #CDCFDD 98.73%);
+    font-size: .42667rem;
+    font-weight: 700;
+    color: #fff;
+    border-radius: 0.53333rem 0.53333rem 0 0;
+    position: relative;
+    margin-right: 0.26667rem;
+    text-align: center;
+}.d5-bet-type.active[data-v-42f27458] {
+    background-color: #B1835A !important;
+    color: #fff !important;
+    background: https://google.com;
 }

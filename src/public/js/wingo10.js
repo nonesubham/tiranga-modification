@@ -1647,5 +1647,5 @@ function timerJoin(params = '', addHours = 0) {
   console.log(selectPageTime - 1);
   $(`.game-betting .box .item:eq(${selectPageTime - 1})`).addClass('action');
   $(`.game-betting .box .item:eq(${selectPageTime - 1}) .img`).addClass('block-click');
-  $(`.game-betting .box .item .img .van-image img`).attr('src', '/images/icon_clock-gerrn.svg');
-  $(`.game-betting .box .item:eq(${selectPageTime - 1}) .img .van-image img`).attr('src', '/images/icon_clock-red.svg');
+  $(`.game-betting .box .item .img .van-image img`).attr('src', '/png/icon_clock-red.png');
+  $(`.game-betting .box .item:eq(${selectPageTime - 1}) .img .van-image img`).attr('src', '/png/icon_clock-gerrn.png');
