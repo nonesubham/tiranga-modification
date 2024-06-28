@@ -105,6 +105,8 @@ const initWebRouter = (app) => {
     
 
     router.get('/myProfile', middlewareController, homeController.myProfilePage);
+    router.get('/activity/rules', middlewareController, homeController.rulesPage);
+    router.get('/jackpot/winningstar', middlewareController, homeController.winningStar);
 
 
 

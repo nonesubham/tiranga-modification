@@ -18,6 +18,9 @@ const GameStats = async (req, res) => {
 const noticePage = async (req, res) => {
     return res.render("member/notice.ejs");
 }
+const rulesPage = async (req, res) => {
+    return res.render("checkin/rules.ejs");
+}
 const notificationPage = async (req, res) => {
     return res.render("member/notification.ejs");
 }
@@ -115,6 +118,9 @@ const invibonusPage = async (req, res) => {
 
 const checkInPage = async (req, res) => {
     return res.render("checkIn/checkIn.ejs");
+}
+const winningStar = async (req, res) => {
+    return res.render("checkIn/jackpotwin.ejs");
 }
 
 const checkDes = async (req, res) => {
@@ -327,4 +333,6 @@ module.exports = {
     notificationPage,
     feedbackPage,
     noticePage,
+    rulesPage,
+    winningStar,
 }
