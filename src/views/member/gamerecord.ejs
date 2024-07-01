@@ -8,7 +8,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <link rel="manifest" href="/manifest.bigmumbai.json?version=1.1">
         <title>BigMumbai</title>
-       
         <link rel="modulepreload" crossorigin="" href="/assets/js/modules-7f822252.js">
         <link rel="modulepreload" crossorigin="" href="/assets/js/native/index-20830f47.js">
         <link rel="modulepreload" crossorigin="" href="/assets/js/en-128c80dd.js">
@@ -37,85 +36,173 @@
         <link rel="stylesheet" href="/assets/css/page-main-d79de402.css">
         <style>
             .fun-tabs {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    background: var(--bg_color_L1);
-}
-.fun-tab-item {
+                overflow: hidden;
+                position: relative;
+                width: 100%;
+                background: var(--bg_color_L1);
+            }
+
+            .fun-tab-item {
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -webkit-flex-direction: column;
+                flex-direction: column;
+                -webkit-box-pack: center;
+                -webkit-justify-content: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                -webkit-align-items: center;
+                align-items: center;
+            }
+
+            .fun-tabs .fun-tab-item {
+                padding: .13333rem .05333rem;
+                font-size: .18667rem;
+                text-align: center;
+                white-space: nowrap;
+            }
+
+            .bet-container[data-v-1d8fbc24] .fun-tabs .fun-tab-item {
+                padding: .18667rem 0;
+            }
+
+            .fun-tab-item__wrap {
+                position: relative;
+            }
+
+            #app div:not(.ranking), #app input {
+                box-shadow: none !important;
+            }
+
+            .fun-tabs__tab-list {
+                position: relative;
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-flex-wrap: nowrap;
+                flex-wrap: nowrap;
+                min-width: 100%;
+                width: -webkit-min-content;
+                width: min-content;
+            }
+
+            .bet-container[data-v-1d8fbc24] .fun-tabs .fun-tab-item {
+                padding: .18667rem 0;
+            }
+
+            .bet-container .tab_item[data-v-1d8fbc24] {
+                width: 2.53333rem;
+                height: 1.33333rem;
+                margin-inline: .06667rem; padding: 0;
+                color: var(--text_color_L2) !important;
+                border-radius: .13333rem;
+                background: var(--bg_color_L2);
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -webkit-flex-direction: column;
+                flex-direction: column;
+                -webkit-box-align: center;
+                -webkit-align-items: center;
+                align-items: center;
+                -webkit-box-pack: center;
+                -webkit-justify-content: center;
+                justify-content: center;
+            }
+
+            .bet-container .tab_active[data-v-1d8fbc24] {
+                color: var(--text_color_L4) !important;
+                background: var(--main_gradient-color);
+            }
+
+            .bet-container .tab_item svg[data-v-1d8fbc24] {
+                height: .66667rem;
+                width: .66667rem;
+            }
+
+            .svg-icon {
+                width: 1em;
+                height: 1em;
+                fill: var(--svgHoticon);
+                vertical-align: middle;
+            }
+
+            .bet-container[data-v-1d8fbc24] {
+                overflow: hidden;
+                padding: 0 .32rem;
+            }
+
+            .bet-container .tab_item span[data-v-1d8fbc24] {
+                font-size: .32rem;
+            }
+
+            .van-popup {
+                position: fixed;
+                max-height: 100%;
+                overflow-y: auto;
+                box-sizing: border-box;
+                background: #fff;
+                -webkit-transition: var(--van-popup-transition);
+                transition: .3s;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .van-popup--bottom {
+                bottom: 0;
+                left: 0;
+                width: 100%;
+            }
+
+            .list[data-v-0a298b45] {
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-flex-wrap: wrap;
+                flex-wrap: wrap;
+                -webkit-box-pack: justify;
+                -webkit-justify-content: space-between;
+                justify-content: space-between;
+                padding: .46667rem .32rem .18667rem;
+            }
+
+            .list .item.active[data-v-0a298b45] {
+                background: linear-gradient(90deg, #D9AD82 0%, #B1835A 100%);
+                color: #FFF;
+            }
+
+            .list .item[data-v-0a298b45] {
+                width: calc(50% - .28rem);
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-box-align: center;
+                -webkit-align-items: center;
+                align-items: center;
+                padding: 0 .26667rem;
+                height: 1.33333rem;
+                background: var(--bg_color_L3);
+                border-radius: .26667rem;
+                margin-bottom: .26667rem;
+                font-size: .37333rem;
+                color: var(--text_color_L2);
+            }
+            .list .item .img[data-v-0a298b45] {
+    display: block;
+    width: 1.06667rem;
+    height: 1.06667rem;
+    margin-right: .26667rem;
+}.list .item>div[data-v-0a298b45] {
     display: -webkit-box;
     display: -webkit-flex;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
     -webkit-box-align: center;
     -webkit-align-items: center;
     align-items: center;
-}.fun-tabs .fun-tab-item {
-    padding: .13333rem .05333rem;
-    font-size: .18667rem;
-    text-align: center;
-    white-space: nowrap;
-}.bet-container[data-v-1d8fbc24] .fun-tabs .fun-tab-item {
-    padding: .18667rem 0;
-}.fun-tab-item__wrap {
-    position: relative;
-}#app div:not(.ranking), #app input {
-    box-shadow: none !important;
-}.fun-tabs__tab-list {
-    position: relative;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    min-width: 100%;
-    width: -webkit-min-content;
-    width: min-content;
-}.bet-container[data-v-1d8fbc24] .fun-tabs .fun-tab-item {
-    padding: .18667rem 0;
-}.bet-container .tab_item[data-v-1d8fbc24] {
-    width: 2.53333rem;
-    height: 1.33333rem;
-    margin-inline: .06667rem;
-    padding: 0;
-    color: var(--text_color_L2) !important;
-    border-radius: .13333rem;
-    background: var(--bg_color_L2);
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-}.bet-container .tab_active[data-v-1d8fbc24] {
-    color: var(--text_color_L4) !important;
-    background: var(--main_gradient-color);
-}.bet-container .tab_item svg[data-v-1d8fbc24] {
-    height: .66667rem;
-    width: .66667rem;
-}.svg-icon {
-    width: 1em;
-    height: 1em;
-    fill: var(--svgHoticon);
-    vertical-align: middle;
-}.bet-container[data-v-1d8fbc24] {
-    overflow: hidden;
-    padding: 0 .32rem;
-}.bet-container .tab_item span[data-v-1d8fbc24] {
-    font-size: .32rem;
 }
         </style>
     </head>
@@ -2599,11 +2686,100 @@
                                     <div class="fun-tabs__active-line" style="transition: all 300ms ease 0s; width: 0px; height: 3px; transform: translate3d(53.5px, 0px, 0px); background-color: rgb(22, 119, 255);"></div>
                                 </div>
                             </div>
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    const tabs = document.querySelectorAll('.tab_item');
+                                    const activeLine = document.querySelector('.fun-tabs__active-line');
+                                    const tabList = document.querySelector('.fun-tabs__tab-list');
+
+                                    function updateActiveLine(tab) {
+                                        const tabRect = tab.getBoundingClientRect();
+                                        const tabListRect = tabList.getBoundingClientRect();
+                                        const tabListLeft = tabListRect.left;
+
+                                        // Calculate the width and position of the active line
+                                        activeLine.style.width = `${tabRect.offsetWidth}px`;
+                                        activeLine.style.transform = `translate3d(${tabRect.left - tabListLeft}px, 0px, 0px)`;
+                                    }
+
+                                    function scrollToTab(tab) {
+                                        const tabRect = tab.getBoundingClientRect();
+                                        const tabListRect = tabList.getBoundingClientRect();
+
+                                        // Calculate the scroll position to bring the tab into view
+                                        const scrollLeft = tabRect.left - tabListRect.left + tabList.scrollLeft - (tabListRect.width / 2) + (tabRect.width / 2);
+                                        tabList.scrollTo({
+                                            left: scrollLeft,
+                                            behavior: 'smooth'// Smooth scroll animation
+                                        });
+                                    }
+
+                                    tabs.forEach(tab=>{
+                                        tab.addEventListener('click', function() {
+                                            // Remove 'tab_active' class from all tabs
+                                            tabs.forEach(t=>t.classList.remove('tab_active'));
+
+                                            // Add 'tab_active' class to the clicked tab
+                                            this.classList.add('tab_active');
+
+                                            // Update the active line position and width
+                                            updateActiveLine(this);
+
+                                            // Scroll to the clicked tab
+                                            scrollToTab(this);
+                                        });
+                                    }
+                                    );
+
+                                    // Set initial active line position
+                                    const initialTab = document.querySelector('.tab_active');
+                                    if (initialTab) {
+                                        updateActiveLine(initialTab);
+                                        scrollToTab(initialTab);
+                                    }
+                                });
+                            </script>
+                            <style>
+                                .fun-tabs {
+                                    position: relative;
+                                    overflow: hidden;
+                                    /* Hide overflow */
+                                    width: 100%;
+                                    /* Ensure it takes full width of its container */
+                                }
+
+                                .fun-tabs__tab-list {
+                                    display: flex;
+                                    overflow-x: auto;
+                                    /* Allows horizontal scrolling */
+                                    scroll-behavior: smooth;
+                                    /* Smooth scrolling */
+                                    white-space: nowrap;
+                                    /* Prevent line breaks */
+                                    position: relative;
+                                    /* For absolute positioning of the active line */
+                                }
+
+                                .fun-tab-item {
+                                    display: inline-block;
+                                    /* Ensure tabs are displayed inline */
+                                    flex-shrink: 0;
+                                    /* Prevent tabs from shrinking */
+                                }
+
+                                .fun-tabs__active-line {
+                                    position: absolute;
+                                    bottom: 0;
+                                    height: 3px;
+                                    background-color: rgb(22, 119, 255);
+                                    transition: all 300ms ease;
+                                }
+                            </style>
                             <div data-v-1d8fbc24="" class="bet-container-searchBar">
                                 <div data-v-1d8fbc24="" class="ar-searchbar">
                                     <div data-v-fa757a88="" data-v-1d8fbc24="" class="ar-searchbar__selector">
                                         <div data-v-fa757a88="">
-                                            <span data-v-fa757a88="" class="ar-searchbar__selector-default">Win Go</span>
+                                            <span data-v-fa757a88="" class="ar-searchbar__selector-default">ALL</span>
                                             <i data-v-fa757a88="" class="van-badge__wrapper van-icon van-icon-arrow-down">
                                             <!---->
                                             <!---->
@@ -2659,11 +2835,60 @@
                     </div>
                 </div>
                 <!---->
-                <!---->
+                <div class="van-overlay" role="button" tabindex="0" data-v-0a298b45="" style="z-index: 2007;display: none;"></div>
+
+                <div role="dialog" tabindex="0" class="van-popup van-popup--round van-popup--bottom" data-v-0a298b45="" style="z-index: 2007; display: none;">
+                    <div data-v-0a298b45="" class="list">
+                        <div data-v-0a298b45="" class="item active">
+                            <div data-v-0a298b45="">
+                                <img data-v-0a298b45="" class="img" data-origin="/assets/png/-1-eebe8111.png" src="https://mumbaibig.com/assets/png/-1-eebe8111.png">All
+                            </div>
+                        </div>
+                        <div data-v-0a298b45="" class="item">
+                            <div data-v-0a298b45="">
+                                <img data-v-0a298b45="" class="img" data-origin="/assets/png/21-d4ee3b73.png" src="https://mumbaibig.com/assets/png/21-d4ee3b73.png">V8Card
+                            </div>
+                        </div>
+                        <div data-v-0a298b45="" class="item">
+                            <div data-v-0a298b45="">
+                                <img data-v-0a298b45="" class="img" data-origin="/assets/png/19-2b8a5fc5.png" src="https://mumbaibig.com/assets/png/19-2b8a5fc5.png">Card365
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <!---->
+                </div>
             </div>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const items = document.querySelectorAll('.list .item');
+                
+                    items.forEach(item => {
+                        item.addEventListener('click', function() {
+                            const itemData = this.getAttribute('data-item');
+                            
+                            // Perform action based on the clicked item
+                            console.log('Clicked item:', itemData);
+                            
+                            // Example: Navigate to a different page
+                            // window.location.href = `/${itemData}.html`;
+                
+                            // Example: Show additional content or change content dynamically
+                            // alert(`Item clicked: ${itemData}`);
+                
+                            // Remove 'active' class from all items
+                            items.forEach(i => i.classList.remove('active'));
+                            
+                            // Add 'active' class to the clicked item
+                            this.classList.add('active');
+                        });
+                    });
+                });
+                </script>
+                
             <!--online custom service-->
             <div class="customer" id="customerId" style="--f13b4d11-currentFontFamily: 'Roboto', 'Inter', sans-serif; --f6a705e1-currentFontFamily: bahnschrift;">
-                <img class="" data-origin="/assets/png/icon_sevice-af9dd176.png" src="/assets/png/icon_sevice-af9dd176.png">
+                <img class="" data-origin="/assets/png/icon_sevice-af9dd176.png" src="https://mumbaibig.com/assets/png/icon_sevice-af9dd176.png">
             </div>
             <!--v-if-->
             <!--v-if-->
@@ -2676,5 +2901,43 @@
             <!---->
         </div>
         <amino-inspect></amino-inspect>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const selector = document.querySelector('.ar-searchbar__selector');
+                const popup = document.querySelector('.van-popup');
+                const overlay = document.querySelector('.van-overlay');
+            
+                // Function to show the popup
+                function showPopup() {
+                    popup.style.display = 'block';
+                    overlay.style.display = 'block';
+                }
+            
+                // Function to hide the popup
+                function hidePopup() {
+                    popup.style.display = 'none';
+                    overlay.style.display = 'none';
+                }
+            
+                // Show popup when selector is clicked
+                selector.addEventListener('click', function(event) {
+                    showPopup();
+                    event.stopPropagation(); // Prevent the click event from bubbling up to the document
+                });
+            
+                // Hide popup when clicking outside of it
+                document.addEventListener('click', function(event) {
+                    if (!popup.contains(event.target) && !selector.contains(event.target)) {
+                        hidePopup();
+                    }
+                });
+            
+                // Hide popup when clicking on the overlay
+                overlay.addEventListener('click', function() {
+                    hidePopup();
+                });
+            });
+            </script>
+            
     </body>
 </html>

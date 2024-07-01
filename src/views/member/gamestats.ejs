@@ -2450,7 +2450,31 @@
                                 <!---->
                             </div>
                         </div>
-                        <!---->
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                // Get all the divs with class 'van-tab'
+                                var tabs = document.querySelectorAll('.van-tab');
+                            
+                                tabs.forEach(function(tab) {
+                                    tab.addEventListener('click', function() {
+                                        // Remove 'van-tab--active' class from all tabs
+                                        tabs.forEach(function(t) {
+                                            t.classList.remove('van-tab--active');
+                                            t.setAttribute('aria-selected', 'false');
+                                        });
+                            
+                                        // Add 'van-tab--active' class to the clicked tab
+                                        tab.classList.add('van-tab--active');
+                                        tab.setAttribute('aria-selected', 'true');
+                            
+                                        // Perform any other actions you need
+                                        // For example, you could log which tab was clicked
+                                        console.log('Clicked tab:', tab.querySelector('.van-tab__text').textContent);
+                                    });
+                                });
+                            });
+                            </script>
+                            
                         <div class="van-tabs__content">
                         <!---->
                         <!---->
