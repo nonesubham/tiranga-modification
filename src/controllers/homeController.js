@@ -90,6 +90,12 @@ const slotjdbPage = async (req, res) => {
 const slotcq9Page = async (req, res) => {
     return res.render("home/slotcq9.ejs");
 }
+const mailbindpage = async (req, res) => {
+    return res.render("member/mailbind.ejs");
+}
+const googleverify = async (req, res) => {
+    return res.render("member/googleverify.ejs");
+}
 
 const slotevoPage = async (req, res) => {
     return res.render("home/slotevo.ejs");
@@ -121,6 +127,9 @@ const checkInPage = async (req, res) => {
 }
 const winningStar = async (req, res) => {
     return res.render("checkIn/jackpotwin.ejs");
+}
+const invirewardrule = async (req, res) => {
+    return res.render("checkIn/invirule.ejs");
 }
 
 const checkDes = async (req, res) => {
@@ -162,6 +171,15 @@ const tutorialPage = async (req, res) => {
 
 const bonusRecordPage = async (req, res) => {
     return res.render("promotion/bonusrecord.ejs");
+}
+const invirecord = async (req, res) => {
+    return res.render("checkin/invirecord.ejs");
+}
+const settingavatar = async (req, res) => {
+    return res.render("member/avatar.ejs");
+}
+const emailbind = async (req, res) => {
+    return res.render("member/mailbind.ejs");
 }
 
 // wallet
@@ -335,4 +353,10 @@ module.exports = {
     noticePage,
     rulesPage,
     winningStar,
+    invirewardrule,
+    invirecord,
+    settingavatar,
+    emailbind,
+    mailbindpage,
+    googleverify,
 }

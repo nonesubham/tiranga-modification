@@ -43,7 +43,9 @@ const initWebRouter = (app) => {
     router.get('/popular', middlewareController, homeController.popularPage);
     router.get('/apiconnect', middlewareController, homeController.apiconnectPage);
     router.get('/gamestatistic', homeController.gamestatPage);
-    
+    router.get('/setting/avatar', homeController.settingavatar);
+    router.get('/account/settingcenter/bindmail', homeController.mailbindpage);
+    router.get('/account/settingcenter/googleverify', homeController.googleverify);
 
 
 
@@ -106,7 +108,9 @@ const initWebRouter = (app) => {
 
     router.get('/myProfile', middlewareController, homeController.myProfilePage);
     router.get('/activity/rules', middlewareController, homeController.rulesPage);
+    router.get('/activity/invirewardrule', middlewareController, homeController.invirewardrule);
     router.get('/jackpot/winningstar', middlewareController, homeController.winningStar);
+    router.get('/activity/invirecord', middlewareController, homeController.invirecord);
 
 
 
