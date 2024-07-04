@@ -3257,7 +3257,7 @@
                                         const tabListRect = tabList.getBoundingClientRect();
                                         const tabListLeft = tabListRect.left;
 
-                                        // Calculate the width and position of the active line
+                                        
                                         activeLine.style.width = `${tabRect.offsetWidth}px`;
                                         activeLine.style.transform = `translate3d(${tabRect.left - tabListLeft}px, 0px, 0px)`;
                                     }
@@ -3266,7 +3266,8 @@
                                         const tabRect = tab.getBoundingClientRect();
                                         const tabListRect = tabList.getBoundingClientRect();
 
-                                        // Calculate the scroll position to bring the tab into view
+                                       
+                                        
                                         const scrollLeft = tabRect.left - tabListRect.left + tabList.scrollLeft - (tabListRect.width / 2) + (tabRect.width / 2);
                                         tabList.scrollTo({
                                             left: scrollLeft,
@@ -3274,7 +3275,8 @@
                                         });
                                     }
 
-                                    tabs.forEach(tab=>{
+                                    tabs.forEach(tab=>{ 
+
                                         tab.addEventListener('click', function() {
                                             // Remove 'tab_active' class from all tabs
                                             tabs.forEach(t=>t.classList.remove('tab_active'));
