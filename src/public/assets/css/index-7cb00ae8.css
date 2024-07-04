@@ -34,4 +34,17 @@
     font-weight: 600;
     font-size: .42667rem;
     color: #1E2637;
+}.Recharge__content-quickInfo .item_active div[data-v-f8389d1e] {
+    color: #fff;
+    font-family: Inter, sans-serif !important;
+}.Recharge__content-quickInfo__item div[data-v-f8389d1e] {
+    font-size: .37333rem;
+    color: #768096;
+    font-family: Inter, sans-serif !important;
+}.mian .selectBox .pay-box .list .item .name[data-v-67caa467] {
+    color: #768096 ! IMPORTANT;
+    font-size: .37333rem;
+    font-size: .32rem !important;
+    text-align: center !important;
+    font-family: Inter, sans-serif !important;
 }

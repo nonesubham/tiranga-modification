@@ -86,6 +86,12 @@ const slotmgPage = async (req, res) => {
 const slotjdbPage = async (req, res) => {
     return res.render("home/slotjdb.ejs");
 }
+const DailySignInRecord = async (req, res) => {
+    return res.render("checkin/DailySignInRecord.ejs");
+}
+const DailySignInRules = async (req, res) => {
+    return res.render("checkin/DailySignInRules.ejs");
+}
 
 const slotcq9Page = async (req, res) => {
     return res.render("home/slotcq9.ejs");
@@ -214,6 +220,11 @@ const withdrawalrecordPage = async (req, res) => {
 const transfer = async (req, res) => {
     return res.render("wallet/transfer.ejs");
 }
+const ActivityDetailsocial = async (req, res) => {
+    return res.render("checkin/bonussocial.ejs");
+}
+
+
 
 // member page
 const mianPage = async (req, res) => {
@@ -226,6 +237,9 @@ const mianPage = async (req, res) => {
 }
 const aboutPage = async (req, res) => {
     return res.render("member/about/index.ejs");
+}
+const DailySignIn = async (req, res) => {
+    return res.render("checkin/DailySignIn.ejs");
 }
 const language = async (req, res) => {
     return res.render("member/language.ejs");
@@ -255,15 +269,26 @@ const forgot = async (req, res) => {
 const redenvelopes = async (req, res) => {
     return res.render("member/redenvelopes.ejs");
 }
+const DailyTasksRecord = async (req, res) => {
+    return res.render("checkin/DailyTasksRecord.ejs");
+}
 
 const riskAgreement = async (req, res) => {
     return res.render("member/about/riskAgreement.ejs");
+}
+const RebateRatio = async (req, res) => {
+    return res.render("promotion/rebateratio.ejs");
 }
 
 const myProfilePage = async (req, res) => {
     return res.render("member/myProfile.ejs");
 }
-
+const ActivityDetail = async (req, res) => {
+    return res.render("checkin/ActivityDetail.ejs");
+}
+const FirstRecharge = async (req, res) => {
+    return res.render("checkin/FirstRecharge.ejs");
+}
 const getSalaryRecord = async (req, res) => {
     const auth = req.cookies.auth;
 
@@ -359,4 +384,12 @@ module.exports = {
     emailbind,
     mailbindpage,
     googleverify,
+    FirstRecharge,
+    ActivityDetail,
+    ActivityDetailsocial,
+    DailySignIn,
+    DailySignInRecord,
+    DailySignInRules,
+    DailyTasksRecord,
+    RebateRatio,
 }

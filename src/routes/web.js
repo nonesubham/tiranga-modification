@@ -46,6 +46,17 @@ const initWebRouter = (app) => {
     router.get('/setting/avatar', homeController.settingavatar);
     router.get('/account/settingcenter/bindmail', homeController.mailbindpage);
     router.get('/account/settingcenter/googleverify', homeController.googleverify);
+    router.get('/activity/FirstRecharge', homeController.FirstRecharge);
+    router.get('/activity/ActivityDetail', homeController.ActivityDetail);
+    router.get('/activity/ActivityDetail?id=48', homeController.ActivityDetailsocial);
+    router.get('/activity/DailySignIn', homeController.DailySignIn);
+    router.get('/activity/DailySignIn/Record', homeController.DailySignInRecord);
+    router.get('/activity/DailySignIn/Rules', homeController.DailySignInRules);
+    router.get('/activity/DailyTasks/Record', homeController.DailyTasksRecord);
+    router.get('/promotion/rebate/ratio', homeController.RebateRatio);
+
+
+
 
 
 

@@ -507,12 +507,104 @@ img.svg-icon.icon-all {
                         <i class="fa-light fa-angle-left fa-fade fa-xl center" style="color: #1E2637"></i>
                     </div>
                 </div>
-                <div data-v-106b99c8="" class="navbar-title">Recharge Record</div>
+                <div data-v-106b99c8="" class="navbar-title">Deposit History</div>
                 <div data-v-106b99c8="" class="navbar-right"></div>
             </div>
                             <div data-v-f851bd18="" class="fun-tabs tabs" is-auto-load="true" activeclassname="tab_active"><div class="fun-tabs__tab-list" style="transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); transition-duration: 360ms; transform: translate3d(0px, 0px, 0px);"><div class="fun-tab-item funtab_item activeClassName" style="color: rgb(22, 119, 255);"><div class="fun-tab-item__wrap"><div class="fun-tab-item__label"><div data-v-f851bd18="" class="tab_item tab_active"><img src="/svg/menu.svg" class="svg-icon icon-all"><span data-v-f851bd18="">All</span></div></div><!--v-if--></div></div><div class="fun-tab-item funtab_item"><div class="fun-tab-item__wrap"><div class="fun-tab-item__label"><div data-v-f851bd18="" class="tab_item"><img data-v-f851bd18="" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/payNameIcon/payNameIcon_2024030722472943n5.png" alt=""><span data-v-f851bd18="">UPI-APP</span></div></div><!--v-if--></div></div><div class="fun-tab-item funtab_item"><div class="fun-tab-item__wrap"><div class="fun-tab-item__label"><div data-v-f851bd18="" class="tab_item"><img data-v-f851bd18="" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/payNameIcon/payNameIcon_20240131164642ws73.png" alt=""><span data-v-f851bd18="">UPI-APPs</span></div></div><!--v-if--></div></div><div class="fun-tab-item funtab_item"><div class="fun-tab-item__wrap"><div class="fun-tab-item__label"><div data-v-f851bd18="" class="tab_item"><img data-v-f851bd18="" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/payNameIcon/payNameIcon_20231208222402n978.png" alt=""><span data-v-f851bd18="">PAYTM-UPI</span></div></div><!--v-if--></div></div><div class="fun-tab-item funtab_item"><div class="fun-tab-item__wrap"><div class="fun-tab-item__label"><div data-v-f851bd18="" class="tab_item"><img data-v-f851bd18="" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/payNameIcon/payNameIcon_20240307174539jk8j.png" alt=""><span data-v-f851bd18="">AR Pay</span></div></div><!--v-if--></div></div><div class="fun-tabs__active-line" style="transition: all 300ms ease 0s; width: 0px; height: 3px; transform: translate3d(53.5px, 0px, 0px); background-color: rgb(22, 119, 255);"></div></div></div>
                             <div data-v-f851bd18="" class="query_select"><div data-v-f851bd18="" class="ar-searchbar__selector"><div data-v-f851bd18="" class=""><span data-v-f851bd18="" class="ar-searchbar__selector-default">All</span><i data-v-f851bd18="" class="van-badge__wrapper van-icon van-icon-arrow-down"><!----><!----><!----></i></div></div><!--日期选择组件--><div class="ar-searchbar__selector"><div><span class="ar-searchbar__selector-default">Choose A Date</span><i class="van-badge__wrapper van-icon van-icon-arrow-down"><!----><!----><!----></i></div></div><!--<ArSelect @click-select="onClickSelectT" :selectName="$t('datePick')|| (startDateValue / endDateValue )"></ArSelect>--><!-- <van-popup v-model:show="showDataPick" round position="bottom"> --><!--teleport start--><!--teleport end--><!-- </van-popup> --></div>
-           
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    const tabs = document.querySelectorAll('.tab_item');
+                                    const activeLine = document.querySelector('.fun-tabs__active-line');
+                                    const tabList = document.querySelector('.fun-tabs__tab-list');
+
+                                    function updateActiveLine(tab) {
+                                        const tabRect = tab.getBoundingClientRect();
+                                        const tabListRect = tabList.getBoundingClientRect();
+                                        const tabListLeft = tabListRect.left;
+
+                                        // Calculate the width and position of the active line
+                                        activeLine.style.width = `${tabRect.offsetWidth}px`;
+                                        activeLine.style.transform = `translate3d(${tabRect.left - tabListLeft}px, 0px, 0px)`;
+                                    }
+
+                                    function scrollToTab(tab) {
+                                        const tabRect = tab.getBoundingClientRect();
+                                        const tabListRect = tabList.getBoundingClientRect();
+
+                                        // Calculate the scroll position to bring the tab into view
+                                        const scrollLeft = tabRect.left - tabListRect.left + tabList.scrollLeft - (tabListRect.width / 2) + (tabRect.width / 2);
+                                        tabList.scrollTo({
+                                            left: scrollLeft,
+                                            behavior: 'smooth'// Smooth scroll animation
+                                        });
+                                    }
+
+                                    tabs.forEach(tab=>{
+                                        tab.addEventListener('click', function() {
+                                            // Remove 'tab_active' class from all tabs
+                                            tabs.forEach(t=>t.classList.remove('tab_active'));
+
+                                            // Add 'tab_active' class to the clicked tab
+                                            this.classList.add('tab_active');
+
+                                            // Update the active line position and width
+                                            updateActiveLine(this);
+
+                                            // Scroll to the clicked tab
+                                            scrollToTab(this);
+                                        });
+                                    }
+                                    );
+
+                                    // Set initial active line position
+                                    const initialTab = document.querySelector('.tab_active');
+                                    if (initialTab) {
+                                        updateActiveLine(initialTab);
+                                        scrollToTab(initialTab);
+                                    }
+                                });
+</SCRIPT>
+
+                                <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const selector = document.querySelector('.ar-searchbar__selector');
+                const popup = document.querySelector('.van-popup');
+                const overlay = document.querySelector('.van-overlay');
+            
+                // Function to show the popup
+                function showPopup() {
+                    popup.style.display = 'block';
+                    overlay.style.display = 'block';
+                }
+            
+                // Function to hide the popup
+                function hidePopup() {
+                    popup.style.display = 'none';
+                    overlay.style.display = 'none';
+                }
+            
+                // Show popup when selector is clicked
+                selector.addEventListener('click', function(event) {
+                    showPopup();
+                    event.stopPropagation(); // Prevent the click event from bubbling up to the document
+                });
+            
+                // Hide popup when clicking outside of it
+                document.addEventListener('click', function(event) {
+                    if (!popup.contains(event.target) && !selector.contains(event.target)) {
+                        hidePopup();
+                    }
+                });
+            
+                // Hide popup when clicking on the overlay
+                overlay.addEventListener('click', function() {
+                    hidePopup();
+                });
+            });
+
+            </script>
+                            </script>
             
             <div data-v-3966082f="" class="box">
                 <div data-v-3966082f="" class="list m-b-20">

@@ -156,7 +156,78 @@
     color: #B1835A !important;
     background: #FFF !important;
 }
+.mian .selectBox .txtBox[data-v-67caa467] {
+    background-color: #F7F8FF;
+    z-index: 99;
+    margin-top: -.8rem;
+    border-radius: .26667rem .26667rem 0 0;
+    position: relative;
+    padding: 0px 10px 10px !important; 
+}.title[data-v-4f3d8608] {
+    font-family: Inter, sans-serif;
+    font-size: .4rem;
+    margin-bottom: .24rem;
+}
+img[data-v-4f3d8608] {
+    width: 1.06667rem;
+    height: 1.06667rem;
+    margin-right: .4rem;
+}.new_upi {
+    margin-top: .4rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    background: #FFF;
+    border-radius: .26667rem;
+    padding: .26667rem .24rem;
+    position: relative;
+    color: #1E2637;
+}
 
+.new_upi .upi_item[data-v-4f3d8608] {
+    color: #1E2637;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    height: 1.33333rem;
+    width: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}.mian .selectBox .pay-box .list .item[data-v-67caa467] {
+    text-align: center;
+    padding: .26667rem 0;
+    margin-bottom: .26667rem;
+    width: 31%;
+    margin-left: 3%;
+    background: #FFF !important;
+    border-radius: .26667rem;
+    overflow: hidden;
+    color: #1E2637;
+    height: 2.4rem;
+}.mian .selectBox .pay-box .list .item.action .name[data-v-67caa467], .mian .selectBox .pay-box .list .item.action .txt[data-v-67caa467] {
+    color: #fff !important;
+    font-size: .32rem;
+    text-align: center;
+    font-family: Inter, sans-serif;
+}.mian .selectBox .pay-box .list .item .name[data-v-67caa467] {
+    color: #1E2637 !important;
+    font-size: .37333rem ;
+    font-size: .32rem !important;
+    text-align: center !important;
+    font-family: Inter, sans-serif !important;
+}
+.navbar-title[data-v-106b99c8] {
+    font-size: .48rem !important;
+    flex: 1;
+    text-align: center;
+    font-family: Inter, sans-serif !important;
+    color: #1E2637 !important;
+}
 </style>
 
 
@@ -174,7 +245,9 @@
                 </div>
                 <div data-v-106b99c8="" class="navbar-title"> Deposit </div>
                 <div data-v-106b99c8="" class="navbar-right">
-                    <div data-v-11ffe290="" data-v-106b99c8="" class="c-row" style="font-weight: 300;" onclick="location.href='/wallet/rechargerecord'">
+                    <div data-v-11ffe290="" data-v-106b99c8="" class="c-row" style="font-weight: 400;
+                    font-size: .34667rem;
+                    font-family: Inter, sans-serif;" onclick="location.href='/wallet/rechargerecord'">
                         Deposit History
                     </div>
                 </div>
@@ -200,8 +273,8 @@
                 <div data-v-618c2f5a="" class="balanceAssets__main">
                   <!-- Money Amount  -->
                   <div data-v-67caa467="" class="money">
-                    <div data-v-67caa467=""  style="color: #FFF;">
-                        ₹ <span data-v-67caa467="" class="p-l-5" id="money_amount_display"  style="color: #FFF;">Loading...</span>
+                    <div data-v-67caa467=""  style="color: #FFF;font-size: .64rem;font-weight: 700;font-family: Inter,sans-serif;">
+                        ₹ <span data-v-67caa467="" class="p-l-5" id="money_amount_display"  style="color: #FFF;font-size: .64rem;font-weight: 700;font-family: Inter,sans-serif;">Loading...</span>
                     </div>
                 </div>
                 <!-- Money Amount -->
@@ -239,12 +312,7 @@
                 <!-- Payment Methods -->
                 <div data-v-67caa467="" class="pay-box">
                     
-                    <div data-v-67caa467="" class="title c-row c-row-middle">
-                        <div data-v-67caa467="" class="van-image" style="width: 20px; height: 20px;">
-                            <img src="/svg/depoamount.svg" class="van-image__img">
-                        </div>
-                        <span data-v-67caa467="" class="m-l-10" style="color:#1E2637;"> Payment Method </span>
-                    </div> 
+                   
                     <div data-v-4f3d8608="" class="new_upi">
                         <img data-v-4f3d8608="" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/payNameIcon/payNameIcon_20240307174539jk8j.png" alt="">
                         <div data-v-4f3d8608="" class="upi_item">
@@ -254,9 +322,9 @@
                     <!-- Payment Methods Options -->
                     <div data-v-67caa467="" class="list c-row c-flex-warp m-t-10" id="payment_methods_options">
                         <div data-v-67caa467="" class="item action" type="upi_gateway">
-                            <img data-v-67caa467="" width="30px" height="30px" src="/images/recharge_TRANSFER.png"
+                            <img data-v-67caa467="" width="100%" height="100%" src="https://ossimg.big-mumadmin888.com/bigmumbai/payNameIcon/payNameIcon2_202403072247296e17.png"
                                 class="img">
-                            <div data-v-67caa467="" class="name">UPI-QR</div>
+                            <div data-v-67caa467="" class="name">UPI APP</div>
 
                             <div data-v-67caa467="" class="icon">
                                 <i data-v-67caa467="" class="van-icon van-icon-success"
@@ -276,9 +344,9 @@
                         </div>  -->
 
                         <div data-v-67caa467="" class="item" type="manual_pay">
-                            <img data-v-67caa467="" width="20px" height="20px" src="/images/recharge_TRANSFER2.png"
+                            <img data-v-67caa467="" width="100%" height="100%" src="https://ossimg.big-mumadmin888.com/bigmumbai/payNameIcon/payNameIcon2_202403072247296e17.png"
                                 class="img">
-                            <div data-v-67caa467="" class="name">M Pay</div>
+                            <div data-v-67caa467="" class="name">UPI APPS</div>
 
                             <div data-v-67caa467="" class="icon">
                                 <i data-v-67caa467="" class="van-icon van-icon-success"
@@ -286,21 +354,12 @@
                             </div>
                         </div>
 
-                        <div data-v-67caa467="" class="item" type="manual_pay1">
-                            <img data-v-67caa467="" width="20px" height="20px" src="/images/recharge_TRANSFER4.png"
-                                class="img">
-                            <div data-v-67caa467="" class="name">AR Pay</div>
-
-                            <div data-v-67caa467="" class="icon">
-                                <i data-v-67caa467="" class="van-icon van-icon-success"
-                                    style="color: rgb(255, 255, 255); font-size: 14px;"> </i>
-                            </div>
-                        </div>
+                      
 
                         <div data-v-67caa467="" class="item" type="manual_pay2">
                             <img data-v-67caa467="" width="20px" height="20px" src="/images/recharge_TRANSFER2.png"
                                 class="img">
-                            <div data-v-67caa467="" class="name">HI Pay</div>
+                            <div data-v-67caa467="" class="name">Paytm UPI</div>
 
                             <div data-v-67caa467="" class="icon">
                                 <i data-v-67caa467="" class="van-icon van-icon-success"
@@ -309,16 +368,7 @@
                         </div>
 
 
-                        <div data-v-67caa467="" class="item" type="usdt_manual">
-                            <img data-v-67caa467="" width="20px" height="20px" src="/images/recharge_TRANSFER3.png"
-                                class="img">
-                            <div data-v-67caa467="" class="name">USDT</div>
-
-                            <div data-v-67caa467="" class="icon">
-                                <i data-v-67caa467="" class="van-icon van-icon-success"
-                                    style="color: rgb(255, 255, 255); font-size: 14px;"> </i>
-                            </div>
-                        </div>
+                        
                         <!-- <div data-v-67caa467="" class="item disabled" type="usdt">
                             <img data-v-67caa467="" width="20px" height="20px" src="/images/recharge_TRANSFER_red.webp"
                                 class="img">
@@ -352,18 +402,7 @@
                       <div data-v-f8389d1e="" class="Recharge__content-quickInfo__item item_active">
                         <div data-v-f8389d1e="" class="other">
                           <div data-v-f8389d1e="">
-                            Funpay - Paytm x QR
-                          </div>
-                          <div data-v-f8389d1e="">
-                            Balance:100 - 100K
-                          </div>
-                          <!---->
-                        </div>
-                      </div>
-                      <div data-v-f8389d1e="" class="Recharge__content-quickInfo__item">
-                        <div data-v-f8389d1e="" class="other">
-                          <div data-v-f8389d1e="">
-                            Dpay - Paytm x QR
+                            APP-IcePay
                           </div>
                           <div data-v-f8389d1e="">
                             Balance:100 - 50K
@@ -374,7 +413,18 @@
                       <div data-v-f8389d1e="" class="Recharge__content-quickInfo__item">
                         <div data-v-f8389d1e="" class="other">
                           <div data-v-f8389d1e="">
-                            LuckyPay - Paytm x QR
+                            APP-Pailepay
+                          </div>
+                          <div data-v-f8389d1e="">
+                            Balance:110 - 50K
+                          </div>
+                          <!---->
+                        </div>
+                      </div>
+                      <div data-v-f8389d1e="" class="Recharge__content-quickInfo__item">
+                        <div data-v-f8389d1e="" class="other">
+                          <div data-v-f8389d1e="">
+                            APP-Rspay
                           </div>
                           <div data-v-f8389d1e="">
                             Balance:100 - 50K
@@ -385,10 +435,10 @@
                       <div data-v-f8389d1e="" class="Recharge__content-quickInfo__item">
                         <div data-v-f8389d1e="" class="other">
                           <div data-v-f8389d1e="">
-                            HappyPay - Paytm x QR
+                            APP-Xupipay
                           </div>
                           <div data-v-f8389d1e="">
-                            Balance:500 - 50K
+                            Balance:100 - 50K
                           </div>
                           <!---->
                         </div>
@@ -398,7 +448,20 @@
 
 
 
-
+                  <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const items = document.querySelectorAll('.Recharge__content-quickInfo__item');
+            
+                        items.forEach(item => {
+                            item.addEventListener('click', function () {
+                                // Remove 'item_active' class from all items
+                                items.forEach(el => el.classList.remove('item_active'));
+                                // Add 'item_active' class to the clicked item
+                                item.classList.add('item_active');
+                            });
+                        });
+                    });
+                </script>
 
 
 

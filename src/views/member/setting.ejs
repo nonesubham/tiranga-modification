@@ -31,9 +31,45 @@
         <link rel="stylesheet" href="https://mumbaibig.com/assets/css/page-home-242d3c23.css">
         <script src="chrome-extension://pbcpfbcibpcbfbmddogfhcijfpboeaaf/inject.js"></script>
         <link rel="modulepreload" as="script" crossorigin="" href="https://mumbaibig.com/assets/js/page-main-89c9b1c6.js">
-        <link rel="modulepreload" as="script" crossorigin="" href=https://mumbaibig.com"/assets/js/page-login-9b1a4d04.js">
+        <link rel="modulepreload" as="script" crossorigin="" href=https://mumbaibig.com/assets/js/page-login-9b1a4d04.js">
         <link rel="stylesheet" href="https://mumbaibig.com/assets/css/page-login-f43635fa.css">
         <link rel="stylesheet" href="https://mumbaibig.com/assets/css/page-main-d79de402.css">
+        <style>
+            .info-dialog-content[data-v-2c18a1cc] {
+    width: 8.8rem;
+    height: 8.26667rem;
+    background: var(--bg_color_L2);
+    border-radius: .26667rem;
+    padding: .46667rem .33333rem;
+}.info-dialog-content-title[data-v-5bd44e74] {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    margin-bottom: .32rem;
+    -webkit-column-gap: .21333rem;
+    column-gap: .21333rem;
+}.info-dialog-content-title svg[data-v-5bd44e74] {
+    width: .64rem;
+    height: .64rem;
+}.info-dialog-content-title span[data-v-5bd44e74] {
+    font-size: .42667rem;
+    color: var(--text_color_L1);
+}.info-dialog-content input[data-v-5bd44e74] {
+    width: 8.13333rem;
+    height: 1.17333rem;
+    background: var(--bg_color_L1);
+    border-radius: .8rem;
+    border: none;
+    padding-left: .6rem;
+    color: var(--text_color_L1);
+}
+        </style>
     </head>
     <body style="font-size: 12px;">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position: absolute; width: 0; height: 0">
@@ -2481,7 +2517,7 @@
                     </div>
                     <div data-v-5bd44e74="" class="userInfo__container-setting-center-content ar-1px-b">
                         <h5 data-v-5bd44e74="">Nickname</h5>
-                        <div data-v-5bd44e74="">
+                        <div data-v-5bd44e74="" id="nickname">
                             <span data-v-5bd44e74="">MemberNNGRCXN1</span>
                             <i data-v-5bd44e74="" class="van-badge__wrapper van-icon van-icon-arrow" style="color: rgb(136, 136, 136);">
                             <!---->
@@ -2598,6 +2634,7 @@
             <!-- 验证弹窗 -->
             <div data-v-96e240c3="" data-v-6af1b9df="" class="popups" style="--f13b4d11-currentFontFamily: 'Roboto', 'Inter', sans-serif;">
             <!---->
+            <div  data-v-2c18a1cc="" data-v-5bd44e74="" class="info-dialog"><div id="nickname-overlay" class="van-overlay" style="z-index: 2003;display:none;"><!----></div><div id="nickname-popup" role="dialog" tabindex="0" class="van-popup van-popup--center van-dialog" style="z-index: 2003;display:none;"><!----><div class="van-dialog__content"><div data-v-2c18a1cc=""><div data-v-2c18a1cc="" class="info-dialog-header"><span data-v-2c18a1cc="" class="info-dialog-header-left"></span><h5 data-v-2c18a1cc="">Change Nickname</h5><span data-v-2c18a1cc="" class="info-dialog-header-right"></span></div><div data-v-2c18a1cc="" class="info-dialog-content"><div data-v-5bd44e74="" class="info-dialog-content-title"><svg data-v-5bd44e74="" class="svg-icon icon-dialogNickname"><use xlink:href="#icon-dialogNickname"></use></svg><span data-v-5bd44e74="">Nickname</span></div><input data-v-5bd44e74="" type="text" auto-complete="new-password" autocomplete="off" name="username" placeholder="Please enter Nickname"><h4 data-v-5bd44e74="" style="display: none;">Please do not enter a Nickname with more than 12 characters</h4></div><div data-v-2c18a1cc="" class="info-dialog-footer"><img id="closenickname" data-v-2c18a1cc="" class="" data-origin="/assets/png/close-00101b6c.png" src="https://mumbaibig.com/assets/png/close-00101b6c.png"></div></div></div><div class="van-hairline--top van-dialog__footer"><!----><button type="button" class="van-button van-button--default van-button--large van-dialog__confirm"><div class="van-button__content"><!----><span class="van-button__text">Confirm</span><!----></div></button></div><!----></div></div>
             <!---->
             </div>
             <div data-v-6af1b9df="" class="setting-records-modal" style="--f13b4d11-currentFontFamily: 'Roboto', 'Inter', sans-serif;">
@@ -2636,5 +2673,17 @@
             <!---->
         </div>
         <amino-inspect></amino-inspect>
+        <script>
+            document.getElementById('nickname').addEventListener('click', function() {
+  document.getElementById('nickname-overlay').style.display = 'flex';
+  document.getElementById('nickname-popup').style.display = 'flex';
+});
+
+document.getElementById('closenickname').addEventListener('click', function() {
+  document.getElementById('nickname-overlay').style.display = 'none';
+  document.getElementById('nickname-popup').style.display = 'none';
+});
+
+        </script>
     </body>
 </html>

@@ -52,6 +52,9 @@
     width: .64rem;
     height: .64rem;
 }
+.arrow img {
+    content: "";
+}
 
 .promote__cell-item .label img[data-v-932703ba] {
     width: .8rem;
@@ -584,10 +587,7 @@ button.shareBtn {
     line-height: .29333rem;
     color: #1E2637 !important;
 }
-.arrow img {
-    background-color: #B1835A;
-    border-radius: 15px;
-}
+
 .commission {
     display: -webkit-box;
     display: -webkit-flex;
@@ -651,6 +651,10 @@ button.shareBtn {
     -webkit-box-align: center;
     -webkit-align-items: center;
     align-items: center;
+}
+.fa-solid, .fass {
+    font-size: 24px !important;
+    font-weight: 200 !important;
 }
     </style>
 </head>
@@ -793,9 +797,8 @@ button.shareBtn {
                             <div data-v-7c8bbbf4="" class="btn-list c-row c-row-middle-center">
                                 <div data-v-7c8bbbf4="" class="btn-box">
                                     <div data-v-7c8bbbf4="" class="btn m-b-10 c-row c-row-middle-center tag-read"
-                                        data-clipboard-text=""> <img data-v-932703ba="" src="/svg/copyinvite.svg" alt="" style="width: 35px;margin-right: 5px;"> Copy Invitation Code</div>
-                                    <div data-v-7c8bbbf4="" data-clipboard-text=""
-                                        class="btn m-b-10 c-row c-row-middle-center tag-read"> <img data-v-932703ba="" src="/svg/copy.svg" alt="" style="width: 35px;margin-right: 5px;"> Copy Link</div>
+                                        data-clipboard-text=""> <img data-v-932703ba="" src="/svg/copyinvite.svg" alt="" style="width: 35px;margin-right: 5px;">Copy Invitation Code</div>
+                                    
                                 </div>
                             </div> 
                            
@@ -808,17 +811,7 @@ button.shareBtn {
 
                 <div data-v-932703ba="" class="promote__cell">
                    
-                    <div data-v-932703ba="" class="promote__cell-item" onclick="location.href='/promotion/bonusrecord'">
-                      <div data-v-932703ba="" class="label">
-                        <img data-v-932703ba="" src="/svg/headerpromo.svg" alt="">
-                        <span data-v-932703ba="">
-                          Downline Data
-                        </span>
-                      </div>
-                      <div data-v-932703ba="" class="arrow">
-                       <img data-v-932703ba="" src="/assets/png/right_arrow-ab888448.png" alt="">
-                      </div>
-                    </div>
+                   
                     <div data-v-932703ba="" class="promote__cell-item" onclick="location.href='promotion/myTeam'">
                       <div data-v-932703ba="" class="label">
                         <img data-v-932703ba="" src="/svg/subordinate.svg" alt="">
@@ -828,7 +821,7 @@ button.shareBtn {
                       </div>
                       <div data-v-932703ba="" class="arrow">
                         <!---->
-                        <img data-v-932703ba="" src="/assets/png/right_arrow-ab888448.png" alt="">
+                        <i class="fa-solid fa-angle-right"></i>
                       </div>
                     </div>
                     <div data-v-932703ba="" class="promote__cell-item"  onclick="location.href='promotion/promotionDes'">
@@ -840,7 +833,7 @@ button.shareBtn {
                       </div>
                       <div data-v-932703ba="" class="arrow">
                         <!---->
-                        <img data-v-932703ba="" src="/assets/png/right_arrow-ab888448.png" alt="">
+                        <i class="fa-solid fa-angle-right"></i>
                       </div>
                     </div>
                     <div data-v-932703ba="" class="promote__cell-item"  onclick="location.href='promotion/tutorial'">
@@ -852,7 +845,7 @@ button.shareBtn {
                       </div>
                       <div data-v-932703ba="" class="arrow">
                         <!---->
-                        <img data-v-932703ba="" src="/assets/png/right_arrow-ab888448.png" alt="">
+                        <i class="fa-solid fa-chevron-right"></i>
                       </div>
                     </div>
                     <div data-v-932703ba="" class="promote__cell-item">
@@ -862,9 +855,9 @@ button.shareBtn {
                           Agent line customer service
                         </span>
                       </div>
-                      <div data-v-932703ba="" class="arrow">
+                      <div data-v-932703ba="" class="arrow" onclick="window.location='/keFuMenu';">
                         <!---->
-                        <img data-v-932703ba="" src="/assets/png/right_arrow-ab888448.png" alt="">
+                        <i class="fa-solid fa-angle-right"></i>
                       </div>
                     </div>
                     <div data-v-932703ba="" class="promote__cell-item">
@@ -874,9 +867,9 @@ button.shareBtn {
                           Rebate ratio
                         </span>
                       </div>
-                      <div data-v-932703ba="" class="arrow">
+                      <div data-v-932703ba="" class="arrow" onclick="window.location='/promotion/rebate/ratio';">
                         <!---->
-                        <img data-v-932703ba="" src="/assets/png/right_arrow-ab888448.png" alt="">
+                        <i class="fa-solid fa-angle-right"></i>
                       </div>
                     </div>
                   </div>

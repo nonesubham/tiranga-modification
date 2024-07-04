@@ -2789,7 +2789,7 @@
                                     </div>
                                     <div data-v-fa757a88="" data-v-1d8fbc24="" class="ar-searchbar__selector">
                                         <div data-v-fa757a88="">
-                                            <span data-v-fa757a88="" class="ar-searchbar__selector-default">Choose a date</span>
+                                            <span id="datepickerbox"data-v-fa757a88="" class="ar-searchbar__selector-default">Choose a date</span>
                                             <i data-v-fa757a88="" class="van-badge__wrapper van-icon van-icon-arrow-down">
                                             <!---->
                                             <!---->
@@ -2835,7 +2835,7 @@
                     </div>
                 </div>
                 <!---->
-                <div class="van-overlay" role="button" tabindex="0" data-v-0a298b45="" style="z-index: 2007;display: none;"></div>
+                <div id="van-overlay"class="van-overlay" role="button" tabindex="0" data-v-0a298b45="" style="z-index: 2007;display: none;"></div>
 
                 <div role="dialog" tabindex="0" class="van-popup van-popup--round van-popup--bottom" data-v-0a298b45="" style="z-index: 2007; display: none;">
                     <div data-v-0a298b45="" class="list">
@@ -2859,7 +2859,30 @@
                     <!---->
                 </div>
             </div>
+            <div id="datepicker" role="dialog" tabindex="0" class="van-popup van-popup--round van-popup--bottom" data-v-1d8fbc24="" style="z-index: 2001;display:none;"><div data-v-1d8fbc24="" class="van-picker"><div class="van-picker__toolbar"><button type="button" class="van-picker__cancel van-haptics-feedback">Cancel</button><div class="van-picker__title van-ellipsis">Choose a date</div><button type="button" class="van-picker__confirm van-haptics-feedback">Confirm</button></div><!----><!----><div class="van-picker__columns" style="height: 264px;"><div class="van-picker-column"><ul class="van-picker-column__wrapper" style="transform: translate3d(0px, 22px, 0px); transition-duration: 0ms; transition-property: none;"><li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;"><div class="van-ellipsis">2022</div></li><li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;"><div class="van-ellipsis">2023</div></li><li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected" style="height: 44px;"><div class="van-ellipsis">2024</div></li></ul></div><div class="van-picker-column"><ul class="van-picker-column__wrapper" style="transform: translate3d(0px, -154px, 0px); transition-duration: 0ms; transition-property: none;"><li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;"><div class="van-ellipsis">01</div></li><li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;"><div class="van-ellipsis">02</div></li><li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;"><div class="van-ellipsis">03</div></li><li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;"><div class="van-ellipsis">04</div></li><li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;"><div class="van-ellipsis">05</div></li><li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;"><div class="van-ellipsis">06</div></li><li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected" style="height: 44px;"><div class="van-ellipsis">07</div></li></ul></div><div class="van-picker-column"><ul class="van-picker-column__wrapper" style="transform: translate3d(0px, -22px, 0px); transition-duration: 0ms; transition-property: none;"><li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;"><div class="van-ellipsis">01</div></li><li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;"><div class="van-ellipsis">02</div></li><li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;"><div class="van-ellipsis">03</div></li><li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected" style="height: 44px;"><div class="van-ellipsis">04</div></li></ul></div><div class="van-picker__mask" style="background-size: 100% 110px;"></div><div class="van-hairline-unset--top-bottom van-picker__frame" style="height: 44px;"></div></div><!----><!----></div><!----></div>
             <script>
+               // Function to show the date picker and overlay
+function showDatePicker() {
+    document.getElementById('datepicker').style.display = 'block';
+    document.querySelector('.van-overlay').style.display = 'block';
+}
+
+// Function to hide the date picker and overlay
+function hideDatePicker() {
+    document.getElementById('datepicker').style.display = 'none';
+    document.getElementById('van-overlay').style.display = 'none';
+}
+
+// Add event listener to the "Choose a date" selector to show the date picker and overlay
+document.getElementById('datepickerbox').addEventListener('click', showDatePicker);
+
+// Add event listeners to the cancel and confirm buttons to hide the date picker and overlay
+document.querySelector('.van-picker__cancel').addEventListener('click', hideDatePicker);
+document.querySelector('.van-picker__confirm').addEventListener('click', hideDatePicker);
+
+            </script>
+            <script>
+     
                 document.addEventListener('DOMContentLoaded', function() {
                     const items = document.querySelectorAll('.list .item');
                 
@@ -2938,6 +2961,43 @@
                 });
             });
             </script>
+                 <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const selector = document.querySelector('.ar-searchbar__selector');
+                        const popup = document.querySelector('.van-popup');
+                        const overlay = document.querySelector('.van-overlay');
+                    
+                        // Function to show the popup
+                        function showPopup() {
+                            popup.style.display = 'block';
+                            overlay.style.display = 'block';
+                        }
+                    
+                        // Function to hide the popup
+                        function hidePopup() {
+                            popup.style.display = 'none';
+                            overlay.style.display = 'none';
+                        }
+                    
+                        // Show popup when selector is clicked
+                        selector.addEventListener('click', function(event) {
+                            showPopup();
+                            event.stopPropagation(); // Prevent the click event from bubbling up to the document
+                        });
+                    
+                        // Hide popup when clicking outside of it
+                        document.addEventListener('click', function(event) {
+                            if (!popup.contains(event.target) && !selector.contains(event.target)) {
+                                hidePopup();
+                            }
+                        });
+                    
+                        // Hide popup when clicking on the overlay
+                        overlay.addEventListener('click', function() {
+                            hidePopup();
+                        });
+                    });
+                    </script>
             
     </body>
 </html>
