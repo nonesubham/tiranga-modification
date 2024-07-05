@@ -263,3 +263,13 @@
     background: #B1835A;
     border-radius: 1.06667rem;
 }
+.game .bet-box .bet-mark .mark-box .item[data-v-03b808c2] {
+    display: inline-block;
+    border-radius: 0.4rem;
+    padding: 0 0.4rem;
+    background-image: linear-gradient(180deg, #D9AD82 0%, #B1835A 100%) !important;
+    font-weight: 700;
+    font-size: 3.73333rem;
+    color: #B1835A;
+    background-color: #F6F6F6 !important;
+}
