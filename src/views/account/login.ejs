@@ -681,6 +681,46 @@ border-bottom: .05333rem solid #E1E1E1 !important;
           }
         }
     </script>
+    <style>
+      .phoneInput__container-input {
+  display: flex;
+  width: 100%;
+}
+
+.phoneInput__container-input input {
+  flex-grow: 1;
+  width: 100%;
+}
+    </style>
+    <script>
+ document.addEventListener('DOMContentLoaded', () => {
+  // Select the email tab and the phone label element
+  const emailTab = document.querySelector('.login_container-tab .tab.inactive');
+  const phoneLabel = document.querySelector('.phoneInput__container-label span');
+  const phoneInput = document.querySelector('.phoneInput__container-input input');
+  const dropdown = document.querySelector('.dropdown');
+
+  // Add click event listener to the email tab
+  emailTab.addEventListener('click', () => {
+    // Change the label text to "Email address"
+    phoneLabel.textContent = 'Email address';
+
+    // Remove the dropdown element
+    if (dropdown) {
+      dropdown.remove();
+    }
+
+    // Change the placeholder text to "Please enter the email address"
+    phoneInput.placeholder = 'Please enter the email address';
+
+    // Adjust the input field to cover the space of the dropdown
+    phoneInput.style.width = '100%';
+    phoneInput.style.marginLeft = '0'; // Remove left margin
+  });
+});
+
+
+    </script>
 </body>
 
 </html>
