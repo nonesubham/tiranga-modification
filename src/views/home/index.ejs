@@ -33,12 +33,16 @@
         <script src="chrome-extension://pbcpfbcibpcbfbmddogfhcijfpboeaaf/inject.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
         <style>
-            /* Hide Mini games section by default */
-            .game_container.mini_games {
-              display: none;
-            }
-          </style>
-        
+            .game_container.active {
+    display: block !important;
+}
+.game_container[data-v-f52c66fe] {
+    padding-top: .4rem;
+    border-top: .02667rem solid #e5e8f5;
+    margin-bottom: .4rem;
+    display: none;
+}
+        </style>
     </head>
    
     <body style="font-size: 12px;" class="">
@@ -2749,48 +2753,7 @@
                         <!---->
                     </div>
                     <!--v-if-->
-                    <script>
-window.addEventListener('load', () => {
-    const slideContainer = document.querySelector('.swiper-wrapper'); 
-    const slides = document.querySelectorAll('.swiper-slide');      
-    let slideWidth = slides[0].offsetWidth + 20;  
-    let currentSlide = 0; 
-
-    // Add transition property to slideContainer
-    slideContainer.style.transition = 'transform 0.5s ease-in-out'; 
-
-    function showSlide(n) {
-        currentSlide = (n + slides.length) % slides.length; 
-        slideContainer.style.transform = `translateX(-${currentSlide * slideWidth}px)`; 
-
-        slides.forEach((slide, index) => {
-            const img = slide.querySelector('img');
-            if (!img.src && index === currentSlide) { 
-                img.src = img.dataset.origin;
-            }
-        });
-    }
-
-    function nextSlide() {
-        showSlide(currentSlide + 1);
-    }
-
-    function prevSlide() {
-        showSlide(currentSlide - 1);
-    }
-
-    // Auto-slide every 3 seconds (adjust as needed)
-    setInterval(nextSlide, 5000);
-
-    // Event listeners for manual sliding (optional)
-    // ... add buttons or swipe events here if you want
-
-    // Show initial slide
-    showSlide(currentSlide);
-});
-
-
-                    </script>
+                  
                 </div>
                 <div data-v-17ed3a84="" class="whiteGLing"></div>
                 <!-- 滚动通知栏 -->
@@ -2804,6 +2767,16 @@ window.addEventListener('load', () => {
                 <div data-v-17ed3a84="" class="whiteGLing mb"></div>
                 <div data-v-17ed3a84="" class="box1">
                     <!-- 游戏菜单 -->
+                     <script>
+                        const gameCategories = document.querySelectorAll('.gamen_item');
+const miniGamesContainer = document.querySelector('.game_container:nth-child(2)');
+
+gameCategories.forEach((category) => {
+  category.addEventListener('click', () => {
+    miniGamesContainer.style.display = miniGamesContainer.style.display === 'none' ? 'block' : 'none';
+  });
+});
+                     </script>
                    
                     <div data-v-c0149d4b="" data-v-17ed3a84="" class="game_menu">
                         <div data-v-c0149d4b="" class="game_menu_list">
@@ -2833,13 +2806,9 @@ window.addEventListener('load', () => {
                             </div>
                         </div>
                     </div>
-                    <style>
-                        .game_container.action{
-                            display: none;
-                        }
-                    </style>
+                  
                     
-                    <div data-v-f52c66fe="" data-v-17ed3a84="" class="game_container" id="gameLottery">
+                    <div data-v-f52c66fe="" data-v-17ed3a84="" class="game_container active">
                         <div data-v-f52c66fe="" class="game_title">Lottery</div>
                         <div data-v-f52c66fe="" class="van-tabs van-tabs--card lottery_tabbar">
                             <div class="van-tabs__wrap">
@@ -2942,7 +2911,7 @@ window.addEventListener('load', () => {
                             </div>
                         </div>
                     </div>
-                    <div data-v-f52c66fe="" data-v-17ed3a84="" class="game_container action" id="gameMiniGames">
+                    <div data-v-f52c66fe="" data-v-17ed3a84="" class="game_container">
                       <div data-v-f52c66fe="" class="game_title">Mini games</div>
                         <!--v-if-->
                         <div data-v-f52c66fe="" class="driver"></div>
@@ -3024,122 +2993,15 @@ window.addEventListener('load', () => {
                         <!--v-if-->
                         <!-- <OtherGameItem :gameList="gameList[currentMenu]" :game-type="currentMenu" v-if="getType === 2" /> -->
                     </div>
-
-                <script>
-  // Get the menu items and game containers
-  const menuItems = document.querySelectorAll('.gamen_item');
-    const gameContainers = document.querySelectorAll('.game_container');
-
-    // Add click event listeners to each menu item
-    menuItems.forEach(item => {
-        item.addEventListener('click', function() {
-            // Remove 'active' class from all menu items
-            menuItems.forEach(menu => menu.classList.remove('active'));
-            // Add 'active' class to the clicked menu item
-            item.classList.add('active');
-
-            // Toggle 'active' class on game containers based on the clicked menu item
-            const itemName = item.querySelector('span').textContent.trim();
-            gameContainers.forEach(container => {
-                if (container.id === `game${itemName.replace(/\s+/g, '')}`) {
-                    container.classList.add('active');
-                } else {
-                    container.classList.remove('active');
-                }
-            });
-        });
-    });
-
-                </script>
-                    <script>
-                        document.addEventListener("DOMContentLoaded", function() {
-                            // Function to check if an element is in viewport
-                            function isInViewport(element) {
-                                var rect = element.getBoundingClientRect();
-                                return (
-                                    rect.top >= 0 &&
-                                    rect.left >= 0 &&
-                                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-                                );
-                            }
+                    <div data-v-f52c66fe="" data-v-17ed3a84="" class="game_container"><div data-v-f52c66fe="" class="game_title">Slots</div><!--v-if--><div data-v-f52c66fe="" class="driver"></div><!--v-if--><div data-v-c2791131="" data-v-f52c66fe="" class="other_box"><div data-v-c2791131="" class="other_item"><img data-v-c2791131="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_20230822181743ytsp.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_20230822181743ytsp.png"></div><div data-v-c2791131="" class="other_item"><img data-v-c2791131="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_20230814171251mwfm.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_20230814171251mwfm.png"></div><div data-v-c2791131="" class="other_item"><img data-v-c2791131="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_20230814171226u65b.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_20230814171226u65b.png"></div><div data-v-c2791131="" class="other_item"><img data-v-c2791131="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_20230814171237qp9g.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_20230814171237qp9g.png"></div><div data-v-c2791131="" class="other_item"><img data-v-c2791131="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_20240402192155nahy.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_20240402192155nahy.png"></div><div data-v-c2791131="" class="other_item"><img data-v-c2791131="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_2023081417112382w9.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_2023081417112382w9.png"></div><div data-v-c2791131="" class="other_item"><img data-v-c2791131="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_202308141711471fix.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_202308141711471fix.png"></div><div data-v-c2791131="" class="other_item"><img data-v-c2791131="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_20240508175049up4n.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_20240508175049up4n.png"></div></div><!--v-if--><!--v-if--><!-- <OtherGameItem :gameList="gameList[currentMenu]" :game-type="currentMenu" v-if="getType === 2" /> --></div>
+                    <div data-v-f52c66fe="" data-v-17ed3a84="" class="game_container"><div data-v-f52c66fe="" class="game_title">Popular</div><!--v-if--><div data-v-f52c66fe="" class="driver"></div><!--v-if--><div data-v-a28fe468="" data-v-f52c66fe="" class="hot_container"><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/TB_Chess/800.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/TB_Chess/800.png"><div data-v-a28fe468="" class="win-odds"><span data-v-a28fe468="">odds of winning</span><span data-v-a28fe468="">83.54%</span><div data-v-a28fe468="" class="win-p" style="width: 83.54%;"></div></div></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/TB_Chess/110_20240125120601528.jpg" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/TB_Chess/110_20240125120601528.jpg"><div data-v-a28fe468="" class="win-odds"><span data-v-a28fe468="">odds of winning</span><span data-v-a28fe468="">87.53%</span><div data-v-a28fe468="" class="win-p" style="width: 87.53%;"></div></div></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/TB_Chess/107_20240330122551914.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/TB_Chess/107_20240330122551914.png"><div data-v-a28fe468="" class="win-odds"><span data-v-a28fe468="">odds of winning</span><span data-v-a28fe468="">90.78%</span><div data-v-a28fe468="" class="win-p" style="width: 90.78%;"></div></div></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/TB_Chess/102.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/TB_Chess/102.png"><div data-v-a28fe468="" class="win-odds"><span data-v-a28fe468="">odds of winning</span><span data-v-a28fe468="">84.32%</span><div data-v-a28fe468="" class="win-p" style="width: 84.32%;"></div></div></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/TB_Chess/101.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/TB_Chess/101.png"><div data-v-a28fe468="" class="win-odds"><span data-v-a28fe468="">odds of winning</span><span data-v-a28fe468="">91.18%</span><div data-v-a28fe468="" class="win-p" style="width: 91.18%;"></div></div></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/TB_Chess/100.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/TB_Chess/100.png"><div data-v-a28fe468="" class="win-odds"><span data-v-a28fe468="">odds of winning</span><span data-v-a28fe468="">88.98%</span><div data-v-a28fe468="" class="win-p" style="width: 88.98%;"></div></div></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JILI/51.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JILI/51.png"><div data-v-a28fe468="" class="win-odds"><span data-v-a28fe468="">odds of winning</span><span data-v-a28fe468="">84.16%</span><div data-v-a28fe468="" class="win-p" style="width: 84.16%;"></div></div></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JILI/109.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JILI/109.png"><div data-v-a28fe468="" class="win-odds"><span data-v-a28fe468="">odds of winning</span><span data-v-a28fe468="">91.72%</span><div data-v-a28fe468="" class="win-p" style="width: 91.72%;"></div></div></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JILI/223.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JILI/223.png"><div data-v-a28fe468="" class="win-odds"><span data-v-a28fe468="">odds of winning</span><span data-v-a28fe468="">85.88%</span><div data-v-a28fe468="" class="win-p" style="width: 85.88%;"></div></div></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="ar-lazyload" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/CQ9/19.png"><div data-v-a28fe468="" class="win-odds"><span data-v-a28fe468="">odds of winning</span><span data-v-a28fe468="">85.54%</span><div data-v-a28fe468="" class="win-p" style="width: 85.54%;"></div></div></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="ar-lazyload" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JILI/35.png"><div data-v-a28fe468="" class="win-odds"><span data-v-a28fe468="">odds of winning</span><span data-v-a28fe468="">89.26%</span><div data-v-a28fe468="" class="win-p" style="width: 89.26%;"></div></div></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="ar-lazyload" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/MG/SMG_wildfireWins.png"><div data-v-a28fe468="" class="win-odds"><span data-v-a28fe468="">odds of winning</span><span data-v-a28fe468="">89.74%</span><div data-v-a28fe468="" class="win-p" style="width: 89.74%;"></div></div></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="ar-lazyload" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JDB/14036.png"><div data-v-a28fe468="" class="win-odds"><span data-v-a28fe468="">odds of winning</span><span data-v-a28fe468="">81.95%</span><div data-v-a28fe468="" class="win-p" style="width: 81.95%;"></div></div></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="ar-lazyload" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/MG/SMG_10000Wishes.png"><div data-v-a28fe468="" class="win-odds"><span data-v-a28fe468="">odds of winning</span><span data-v-a28fe468="">87.52%</span><div data-v-a28fe468="" class="win-p" style="width: 87.52%;"></div></div></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="ar-lazyload" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JILI/49.png"><div data-v-a28fe468="" class="win-odds"><span data-v-a28fe468="">odds of winning</span><span data-v-a28fe468="">91.94%</span><div data-v-a28fe468="" class="win-p" style="width: 91.94%;"></div></div></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="ar-lazyload" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JILI/82.png"><div data-v-a28fe468="" class="win-odds"><span data-v-a28fe468="">odds of winning</span><span data-v-a28fe468="">84.54%</span><div data-v-a28fe468="" class="win-p" style="width: 84.54%;"></div></div></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="ar-lazyload" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JILI/100.png"><div data-v-a28fe468="" class="win-odds"><span data-v-a28fe468="">odds of winning</span><span data-v-a28fe468="">91.17%</span><div data-v-a28fe468="" class="win-p" style="width: 91.17%;"></div></div></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="ar-lazyload" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/CQ9/128.png"><div data-v-a28fe468="" class="win-odds"><span data-v-a28fe468="">odds of winning</span><span data-v-a28fe468="">92.28%</span><div data-v-a28fe468="" class="win-p" style="width: 92.28%;"></div></div></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="ar-lazyload" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JILI/47.png"><div data-v-a28fe468="" class="win-odds"><span data-v-a28fe468="">odds of winning</span><span data-v-a28fe468="">89.76%</span><div data-v-a28fe468="" class="win-p" style="width: 89.76%;"></div></div></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="ar-lazyload" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/AG_Fish/HM2D_EN.png"><div data-v-a28fe468="" class="win-odds"><span data-v-a28fe468="">odds of winning</span><span data-v-a28fe468="">86.95%</span><div data-v-a28fe468="" class="win-p" style="width: 86.95%;"></div></div></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="ar-lazyload" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JDB/8035.png"><div data-v-a28fe468="" class="win-odds"><span data-v-a28fe468="">odds of winning</span><span data-v-a28fe468="">89.68%</span><div data-v-a28fe468="" class="win-p" style="width: 89.68%;"></div></div></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="ar-lazyload" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/V8Card/220.png"><div data-v-a28fe468="" class="win-odds"><span data-v-a28fe468="">odds of winning</span><span data-v-a28fe468="">91.76%</span><div data-v-a28fe468="" class="win-p" style="width: 91.76%;"></div></div></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="ar-lazyload" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/CQ9/102.png"><div data-v-a28fe468="" class="win-odds"><span data-v-a28fe468="">odds of winning</span><span data-v-a28fe468="">82.15%</span><div data-v-a28fe468="" class="win-p" style="width: 82.15%;"></div></div></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="ar-lazyload" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/V8Card/510.png"><div data-v-a28fe468="" class="win-odds"><span data-v-a28fe468="">odds of winning</span><span data-v-a28fe468="">86.8%</span><div data-v-a28fe468="" class="win-p" style="width: 86.8%;"></div></div></div></div><!--v-if--><!-- <OtherGameItem :gameList="gameList[currentMenu]" :game-type="currentMenu" v-if="getType === 2" /> --></div>
+                    <div data-v-f52c66fe="" data-v-17ed3a84="" class="game_container"><div data-v-f52c66fe="" class="game_title">PVC</div><!--v-if--><div data-v-f52c66fe="" class="driver"></div><!--v-if--><div data-v-c2791131="" data-v-f52c66fe="" class="other_box"><div data-v-c2791131="" class="other_item"><img data-v-c2791131="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_20230815191734ns4h.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_20230815191734ns4h.png"></div><div data-v-c2791131="" class="other_item"><img data-v-c2791131="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_2024030619030017d8.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_2024030619030017d8.png"></div></div><!--v-if--><!--v-if--><!-- <OtherGameItem :gameList="gameList[currentMenu]" :game-type="currentMenu" v-if="getType === 2" /> --></div>
+                    <div data-v-f52c66fe="" data-v-17ed3a84="" class="game_container"><div data-v-f52c66fe="" class="game_title">Fishing</div><!--v-if--><div data-v-f52c66fe="" class="driver"></div><!--v-if--><div data-v-a28fe468="" data-v-f52c66fe="" class="hot_container"><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/AG_Fish/HM2D_EN.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/AG_Fish/HM2D_EN.png"><!--v-if--></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/AG_Fish/HM3D_EN.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/AG_Fish/HM3D_EN.png"><!--v-if--></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/AG_Fish/HMFP_EN.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/AG_Fish/HMFP_EN.png"><!--v-if--></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/AG_Fish/HMSH_EN.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/AG_Fish/HMSH_EN.png"><!--v-if--></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/V8Card/510.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/V8Card/510.png"><!--v-if--></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/CQ9/AB3.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/CQ9/AB3.png"><!--v-if--></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/CQ9/AT01.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/CQ9/AT01.png"><!--v-if--></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/CQ9/AT05.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/CQ9/AT05.png"><!--v-if--></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/CQ9/GO02.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/CQ9/GO02.png"><!--v-if--></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JDB/67001.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JDB/67001.png"><!--v-if--></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JDB/7001.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JDB/7001.png"><!--v-if--></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JDB/7002.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JDB/7002.png"><!--v-if--></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JDB/7003.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JDB/7003.png"><!--v-if--></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JDB/7004.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JDB/7004.png"><!--v-if--></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JDB/7005.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JDB/7005.png"><!--v-if--></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JDB/7006.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JDB/7006.png"><!--v-if--></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JDB/7007.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JDB/7007.png"><!--v-if--></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JILI/1.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JILI/1.png"><!--v-if--></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JILI/119.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JILI/119.png"><!--v-if--></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JILI/20.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JILI/20.png"><!--v-if--></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JILI/212.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JILI/212.png"><!--v-if--></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JILI/32.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JILI/32.png"><!--v-if--></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JILI/42.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JILI/42.png"><!--v-if--></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JILI/60.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JILI/60.png"><!--v-if--></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JILI/71.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JILI/71.png"><!--v-if--></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JILI/74.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JILI/74.png"><!--v-if--></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JILI/82.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/JILI/82.png"><!--v-if--></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/MG_Fish/SFG_WDFuWaFishing.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/MG_Fish/SFG_WDFuWaFishing.png"><!--v-if--></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/MG_Fish/SFG_WDGoldBlastFishing.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/MG_Fish/SFG_WDGoldBlastFishing.png"><!--v-if--></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/MG_Fish/SFG_WDGoldenFortuneFishing.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/MG_Fish/SFG_WDGoldenFortuneFishing.png"><!--v-if--></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/MG_Fish/SFG_WDGoldenFuwaFishing.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/MG_Fish/SFG_WDGoldenFuwaFishing.png"><!--v-if--></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/MG_Fish/SFG_WDGoldenTyrantFishing.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/MG_Fish/SFG_WDGoldenTyrantFishing.png"><!--v-if--></div><div data-v-a28fe468="" class="hot_container-item"><img data-v-a28fe468="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/MG_Fish/SFG_WDMerryIslandFishing.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/gamelogo/MG_Fish/SFG_WDMerryIslandFishing.png"><!--v-if--></div></div><!--v-if--><!-- <OtherGameItem :gameList="gameList[currentMenu]" :game-type="currentMenu" v-if="getType === 2" /> --></div>
+                    <div data-v-f52c66fe="" data-v-17ed3a84="" class="game_container"><div data-v-f52c66fe="" class="game_title">Casino</div><!--v-if--><div data-v-f52c66fe="" class="driver"></div><!--v-if--><div data-v-c2791131="" data-v-f52c66fe="" class="other_box"><div data-v-c2791131="" class="other_item"><img data-v-c2791131="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_20230814171130qjl7.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_20230814171130qjl7.png"></div><div data-v-c2791131="" class="other_item"><img data-v-c2791131="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_202308141712568hjl.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_202308141712568hjl.png"></div><div data-v-c2791131="" class="other_item"><img data-v-c2791131="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_20230814171113em6y.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_20230814171113em6y.png"></div><div data-v-c2791131="" class="other_item"><img data-v-c2791131="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_20240508175030lt67.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_20240508175030lt67.png"></div></div><!--v-if--><!--v-if--><!-- <OtherGameItem :gameList="gameList[currentMenu]" :game-type="currentMenu" v-if="getType === 2" /> --></div>
+                    <div data-v-f52c66fe="" data-v-17ed3a84="" class="game_container"><div data-v-f52c66fe="" class="game_title">Sports</div><!--v-if--><div data-v-f52c66fe="" class="driver"></div><!--v-if--><div data-v-c2791131="" data-v-f52c66fe="" class="other_box"><div data-v-c2791131="" class="other_item"><img data-v-c2791131="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_20230814175823ja4x.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_20230814175823ja4x.png"></div><div data-v-c2791131="" class="other_item"><img data-v-c2791131="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_20230822181756vrix.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_20230822181756vrix.png"></div><div data-v-c2791131="" class="other_item"><img data-v-c2791131="" class="" data-origin="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_20230814171208qfou.png" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_20230814171208qfou.png"></div></div><!--v-if--><!--v-if--><!-- <OtherGameItem :gameList="gameList[currentMenu]" :game-type="currentMenu" v-if="getType === 2" /> --></div>
                 
-                            // Lazy load images when they enter the viewport
-                            function lazyLoadImages() {
-                                var lazyloadImages = document.querySelectorAll(".lazyload");
-                
-                                lazyloadImages.forEach(function(img) {
-                                    if (isInViewport(img)) {
-                                        img.src = img.getAttribute("data-origin");
-                                        img.classList.remove("lazyload"); // Remove the lazyload class after setting src
-                                    }
-                                });
-                            }
-                
-                            // Initial load check
-                            lazyLoadImages();
-                
-                            // Attach scroll event listener
-                            window.addEventListener("scroll", lazyLoadImages);
-                        });
-                    </script>
-                    <script>
-                        document.getElementById('van-tabs-1-0').addEventListener('click', function() {
-                            setActiveTab('all');
-                            showLotteryItems('all');
-                        });
-                        document.getElementById('van-tabs-1-1').addEventListener('click', function() {
-                            setActiveTab('wingo');
-                            showLotteryItems('wingo');
-                        });
-                        document.getElementById('van-tabs-1-2').addEventListener('click', function() {
-                            setActiveTab('k3');
-                            showLotteryItems('k3');
-                        });
-                        document.getElementById('van-tabs-1-3').addEventListener('click', function() {
-                            setActiveTab('d5');
-                            showLotteryItems('d5');
-                        });
-                        document.getElementById('van-tabs-1-4').addEventListener('click', function() {
-                            setActiveTab('trx');
-                            showLotteryItems('trx');
-                        });
-                
-                        function setActiveTab(tab) {
-                            document.querySelectorAll('.van-tab').forEach(function(el) {
-                                el.classList.remove('van-tab--active');
-                                el.setAttribute('aria-selected', 'false');
-                            });
-                            document.getElementById('van-tabs-1-' + tabIndex(tab)).classList.add('van-tab--active');
-                            document.getElementById('van-tabs-1-' + tabIndex(tab)).setAttribute('aria-selected', 'true');
-                        }
-                
-                        function showLotteryItems(tab) {
-                            document.querySelectorAll('.lotterySlotItem').forEach(function(el) {
-                                el.style.display = 'none';
-                            });
-                            if (tab === 'all') {
-                                document.querySelectorAll('.lotterySlotItem').forEach(function(el) {
-                                    el.style.display = 'block';
-                                });
-                            } else {
-                                document.querySelectorAll('.lotterySlotItem.' + tab).forEach(function(el) {
-                                    el.style.display = 'block';
-                                });
-                            }
-                        }
-                
-                        function tabIndex(tab) {
-                            switch (tab) {
-                                case 'all': return '0';
-                                case 'wingo': return '1';
-                                case 'k3': return '2';
-                                case 'd5': return '3';
-                                case 'trx': return '4';
-                                default: return '0';
-                            }
-                        }
-                    </script>
+                 
+                    
                     <!-- 中奖信息 -->
                     <div data-v-84514e8e="" data-v-17ed3a84="" class="dailyProfitRank">
                         <div data-v-84514e8e="" class="title">
@@ -3290,66 +3152,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             </div>
             <!--v-if-->
-            <script>
-// Wait for the DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', function () {
-    // Function to show the elements
-    function showElements() {
-        // Get the elements by their class names
-        var overlay = document.querySelector('.van-overlay');
-        var dialog = document.querySelector('.van-popup.van-popup--center.van-dialog.firstSaveDialog');
-
-        // Set their display styles to 'flex' and 'block' respectively
-        if (overlay) {
-            console.log("Showing overlay");
-            overlay.style.display = 'flex';
-        } else {
-            console.log("Overlay not found");
-        }
-
-        if (dialog) {
-            console.log("Showing dialog");
-            dialog.style.display = 'block';
-        } else {
-            console.log("Dialog not found");
-        }
-    }
-
-    // Function to hide the elements
-    function hideElements() {
-        // Get the elements by their class names
-        let overlay = document.querySelector('.van-overlay');
-        let dialog = document.querySelector('.van-popup.van-popup--center.van-dialog.firstSaveDialog');
-
-        // Set their display styles to 'none'
-        if (overlay) {
-            console.log("Hiding overlay");
-            overlay.style.display = 'none';
-        } else {
-            console.log("Overlay not found");
-        }
-
-        if (dialog) {
-            console.log("Hiding dialog");
-            dialog.style.display = 'none';
-        } else {
-            console.log("Dialog not found");
-        }
-    }
-
-    // Call the showElements function after 3 seconds (3000 milliseconds)
-    setTimeout(showElements, 1000);
-
-    // Add event listener to the close element
-    var closeButton = document.querySelector('.close');
-    if (closeButton) {
-        closeButton.addEventListener('click', hideElements);
-    } else {
-        console.log("Close button not found");
-    }
-});
-
-            </script>
+ 
 
             <div class="van-overlay" style="z-index: 2001; --f13b4d11-currentFontFamily: 'Roboto', 'Inter', sans-serif; display: none;">
             <!---->
@@ -3492,35 +3295,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             </div>
                         </div>
                         <!---->
-                        <script>
-                            // Wait for the DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', function () {
-    // Function to hide the elements
-    function hideElements() {
-        // Get the elements by their class names
-        let overlay = document.querySelector('.van-overlay');
-        let dialog = document.querySelector('.van-popup.van-popup--center.van-dialog.firstSaveDialog');
-
-        // Set their display styles to 'none'
-        if (overlay) {
-            overlay.style.display = 'none';
-        }
-
-        if (dialog) {
-            dialog.style.display = 'none';
-        }
-    }
-
-    // Add event listener to the close element
-    let closeButton = document.getElementById('closeactivity');
-    if (closeButton) {
-        closeButton.addEventListener('click', hideElements);
-    } else {
-        console.error("Close button not found");
-    }
-});
-
-                        </script>
+             
                         <!---->
                     </div>
                     <div data-v-9cd12fb2="" id="closeactivity" class="close"></div>
@@ -3559,5 +3334,268 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
         </script>
+                   <script>
+                    // Wait for the DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function () {
+// Function to hide the elements
+function hideElements() {
+// Get the elements by their class names
+let overlay = document.querySelector('.van-overlay');
+let dialog = document.querySelector('.van-popup.van-popup--center.van-dialog.firstSaveDialog');
+
+// Set their display styles to 'none'
+if (overlay) {
+    overlay.style.display = 'none';
+}
+
+if (dialog) {
+    dialog.style.display = 'none';
+}
+}
+
+// Add event listener to the close element
+let closeButton = document.getElementById('closeactivity');
+if (closeButton) {
+closeButton.addEventListener('click', hideElements);
+} else {
+console.error("Close button not found");
+}
+});
+
+                </script>
+                           <script>
+                            // Wait for the DOM to be fully loaded
+                            document.addEventListener('DOMContentLoaded', function () {
+                                // Function to show the elements
+                                function showElements() {
+                                    // Get the elements by their class names
+                                    var overlay = document.querySelector('.van-overlay');
+                                    var dialog = document.querySelector('.van-popup.van-popup--center.van-dialog.firstSaveDialog');
+                            
+                                    // Set their display styles to 'flex' and 'block' respectively
+                                    if (overlay) {
+                                        console.log("Showing overlay");
+                                        overlay.style.display = 'flex';
+                                    } else {
+                                        console.log("Overlay not found");
+                                    }
+                            
+                                    if (dialog) {
+                                        console.log("Showing dialog");
+                                        dialog.style.display = 'block';
+                                    } else {
+                                        console.log("Dialog not found");
+                                    }
+                                }
+                            
+                                // Function to hide the elements
+                                function hideElements() {
+                                    // Get the elements by their class names
+                                    let overlay = document.querySelector('.van-overlay');
+                                    let dialog = document.querySelector('.van-popup.van-popup--center.van-dialog.firstSaveDialog');
+                            
+                                    // Set their display styles to 'none'
+                                    if (overlay) {
+                                        console.log("Hiding overlay");
+                                        overlay.style.display = 'none';
+                                    } else {
+                                        console.log("Overlay not found");
+                                    }
+                            
+                                    if (dialog) {
+                                        console.log("Hiding dialog");
+                                        dialog.style.display = 'none';
+                                    } else {
+                                        console.log("Dialog not found");
+                                    }
+                                }
+                            
+                                // Call the showElements function after 3 seconds (3000 milliseconds)
+                                setTimeout(showElements, 1000);
+                            
+                                // Add event listener to the close element
+                                var closeButton = document.querySelector('.close');
+                                if (closeButton) {
+                                    closeButton.addEventListener('click', hideElements);
+                                } else {
+                                    console.log("Close button not found");
+                                }
+                            });
+                            
+                                        </script>
+                                        <script>
+                                            // Wait for the DOM to fully load
+                        document.addEventListener('DOMContentLoaded', function() {
+                            // Get the close button element
+                            const closeButton = document.querySelector('.van-badge__wrapper.van-icon.van-icon-close');
+                        
+                            if (closeButton) {
+                                // Add click event listener to the close button
+                                closeButton.addEventListener('click', function() {
+                                    // Get all elements with the class 'btn pwa-btn'
+                                    const btnPwaBtnElements = document.querySelectorAll('.btn.pwa-btn');
+                        
+                                    // Loop through each element and set display to none
+                                    btnPwaBtnElements.forEach(function(element) {
+                                        element.style.display = 'none';
+                                    });
+                                });
+                            } else {
+                                console.error('Close button not found');
+                            }
+                        });
+                        
+                                        </script>
+                                          <script>
+                                            window.addEventListener('load', () => {
+                                                const slideContainer = document.querySelector('.swiper-wrapper'); 
+                                                const slides = document.querySelectorAll('.swiper-slide');      
+                                                let slideWidth = slides[0].offsetWidth + 20;  
+                                                let currentSlide = 0; 
+                                            
+                                                // Add transition property to slideContainer
+                                                slideContainer.style.transition = 'transform 0.5s ease-in-out'; 
+                                            
+                                                function showSlide(n) {
+                                                    currentSlide = (n + slides.length) % slides.length; 
+                                                    slideContainer.style.transform = `translateX(-${currentSlide * slideWidth}px)`; 
+                                            
+                                                    slides.forEach((slide, index) => {
+                                                        const img = slide.querySelector('img');
+                                                        if (!img.src && index === currentSlide) { 
+                                                            img.src = img.dataset.origin;
+                                                        }
+                                                    });
+                                                }
+                                            
+                                                function nextSlide() {
+                                                    showSlide(currentSlide + 1);
+                                                }
+                                            
+                                                function prevSlide() {
+                                                    showSlide(currentSlide - 1);
+                                                }
+                                            
+                                                // Auto-slide every 3 seconds (adjust as needed)
+                                                setInterval(nextSlide, 5000);
+                                            
+                                                // Event listeners for manual sliding (optional)
+                                                // ... add buttons or swipe events here if you want
+                                            
+                                                // Show initial slide
+                                                showSlide(currentSlide);
+                                            });
+                                            
+                                            
+                                                                </script>
+                                                                   <script>
+                                                                    document.addEventListener("DOMContentLoaded", function() {
+                                                                        // Function to check if an element is in viewport
+                                                                        function isInViewport(element) {
+                                                                            var rect = element.getBoundingClientRect();
+                                                                            return (
+                                                                                rect.top >= 0 &&
+                                                                                rect.left >= 0 &&
+                                                                                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                                                                                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                                                                            );
+                                                                        }
+                                                            
+                                                                        // Lazy load images when they enter the viewport
+                                                                        function lazyLoadImages() {
+                                                                            var lazyloadImages = document.querySelectorAll(".lazyload");
+                                                            
+                                                                            lazyloadImages.forEach(function(img) {
+                                                                                if (isInViewport(img)) {
+                                                                                    img.src = img.getAttribute("data-origin");
+                                                                                    img.classList.remove("lazyload"); // Remove the lazyload class after setting src
+                                                                                }
+                                                                            });
+                                                                        }
+                                                            
+                                                                        // Initial load check
+                                                                        lazyLoadImages();
+                                                            
+                                                                        // Attach scroll event listener
+                                                                        window.addEventListener("scroll", lazyLoadImages);
+                                                                    });
+                                                                </script>
+                                            
+                                                                <script>
+                                                                    document.getElementById('van-tabs-1-0').addEventListener('click', function() {
+                                                                        setActiveTab('all');
+                                                                        showLotteryItems('all');
+                                                                    });
+                                                                    document.getElementById('van-tabs-1-1').addEventListener('click', function() {
+                                                                        setActiveTab('wingo');
+                                                                        showLotteryItems('wingo');
+                                                                    });
+                                                                    document.getElementById('van-tabs-1-2').addEventListener('click', function() {
+                                                                        setActiveTab('k3');
+                                                                        showLotteryItems('k3');
+                                                                    });
+                                                                    document.getElementById('van-tabs-1-3').addEventListener('click', function() {
+                                                                        setActiveTab('d5');
+                                                                        showLotteryItems('d5');
+                                                                    });
+                                                                    document.getElementById('van-tabs-1-4').addEventListener('click', function() {
+                                                                        setActiveTab('trx');
+                                                                        showLotteryItems('trx');
+                                                                    });
+                                                            
+                                                                    function setActiveTab(tab) {
+                                                                        document.querySelectorAll('.van-tab').forEach(function(el) {
+                                                                            el.classList.remove('van-tab--active');
+                                                                            el.setAttribute('aria-selected', 'false');
+                                                                        });
+                                                                        document.getElementById('van-tabs-1-' + tabIndex(tab)).classList.add('van-tab--active');
+                                                                        document.getElementById('van-tabs-1-' + tabIndex(tab)).setAttribute('aria-selected', 'true');
+                                                                    }
+                                                            
+                                                                    function showLotteryItems(tab) {
+                                                                        document.querySelectorAll('.lotterySlotItem').forEach(function(el) {
+                                                                            el.style.display = 'none';
+                                                                        });
+                                                                        if (tab === 'all') {
+                                                                            document.querySelectorAll('.lotterySlotItem').forEach(function(el) {
+                                                                                el.style.display = 'block';
+                                                                            });
+                                                                        } else {
+                                                                            document.querySelectorAll('.lotterySlotItem.' + tab).forEach(function(el) {
+                                                                                el.style.display = 'block';
+                                                                            });
+                                                                        }
+                                                                    }
+                                                            
+                                                                    function tabIndex(tab) {
+                                                                        switch (tab) {
+                                                                            case 'all': return '0';
+                                                                            case 'wingo': return '1';
+                                                                            case 'k3': return '2';
+                                                                            case 'd5': return '3';
+                                                                            case 'trx': return '4';
+                                                                            default: return '0';
+                                                                        }
+                                                                    }
+                                                                </script>
+                                                                
+                                                                    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuItems = document.querySelectorAll('.game_menu_list .gamen_item');
+            const gameContainers = document.querySelectorAll('.game_container');
+
+            menuItems.forEach((menuItem, index) => {
+                menuItem.addEventListener('click', () => {
+                    // Hide all game containers
+                    gameContainers.forEach(container => {
+                        container.classList.remove('active');
+                    });
+                    // Show the clicked game's container
+                    gameContainers[index].classList.add('active');
+                });
+            });
+        });
+    </script>
+                                                                
     </body>
 </html>

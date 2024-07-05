@@ -701,6 +701,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const phoneLabel = document.querySelector('.phoneInput__container-label span');
   const phoneInput = document.querySelector('.phoneInput__container-input input');
   const dropdown = document.querySelector('.dropdown');
+  
+   // Get image elements
+  const phoneTabImage = phoneTab.querySelector('.phoneInput__container-label__icon');
+  const emailTabImage = emailTab.querySelector('.phoneInput__container-label__icon');
+  const phoneInputIcon = document.querySelector('.phoneInput__container-label .phoneInput__container-label__icon');
 
   function toggleTabClasses() {
     // Toggle active/inactive classes
@@ -715,20 +720,29 @@ document.addEventListener('DOMContentLoaded', () => {
     emailTab.querySelector('.font30').classList.toggle('phonefont30active');
     emailTab.querySelector('.font30').classList.toggle('phonefont30inactive');
 
-    // Update label, input, and dropdown visibility
+    // Update label, input, dropdown visibility, and images
     if (emailTab.classList.contains('active')) {
       phoneLabel.textContent = 'Email address';
-      dropdown.style.display = 'none'; // Hide dropdown
+      dropdown.style.display = 'none'; 
       phoneInput.placeholder = 'Please enter the email address';
       phoneInput.style.width = '100%';
       phoneInput.style.marginLeft = '0';
+
+      // Change image sources
+      phoneTabImage.src = './svg/phonelogin.svg';
+      emailTabImage.src = './svg/mailloginactive.svg';  
+      phoneInputIcon.src = './svg/mailloginactive.svg';
     } else { // Phone tab is active
       phoneLabel.textContent = 'Phone Number'; 
-      dropdown.style.display = 'flex'; // Show dropdown using 'flex'
-      phoneInput.placeholder = 'Please enter the phone number'; // Restore phone input placeholder
-      // Adjust input styling as needed
-      phoneInput.style.width = 'calc(100% - 60px)'; // Adjust for dropdown's width
-      phoneInput.style.marginLeft = '2.66667rem'; // Adjust for dropdown's width
+      dropdown.style.display = 'flex'; 
+      phoneInput.placeholder = 'Please enter the phone number'; 
+      phoneInput.style.width = 'calc(100% - 60px)';
+      phoneInput.style.marginLeft = '2.66667rem';
+
+      // Change image sources
+      phoneTabImage.src = './svg/phone.svg';
+      emailTabImage.src = './svg/mail.svg';
+      phoneInputIcon.src = './svg/phone.svg';
     }
   }
 
@@ -736,6 +750,7 @@ document.addEventListener('DOMContentLoaded', () => {
   phoneTab.addEventListener('click', toggleTabClasses);
   emailTab.addEventListener('click', toggleTabClasses);
 });
+
 
     </script>
 </body>
