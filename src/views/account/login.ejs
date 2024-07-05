@@ -20,7 +20,7 @@
 
 .login__container .login_container-tab .tab .font30[data-v-8752c961] {
     font-size: .4rem;
-    color: #fff;
+
     /* text-align: center; */
     /* -webkit-box-flex: 0; */
     /* -webkit-flex: none; */
@@ -118,13 +118,14 @@ border-bottom: .05333rem solid #E1E1E1 !important;
     color: #B1835A;
     border-bottom: .05333rem solid #B1835A !important;
 }
-.login__container .login_container-tab .tab .font30[data-v-8752c961] {
-    font-size: .4rem;
-    color: #B1835A !important;
-    
-    white-space: inherit !important;
-    margin-top: .21333rem;
+.font30 phonefont30active{
+  color: #B1835A;
 }
+
+          .font30.phonefont30inactive {
+    color: #768096 !important;
+}
+       
     </style>
 </head>
 
@@ -285,11 +286,12 @@ border-bottom: .05333rem solid #E1E1E1 !important;
           <div data-v-8752c961="" class="tab inactive">
             <img data-v-93f53084="" src="./SVG/MAIL.SVG"
                   class="phoneInput__container-label__icon">
-            <div data-v-8752c961="" class="font30 phonefont30active" style="color:#768096 !important;">
+            <div data-v-8752c961="" class="font30 phonefont30inactive">
             Email Login
             </div>
           </div>
         </div>
+       
         
         <div data-v-8752c961="" class="login__container-form">
           <div data-v-8752c961="" class="tab-content activecontent">
@@ -693,32 +695,47 @@ border-bottom: .05333rem solid #E1E1E1 !important;
 }
     </style>
     <script>
- document.addEventListener('DOMContentLoaded', () => {
-  // Select the email tab and the phone label element
-  const emailTab = document.querySelector('.login_container-tab .tab.inactive');
+document.addEventListener('DOMContentLoaded', () => {
+  const phoneTab = document.querySelector('.tab.active');
+  const emailTab = document.querySelector('.tab.inactive');
   const phoneLabel = document.querySelector('.phoneInput__container-label span');
   const phoneInput = document.querySelector('.phoneInput__container-input input');
   const dropdown = document.querySelector('.dropdown');
 
-  // Add click event listener to the email tab
-  emailTab.addEventListener('click', () => {
-    // Change the label text to "Email address"
-    phoneLabel.textContent = 'Email address';
+  function toggleTabClasses() {
+    // Toggle active/inactive classes
+    phoneTab.classList.toggle('active');
+    phoneTab.classList.toggle('inactive');
+    emailTab.classList.toggle('active');
+    emailTab.classList.toggle('inactive');
 
-    // Remove the dropdown element
-    if (dropdown) {
-      dropdown.remove();
+    // Toggle font classes
+    phoneTab.querySelector('.font30').classList.toggle('phonefont30active');
+    phoneTab.querySelector('.font30').classList.toggle('phonefont30inactive');
+    emailTab.querySelector('.font30').classList.toggle('phonefont30active');
+    emailTab.querySelector('.font30').classList.toggle('phonefont30inactive');
+
+    // Update label, input, and dropdown visibility
+    if (emailTab.classList.contains('active')) {
+      phoneLabel.textContent = 'Email address';
+      dropdown.style.display = 'none'; // Hide dropdown
+      phoneInput.placeholder = 'Please enter the email address';
+      phoneInput.style.width = '100%';
+      phoneInput.style.marginLeft = '0';
+    } else { // Phone tab is active
+      phoneLabel.textContent = 'Phone Number'; 
+      dropdown.style.display = 'flex'; // Show dropdown using 'flex'
+      phoneInput.placeholder = 'Please enter the phone number'; // Restore phone input placeholder
+      // Adjust input styling as needed
+      phoneInput.style.width = 'calc(100% - 60px)'; // Adjust for dropdown's width
+      phoneInput.style.marginLeft = '2.66667rem'; // Adjust for dropdown's width
     }
+  }
 
-    // Change the placeholder text to "Please enter the email address"
-    phoneInput.placeholder = 'Please enter the email address';
-
-    // Adjust the input field to cover the space of the dropdown
-    phoneInput.style.width = '100%';
-    phoneInput.style.marginLeft = '0'; // Remove left margin
-  });
+  // Event listeners for tabs
+  phoneTab.addEventListener('click', toggleTabClasses);
+  emailTab.addEventListener('click', toggleTabClasses);
 });
-
 
     </script>
 </body>
