@@ -3059,29 +3059,7 @@ gameCategories.forEach((category) => {
                 <!--下载PWA应用-->
                 <div data-v-b3bd7e49="" data-v-17ed3a84="" class="btn pwa-btn"><svg data-v-b3bd7e49="" class="line" width="1" height="60" viewBox="0 0 1 60" fill="none" xmlns="http://www.w3.org/2000/svg"><line data-v-b3bd7e49="" x1="0.5" x2="0.5" y2="60" stroke="white"></line></svg><i data-v-b3bd7e49="" class="van-badge__wrapper van-icon van-icon-close close"><!----><!----><!----></i><img data-v-b3bd7e49="" class="icon" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/other/h5setting_20230814170913idlb.ico"><div data-v-b3bd7e49="" class="text">Add to Desktop</div></div>
                 <!--v-if-->
-                <script>
-                    // Wait for the DOM to fully load
-document.addEventListener('DOMContentLoaded', function() {
-    // Get the close button element
-    const closeButton = document.querySelector('.van-badge__wrapper.van-icon.van-icon-close');
-
-    if (closeButton) {
-        // Add click event listener to the close button
-        closeButton.addEventListener('click', function() {
-            // Get all elements with the class 'btn pwa-btn'
-            const btnPwaBtnElements = document.querySelectorAll('.btn.pwa-btn');
-
-            // Loop through each element and set display to none
-            btnPwaBtnElements.forEach(function(element) {
-                element.style.display = 'none';
-            });
-        });
-    } else {
-        console.error('Close button not found');
-    }
-});
-
-                </script>
+       
                 <!--v-if-->
                 <!--v-if-->
 
@@ -3596,6 +3574,29 @@ console.error("Close button not found");
             });
         });
     </script>
+             <script>
+                // Wait for the DOM to fully load
+document.addEventListener('DOMContentLoaded', function() {
+// Get the close button element
+const closeButton = document.querySelector('.van-badge__wrapper.van-icon.van-icon-close');
+
+if (closeButton) {
+    // Add click event listener to the close button
+    closeButton.addEventListener('click', function() {
+        // Get all elements with the class 'btn pwa-btn'
+        const btnPwaBtnElements = document.querySelectorAll('.btn.pwa-btn');
+
+        // Loop through each element and set display to none
+        btnPwaBtnElements.forEach(function(element) {
+            element.style.display = 'none';
+        });
+    });
+} else {
+    console.error('Close button not found');
+}
+});
+
+            </script>
                                                                 
     </body>
 </html>
