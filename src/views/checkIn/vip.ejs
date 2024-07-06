@@ -2468,7 +2468,8 @@
                     </div>
                     <div data-v-92d3d2e1="" class="vip-content-tip">VIP level rewards are settled at 2:00 am on the 1st of every month</div>
                     <!--vip卡片-->
-                    <div data-v-31cfa30d="" data-v-92d3d2e1="" class="vip-content-card">
+                    
+                    </div><div data-v-31cfa30d="" data-v-92d3d2e1="" class="vip-content-card">
                         <div data-v-31cfa30d="" class="vip-content-card-item">
                             <div data-v-31cfa30d="" class="swiper swiper-initialized swiper-horizontal swiper-pointer-events my-swipe swiper-backface-hidden">
                                 <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(46.586px, 0px, 0px);">
@@ -2838,8 +2839,37 @@
                                 <!---->
                             </div>
                         </div>
-                    </div>
                     <!--等级福利-->
+                    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                            // Initialize Swiper
+                            var swiper = new Swiper('.swiper', {
+                                // Enable swiping
+                                allowTouchMove: true,
+                                // Optional: Set initial slide index
+                                initialSlide: 0,
+                                // Optional: Configure slide transition speed
+                                speed: 600,
+                                // Optional: Configure slides per view and space between slides
+                                slidesPerView: 'auto',
+                                spaceBetween: 20,
+                                slidesOffsetBefore: 20,
+                                // Optional: Add pagination (dots) if needed
+                                pagination: {
+                                    el: '.swiper-pagination',
+                                    clickable: true,
+                                },
+                                // Optional: Add navigation arrows if needed
+                                navigation: {
+                                    nextEl: '.swiper-button-next',
+                                    prevEl: '.swiper-button-prev',
+                                },
+                            });
+                        });
+                    </script>
+                    
                     <div data-v-9bb5e81c="" data-v-92d3d2e1="" class="vip-content-weal">
                         <div data-v-9bb5e81c="" class="slide">
                             <div data-v-9bb5e81c="" class="vip-content-weal-head ar-1px-b">
@@ -2972,5 +3002,6 @@
             <!---->
         </div>
         <amino-inspect></amino-inspect>
+       
     </body>
 </html>
