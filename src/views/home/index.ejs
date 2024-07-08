@@ -2709,7 +2709,7 @@
                     </div>
                 </div>
                 <!--v-if-->
-                <div data-v-cbf8511f="" data-v-17ed3a84="" class="login_tip"><div data-v-cbf8511f="" class="tip"><div data-v-cbf8511f="">Welcome to BigMumbai</div><div data-v-cbf8511f="">Start Your Super Jackpot Journey</div></div><div data-v-cbf8511f="" class="btn_box"><div data-v-cbf8511f="" class="login" onClick="window.location='/login';">Log in</div><div data-v-cbf8511f="" class="register" onClick="window.location='/register';">Register</div></div></div>
+                <div data-v-cbf8511f="" data-v-17ed3a84="" class="login_tip" id="log_pop"><div data-v-cbf8511f="" class="tip"><div data-v-cbf8511f="">Welcome to BigMumbai</div><div data-v-cbf8511f="">Start Your Super Jackpot Journey</div></div><div data-v-cbf8511f="" class="btn_box"><div data-v-cbf8511f="" class="login" onClick="window.location='/login';">Log in</div><div data-v-cbf8511f="" class="register" onClick="window.location='/register';">Register</div></div></div>
                 <!-- 头部轮播图 -->
                  <style>
                     .swiper_box .my-swipe img[data-v-3ad7aed7] {
@@ -3055,7 +3055,7 @@ gameCategories.forEach((category) => {
                     </div>
                 </div>
                 <!-- 长龙-->
-                <div data-v-0ac3de13="" data-v-17ed3a84="" class="changlongEnter changlong"></div>
+             <a href="/activity">   <div data-v-0ac3de13="" data-v-17ed3a84="" class="changlongEnter changlong"></div></a>
                 <!--下载PWA应用-->
                 <div data-v-b3bd7e49="" data-v-17ed3a84="" class="btn pwa-btn"><svg data-v-b3bd7e49="" class="line" width="1" height="60" viewBox="0 0 1 60" fill="none" xmlns="http://www.w3.org/2000/svg"><line data-v-b3bd7e49="" x1="0.5" x2="0.5" y2="60" stroke="white"></line></svg><i data-v-b3bd7e49="" class="van-badge__wrapper van-icon van-icon-close close"><!----><!----><!----></i><img data-v-b3bd7e49="" class="icon" src="https://ossimg.Big-Mumadmin888.com/bigmumbai/other/h5setting_20230814170913idlb.ico"><div data-v-b3bd7e49="" class="text">Add to Desktop</div></div>
                 <!--v-if-->
@@ -3090,7 +3090,7 @@ gameCategories.forEach((category) => {
             </div>
             <!--online custom service-->
             <div class="customer" id="customerId" style="--f13b4d11-currentFontFamily: 'Roboto', 'Inter', sans-serif; --f6a705e1-currentFontFamily: bahnschrift;">
-                <img class="" data-origin="assets/png/icon_sevice-af9dd176.png" src="assets/png/icon_sevice-af9dd176.png">
+                <a href="/knowledgebase/index"><img class="" data-origin="assets/png/icon_sevice-af9dd176.png" src="assets/png/icon_sevice-af9dd176.png"></a>
             </div>
             <div data-v-6ab3f23e="" class="tabbar__container" style="--f13b4d11-currentFontFamily: 'Roboto', 'Inter', sans-serif;">
                 <div data-v-6ab3f23e="" class="tabbar__container-item active">
@@ -3132,10 +3132,10 @@ gameCategories.forEach((category) => {
             <!--v-if-->
  
 
-            <div class="van-overlay" style="z-index: 2001; --f13b4d11-currentFontFamily: 'Roboto', 'Inter', sans-serif; display: none;">
+            <div id="blk_ovr" class="van-overlay" style="z-index: 2001; --f13b4d11-currentFontFamily: 'Roboto', 'Inter', sans-serif; display: none;">
             <!---->
             </div>
-            <div role="dialog" tabindex="0" class="van-popup van-popup--center van-dialog firstSaveDialog" style="z-index: 2001; --f13b4d11-currentFontFamily: 'Roboto', 'Inter', sans-serif; display: none;">
+            <div id="act_ovr" role="dialog" tabindex="0" class="van-popup van-popup--center van-dialog firstSaveDialog" style="z-index: 2001; --f13b4d11-currentFontFamily: 'Roboto', 'Inter', sans-serif; display: none;">
                 <div class="van-dialog__header">
                     <div data-v-9cd12fb2="" class="header">
                         <div data-v-9cd12fb2="" class="title">Extra first deposit bonus</div>
@@ -3300,9 +3300,33 @@ gameCategories.forEach((category) => {
         <amino-inspect></amino-inspect>
         <deepl-input-controller></deepl-input-controller>
         <script>
+            function checkCookies() {
+  const cookies = document.cookie.split(';');
+  let authExists = false;
+  let tokenExists = false;
+
+  for (let cookie of cookies) {
+    if (cookie.trim().startsWith('auth=')) {
+      authExists = true;
+    }
+    if (cookie.trim().startsWith('token=')) {
+      tokenExists = true;
+    }
+  }
+
+  return authExists && tokenExists;
+}
+
+
+
             window.addEventListener('load', () => {
     const images = document.querySelectorAll('img[data-img], img[data-origin]');
-
+if (checkCookies()) {
+    document.getElementById('log_pop').remove()
+}else{
+    document.getElementById('act_ovr').remove()
+    document.getElementById('blk_ovr').remove()
+}
     images.forEach(img => {
         if (img.dataset.img) {
             img.src = img.dataset.img;

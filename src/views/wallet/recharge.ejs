@@ -608,12 +608,13 @@ img[data-v-4f3d8608] {
         Deposit history
       </span>
     </div>
-    <div data-v-91f2fefc="" data-v-8e19e440="" class="empty__container mgt40">
+    <div data-v-91f2fefc="" data-v-8e19e440="" class="empty__container mgt40" id="recharge_history">
       <img data-v-91f2fefc="" alt="" data-src="/assets/png/empty-b69316fb.png"
       src="/assets/png/empty-b69316fb.png" lazy="loaded">
-      <p data-v-91f2fefc="">
+      <p data-v-91f2fefc="" >
         No data
       </p>
+      
     </div>
     <!---->
   </div>
@@ -739,7 +740,7 @@ img[data-v-4f3d8608] {
                     throw Error("Something went wrong while fetching the user wallet balance!")
                 }
 
-                MoneyAmountDisplay.textContent = user?.money_user
+                MoneyAmountDisplay.textContent = user?.money_user.toFixed(2)
             } catch (error) {
                 console.log(error)
             }
@@ -945,6 +946,17 @@ img[data-v-4f3d8608] {
         /* Some Event Listeners added in handleCheckAndSelectPaymentMethod function */
         // --------------
 
+    </script>
+    <script>
+                fetch('/api/webapi/GetUserInfo')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === false) {
+                        unsetCookie();
+                        return false;
+                    }
+ document.getElementById('balance_show').innerText="₹"+data.data.money_user.toFixed(2);
+                });
     </script>
 </body>
 

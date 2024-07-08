@@ -224,8 +224,57 @@ const ActivityDetailsocial = async (req, res) => {
     return res.render("checkin/bonussocial.ejs");
 }
 
+//knowledgebase
 
+const knowledgeindexifscupdate = async (req, res) => {
+    return res.render("account/knowledgeindexifscupdate.ejs");
+}
+const knowledgeindexbankupdate = async (req, res) => {
+    return res.render("account/knowledgeindexbankupdate.ejs");
+}
 
+const knowledgeindexdeposit = async (req, res) => {
+    return res.render("account/knowledgeindexdeposit.ejs");
+}
+
+const knowledgeindex = async (req, res) => {
+    return res.render("account/knowledge.ejs");
+}
+const knowledgeindexbindgoogle = async (req, res) => {
+    return res.render("account/knowledgeindexbindgoogle.ejs");
+}
+const knowledgeindexwinstreakt = async (req, res) => {
+    return res.render("account/knowledgeindexwinstreakt.ejs");
+}
+
+const knowledgeindexupdateid = async (req, res) => {
+    return res.render("account/knowledgeindexupdateid.ejs");
+}
+const knowledgeindexretriveid = async (req, res) => {
+    return res.render("account/knowledgeindexretriveid.ejs");
+}
+const knowledgeindexdeletebank = async (req, res) => {
+    return res.render("account/knowledgeindexdeletebank.ejs");
+}
+const knowledgeindexdeleteoldusdt = async (req, res) => {
+    return res.render("account/knowledgeindexdeleteoldusdt.ejs");
+}
+
+const supportSubmit = async (req, res) => {
+
+  
+        let memb_id = req.body.account;
+        let messa = JSON.stringify(req.body);
+     
+
+        let sql = 'INSERT INTO `support` SET member_id = ?, message = ?, admin_msg = ?';
+            await connection.query(sql, [memb_id, messa, ""]);
+            return res.status(200).json({
+                message: `Received successfully `,
+                status: true,
+            });
+   
+}
 // member page
 const mianPage = async (req, res) => {
     let auth = req.cookies.auth;
@@ -392,4 +441,15 @@ module.exports = {
     DailySignInRules,
     DailyTasksRecord,
     RebateRatio,
+    knowledgeindex,
+    knowledgeindexdeposit,
+    knowledgeindexifscupdate,
+    knowledgeindexbankupdate,
+    knowledgeindexdeletebank,
+    knowledgeindexdeleteoldusdt,
+    knowledgeindexupdateid,
+    knowledgeindexretriveid,
+    knowledgeindexbindgoogle,
+    knowledgeindexwinstreakt,
+    supportSubmit
 }
