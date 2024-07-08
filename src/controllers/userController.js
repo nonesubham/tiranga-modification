@@ -93,6 +93,8 @@ const userInfo = async (req, res) => {
             name_user: others.name_user,
             phone_user: others.phone,
             money_user: others.money,
+            prof_id:others.profile_id,
+            last_log:others.today
         },
         totalRecharge: totalRecharge,
         totalWithdraw: totalWithdraw,
@@ -1836,6 +1838,19 @@ const updateRecharge = async (req, res) => {
 }
 
 
+const change_prof = async (req, res) => {
+    let auth_cod = req.body.auth_code;
+    let img_id = req.body.img_id;
+
+
+            await connection.query('UPDATE users SET profile_id = ? WHERE `token` = ? ', [img_id, auth_cod]);
+            return res.status(200).json({
+                message: 'Profile Picture Updated',
+                status: true,
+            });
+
+
+}
 module.exports = {
     userInfo,
     changeUser,
@@ -1862,5 +1877,6 @@ module.exports = {
     updateRecharge,
     confirmRecharge,
     cancelRecharge,
-    confirmUSDTRecharge
+    confirmUSDTRecharge,
+    change_prof
 }

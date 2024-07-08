@@ -22,7 +22,16 @@
     <link href="/css/wallet/chunk_2-2.css" rel="stylesheet" />
     <link href="/css/wallet/chunk_2-3.css" rel="stylesheet" />
     <link rel="shortcut icon" href="/images/bitbug_favicon.ico" type="image/x-icon">
+
     <style>
+@font-face {
+    font-family: "Roboto";
+    src: url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+}
+@font-face {
+    font-family: "Inter";
+    src: url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+}
         html,
         body {
             height: 100%;
@@ -80,7 +89,9 @@
             background: -webkit-linear-gradient(left, #61a9ff 0%, #59b0ea 100%);
             background: linear-gradient(90deg, #61a9ff 0%, #59b0ea 100%)
         }
-
+.side_class{
+    font-family: "Inter" !important;
+}
         .mian .selectBox .txtBox[data-v-25d9c352] {
             width: 95%;
             height: 3.46667rem !important;
@@ -107,16 +118,26 @@
         .mian .selectBox .txtBox .txt[data-v-25d9c352] {
             color: #ffffff;
             font-weight: 400;
-            font-size: .4rem;
-            line-height: .53333rem
+            font-size: 14px;
+            margin-bottom: 10px;
+            font-family: "Inter";
         }
+    #m_txt{
+        line-height: 10px !important;
 
+        font-family: "Inter";
+    }
+    .navbar-title{
+        font-family: "Inter";
+    }
         .mian .selectBox .txtBox .money[data-v-25d9c352] {
             color: #ffffff;
             font-weight: 600;
             margin-left: .13333rem;
-            font-size: .64rem;
-            text-align: center
+            font-size: 26px;
+            text-align: center;
+            font-family: "inter";
+            
         }
 
         .mian .selectBox .txtBox .Umoney[data-v-25d9c352] {
@@ -127,6 +148,7 @@
         .mian .selectBox .txtBox .Umoney .txt[data-v-25d9c352] {
             font-size: .37333rem;
             font-weight: 400
+            
         }
 
         .mian .selectBox .txtBox .Umoney .red[data-v-25d9c352] {
@@ -396,7 +418,7 @@
 
         body {
             margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, Hiragino Sans GB, Microsoft Yahei, sans-serif
+            font-family: "Inter" !important;
         }
 
         a {
@@ -443,6 +465,7 @@
 
         .symbol.c-row.c-row-middle {
     font-weight: 400;
+   
 }
 
 
@@ -646,7 +669,7 @@
 
 .rechargeh__container[data-v-c343a2ef] {
     margin-bottom: .8rem;
-    font-family: bahnschrift;
+    font-family: "Inter";
     color: #fff;
     margin-left: 0.4rem;
     margin-right: 0.4rem;
@@ -872,12 +895,12 @@ img.bankpng {
                         <i class="fa-light fa-angle-left fa-fade fa-xl center" style="color: #1E2637"></i>
                     </div>
                 </div>
-                <div data-v-106b99c8="" class="navbar-title" style="margin-right:55px;"> Withdraw Money</div>
+                <div data-v-106b99c8="" class="navbar-title" style="margin-right:55px;"> Withdraw</div>
                 <div data-v-106b99c8="" class="navbar-right">
                     <div data-v-11ffe290="" data-v-106b99c8="" class="c-row" style="
     right: .32rem;">
                        
-                            <span>Withdraw History</span>
+                            <span class="side_class">Withdraw History</span>
                         
                     </div>
                 </div>
@@ -888,19 +911,19 @@ img.bankpng {
                 <div data-v-25d9c352="" class="txtBox">
                  
                     <div data-v-25d9c352="" class="c-row">
-                        <div data-v-25d9c352="" class="txt"><img data-v-618c2f5a="" src="/assets/png/balance-d5880fa1.png" width="20px"> Available Balance </div>
+                        <div data-v-25d9c352="" class="txt"><img data-v-618c2f5a="" src="/assets/png/balance-d5880fa1.png" width="20px">&nbsp;&nbsp;<span id="m_txt">Available Balance </span> </div>
                     </div>  
                     <div data-v-25d9c352="" class="c-row">
                         
                         <div data-v-25d9c352="" class="c-row c-row-middle">
-                            <div data-v-25d9c352="" class="money">
+                            <div data-v-25d9c352="" class="money" id="main_mon">
                                 
-                                <div data-v-25d9c352="">₹<span data-v-25d9c352="" class="p-l-10">Loading...</span></div>
+                                <div data-v-25d9c352="" >Loading...</div>
                                 
                             </div>
                             <!-- Reload Button -->
                         <div data-v-67caa467="" class="van-image img m-l-10" style="width: 18px; height: 18px;"
-                        id="reload_money_amount_button">
+                        id="reload_money_amount_button" onclick="reloadMon()">
                         <img src="/png/load.png" class="van-image__img">
                         </div>
                         <!-- Reload Button -->
@@ -1196,6 +1219,17 @@ img.bankpng {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="/js/client.js"></script>
     <script>
+        function reloadMon() {
+            fetch('/api/webapi/GetUserInfo')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === false) {
+                        unsetCookie();
+                        return false;
+                    }
+ document.getElementById('main_mon').innerText="₹"+data.data.money_user.toFixed(2);
+                });
+        }
         $('.txtBox .van-image').click(function (e) {
             e.preventDefault();
             $(this).addClass('action block-click');
@@ -1209,7 +1243,7 @@ img.bankpng {
             dataType: "json",
             success: function (response) {
                 let user = response.userInfo[0];
-                $('.money').text("₹" + user.money);
+                $('.money').text("₹" + user.money.toFixed(2));
                 console.log(user);
                 $('.bankBox .box .item:eq(0) div:eq(0)').html(`Withdrawable Balance: ₹ ${response.result}`);
                 if (!response.datas[0]) return;

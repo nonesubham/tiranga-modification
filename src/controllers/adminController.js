@@ -28,6 +28,16 @@ const adminPage5d = async (req, res) => {
 const adminPageK3 = async (req, res) => {
     return res.render("manage/k3.ejs");
 }
+const admin_msg = async (req, res) => {
+    console.log(req.body);
+    let mem_id=req.body.member_id
+    let adm_msg = req.body.adm_msg
+    await connection.query('UPDATE support SET `admin_msg` = ? WHERE `member_id` = ? ', [adm_msg, mem_id]);
+    return res.status(200).json({
+        message: `Received successfully `,
+        status: true,
+    });
+}
 
 const ctvProfilePage = async (req, res) => {
     var phone = req.params.phone;
@@ -53,6 +63,18 @@ const infoMember = async (req, res) => {
 
 const statistical = async (req, res) => {
     return res.render("manage/statistical.ejs");
+}
+const supportPage = async (req, res) => {
+    return res.render("manage/support.ejs");
+}
+const supportPageData = async (req, res) => {
+        const [rows] = await connection.query('SELECT * FROM `support`');
+        
+        return res.status(200).json({
+            message: 'Success',
+            status: true,
+            data:rows,
+        });
 }
 
 const rechargePage = async (req, res) => {
@@ -2025,4 +2047,7 @@ module.exports = {
     CreatedSalaryRecord,
     CreatedSalary,
     getSalary,
+    supportPage,
+    supportPageData,
+    admin_msg
 }

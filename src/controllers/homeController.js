@@ -18,6 +18,12 @@ const GameStats = async (req, res) => {
 const noticePage = async (req, res) => {
     return res.render("member/notice.ejs");
 }
+const knowledgeindexifscupdate = async (req, res) => {
+    return res.render("account/knowledgeindexifscupdate.ejs");
+}
+const knowledgeindexbankupdate = async (req, res) => {
+    return res.render("account/knowledgeindexbankupdate.ejs");
+}
 const rulesPage = async (req, res) => {
     return res.render("checkin/rules.ejs");
 }
@@ -145,9 +151,21 @@ const checkDes = async (req, res) => {
 const checkRecord = async (req, res) => {
     return res.render("checkIn/checkRecord.ejs");
 }
+const knowledgeindexdeposit = async (req, res) => {
+    return res.render("account/knowledgeindexdeposit.ejs");
+}
 
 const addBank = async (req, res) => {
     return res.render("wallet/addbank.ejs");
+}
+const knowledgeindex = async (req, res) => {
+    return res.render("account/knowledge.ejs");
+}
+const knowledgeindexbindgoogle = async (req, res) => {
+    return res.render("account/knowledgeindexbindgoogle.ejs");
+}
+const knowledgeindexwinstreakt = async (req, res) => {
+    return res.render("account/knowledgeindexwinstreakt.ejs");
 }
 
 // promotion
@@ -161,6 +179,9 @@ const promotion1Page = async (req, res) => {
 
 const promotionmyTeamPage = async (req, res) => {
     return res.render("promotion/myTeam.ejs");
+}
+const LiveChat = async (req, res) => {
+    return res.render("account/livechat.ejs");
 }
 
 const promotionDesPage = async (req, res) => {
@@ -224,8 +245,57 @@ const ActivityDetailsocial = async (req, res) => {
     return res.render("checkin/bonussocial.ejs");
 }
 
+//knowledgebase
 
+const knowledgeindexifscupdate = async (req, res) => {
+    return res.render("account/knowledgeindexifscupdate.ejs");
+}
+const knowledgeindexbankupdate = async (req, res) => {
+    return res.render("account/knowledgeindexbankupdate.ejs");
+}
 
+const knowledgeindexdeposit = async (req, res) => {
+    return res.render("account/knowledgeindexdeposit.ejs");
+}
+
+const knowledgeindex = async (req, res) => {
+    return res.render("account/knowledge.ejs");
+}
+const knowledgeindexbindgoogle = async (req, res) => {
+    return res.render("account/knowledgeindexbindgoogle.ejs");
+}
+const knowledgeindexwinstreakt = async (req, res) => {
+    return res.render("account/knowledgeindexwinstreakt.ejs");
+}
+
+const knowledgeindexupdateid = async (req, res) => {
+    return res.render("account/knowledgeindexupdateid.ejs");
+}
+const knowledgeindexretriveid = async (req, res) => {
+    return res.render("account/knowledgeindexretriveid.ejs");
+}
+const knowledgeindexdeletebank = async (req, res) => {
+    return res.render("account/knowledgeindexdeletebank.ejs");
+}
+const knowledgeindexdeleteoldusdt = async (req, res) => {
+    return res.render("account/knowledgeindexdeleteoldusdt.ejs");
+}
+
+const supportSubmit = async (req, res) => {
+
+  
+        let memb_id = req.body.account;
+        let messa = JSON.stringify(req.body);
+     
+
+        let sql = 'INSERT INTO `support` SET member_id = ?, message = ?, admin_msg = ?';
+            await connection.query(sql, [memb_id, messa, ""]);
+            return res.status(200).json({
+                message: `Received successfully `,
+                status: true,
+            });
+   
+}
 // member page
 const mianPage = async (req, res) => {
     let auth = req.cookies.auth;
@@ -258,7 +328,12 @@ const privacyPolicy = async (req, res) => {
 const newtutorial = async (req, res) => {
     return res.render("member/newtutorial.ejs");
 }
-
+const knowledgeindexupdateid = async (req, res) => {
+    return res.render("account/knowledgeindexupdateid.ejs");
+}
+const knowledgeindexretriveid = async (req, res) => {
+    return res.render("account/knowledgeindexretriveid.ejs");
+}
 const forgot = async (req, res) => {
     let auth = req.cookies.auth;
     const [user] = await connection.query('SELECT `time_otp` FROM users WHERE token = ? ', [auth]);
@@ -271,6 +346,12 @@ const redenvelopes = async (req, res) => {
 }
 const DailyTasksRecord = async (req, res) => {
     return res.render("checkin/DailyTasksRecord.ejs");
+}
+const knowledgeindexdeletebank = async (req, res) => {
+    return res.render("account/knowledgeindexdeletebank.ejs");
+}
+const knowledgeindexdeleteoldusdt = async (req, res) => {
+    return res.render("account/knowledgeindexdeleteoldusdt.ejs");
 }
 
 const riskAgreement = async (req, res) => {
@@ -392,4 +473,22 @@ module.exports = {
     DailySignInRules,
     DailyTasksRecord,
     RebateRatio,
+<<<<<<< HEAD
+=======
+    LiveChat,
+>>>>>>> 6b1c1eb23f6ab5f30d267d8f05053d302b001599
+    knowledgeindex,
+    knowledgeindexdeposit,
+    knowledgeindexifscupdate,
+    knowledgeindexbankupdate,
+    knowledgeindexdeletebank,
+    knowledgeindexdeleteoldusdt,
+    knowledgeindexupdateid,
+    knowledgeindexretriveid,
+    knowledgeindexbindgoogle,
+    knowledgeindexwinstreakt,
+<<<<<<< HEAD
+    supportSubmit
+=======
+>>>>>>> 6b1c1eb23f6ab5f30d267d8f05053d302b001599
 }

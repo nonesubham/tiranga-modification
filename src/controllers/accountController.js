@@ -66,9 +66,16 @@ const login = async (req, res) => {
             message: 'ERROR!!!'
         });
     }
-
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const phonePattern = /^\d{10,15}$/;
     try {
-        const [rows] = await connection.query('SELECT * FROM users WHERE phone = ? AND password = ? ', [username, md5(pwd)]);
+        const query = emailPattern.test(username)
+        ? 'SELECT * FROM users WHERE email = ? AND password = ?'
+        : phonePattern.test(username)
+        ? 'SELECT * FROM users WHERE phone = ? AND password = ?'
+        : null;
+        // const [rows] = await connection.query('SELECT * FROM users WHERE phone = ? AND password = ? ', [username, md5(pwd)]);
+        const [rows] = await connection.query(query, [username, md5(pwd)]);
         if (rows.length == 1) {
             if (rows[0].status == 1) {
                 const { password, money, ip, veri, ip_address, status, time, ...others } = rows[0];
@@ -76,7 +83,12 @@ const login = async (req, res) => {
                     user: { ...others },
                     timeNow: timeNow
                 }, process.env.JWT_ACCESS_TOKEN, { expiresIn: "1d" });
-                await connection.execute('UPDATE `users` SET `token` = ? WHERE `phone` = ? ', [md5(accessToken), username]);
+                const query2 = emailPattern.test(username)
+                ? 'UPDATE `users` SET `token` = ? WHERE `email` = ?'
+                : phonePattern.test(username)
+                ? 'UPDATE `users` SET `token` = ? WHERE `phone` = ?'
+                : null;
+                await connection.execute(query2, [md5(accessToken), username]);
                 return res.status(200).json({
                     message: 'Login Successfully!',
                     status: true,
@@ -118,21 +130,22 @@ const register = async (req, res) => {
         });
     }
 
-    if (username.length < 9 || username.length > 10 || !isNumber(username)) {
-        return res.status(200).json({
-            message: 'phone error',
-            status: false
-        });
-    }
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const phonePattern = /^\d{10,15}$/;
+        const query = emailPattern.test(username)
+        ? 'SELECT * FROM users WHERE email = ?'
+        : phonePattern.test(username)
+        ? 'SELECT * FROM users WHERE phone = ?'
+        : null;
 
     try {
-        const [check_u] = await connection.query('SELECT * FROM users WHERE phone = ?', [username]);
+        const [check_u] = await connection.query(query, [username]);
         const [check_i] = await connection.query('SELECT * FROM users WHERE code = ? ', [invitecode]);
         const [check_ip] = await connection.query('SELECT * FROM users WHERE ip_address = ? ', [ip]);
 
         if (check_u.length == 1 && check_u[0].veri == 1) {
             return res.status(200).json({
-                message: 'Registered phone number',
+                message: 'Registered user',
                 status: false
             });
         } else {
@@ -145,8 +158,18 @@ const register = async (req, res) => {
                         ctv = check_i[0].ctv;
                     }
                     const sql = "INSERT INTO users SET id_user = ?,phone = ?,name_user = ?,password = ?, plain_password = ?, money = ?,code = ?,invite = ?,ctv = ?,veri = ?,otp = ?,ip_address = ?,status = ?,time = ?";
-                    await connection.execute(sql, [id_user, username, name_user, md5(pwd), pwd, 0, code, invitecode, ctv, 1, otp2, ip, 1, time]);
-                    await connection.execute('INSERT INTO point_list SET phone = ?', [username]);
+                    const conf_sql = emailPattern.test(username)
+                    ? sql.replace("phone = ?", "email = ?")
+                    : phonePattern.test(username)
+                    ? sql
+                    : null;
+                    await connection.execute(conf_sql, [id_user, username, name_user, md5(pwd), pwd, 0, code, invitecode, ctv, 1, otp2, ip, 1, time]);
+                    const pont_list_sql = emailPattern.test(username)
+                    ? "INSERT INTO point_list SET email = ?"
+                    : phonePattern.test(username)
+                    ? "INSERT INTO point_list SET phone = ?"
+                    : null;
+                    await connection.execute(pont_list_sql, [username]);
 
                     let [check_code] = await connection.query('SELECT * FROM users WHERE invite = ? ', [invitecode]);
 
@@ -162,9 +185,14 @@ const register = async (req, res) => {
                         }
                     }
 
+                    const turn_over_sql = emailPattern.test(username)
+                    ? "INSERT INTO turn_over SET email = ?, code = ?, invite = ?"
+                    : phonePattern.test(username)
+                    ? "INSERT INTO turn_over SET phone = ?, code = ?, invite = ?"
+                    : null;
 
-                    let sql4 = 'INSERT INTO turn_over SET phone = ?, code = ?, invite = ?';
-                    await connection.query(sql4, [username, code, invitecode]);
+                
+                    await connection.query(turn_over_sql, [username, code, invitecode]);
 
                     return res.status(200).json({
                         message: "Registered successfully",

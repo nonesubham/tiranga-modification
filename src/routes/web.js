@@ -27,6 +27,19 @@ const initWebRouter = (app) => {
         return res.redirect('/home');
     });
     router.get('/home', homeController.homePage);
+    router.get('/livechat/coustomersupport', homeController.LiveChat);
+    router.get('/knowledgebase/index', homeController.knowledgeindex);
+    router.get('/support/deposit', homeController.knowledgeindexdeposit);
+    router.get('/support/ifscupdate', homeController.knowledgeindexifscupdate);
+    router.get('/support/bankupdate', homeController.knowledgeindexbankupdate);
+    router.get('/support/deletebank', homeController.knowledgeindexdeletebank);
+    router.get('/support/deleteoldusdt', homeController.knowledgeindexdeleteoldusdt);
+    router.get('/support/updateid', homeController.knowledgeindexupdateid);
+    router.get('/support/retriveid', homeController.knowledgeindexretriveid);
+    router.get('/support/bindgoogle', homeController.knowledgeindexbindgoogle);
+    router.get('/support/winstreakt', homeController.knowledgeindexwinstreakt);
+    
+
     router.get('/slotjili', middlewareController, homeController.slotjiliPage);
     router.get('/slotpg', middlewareController, homeController.slotpgPage);
     router.get('/slotag', middlewareController, homeController.slotagPage);
@@ -43,7 +56,8 @@ const initWebRouter = (app) => {
     router.get('/popular', middlewareController, homeController.popularPage);
     router.get('/apiconnect', middlewareController, homeController.apiconnectPage);
     router.get('/gamestatistic', homeController.gamestatPage);
-    router.get('/setting/avatar', homeController.settingavatar);
+    router.get('/account/setting/avatar', middlewareController, homeController.settingavatar);
+    router.get('/mian/avatar', middlewareController, homeController.settingavatar);
     router.get('/account/settingcenter/bindmail', homeController.mailbindpage);
     router.get('/account/settingcenter/googleverify', homeController.googleverify);
     router.get('/activity/FirstRecharge', homeController.FirstRecharge);
@@ -57,6 +71,19 @@ const initWebRouter = (app) => {
 
 
 
+//knowledgebase
+
+router.get('/knowledgebase/index', homeController.knowledgeindex);
+router.get('/support/deposit', homeController.knowledgeindexdeposit);
+router.get('/support/ifscupdate', homeController.knowledgeindexifscupdate);
+router.get('/support/bankupdate', homeController.knowledgeindexbankupdate);
+router.get('/support/deletebank', homeController.knowledgeindexdeletebank);
+router.get('/support/deleteoldusdt', homeController.knowledgeindexdeleteoldusdt);
+router.get('/support/updateid', homeController.knowledgeindexupdateid);
+router.get('/support/retriveid', homeController.knowledgeindexretriveid);
+router.get('/support/bindgoogle', homeController.knowledgeindexbindgoogle);
+router.get('/support/winstreakt', homeController.knowledgeindexwinstreakt);
+router.post('/support/submit', homeController.supportSubmit);
 
 
 
@@ -151,6 +178,7 @@ const initWebRouter = (app) => {
     router.get('/aviator', middlewareController, userController.aviator);
     router.get('/api/webapi/GetUserInfo', middlewareController, userController.userInfo); // get info account
     router.put('/api/webapi/change/userInfo', middlewareController, userController.changeUser); // get info account
+    router.put('/api/webapi/change/userProf', userController.change_prof); // get info account
     router.put('/api/webapi/change/pass', middlewareController, userController.changePassword); // get info account
 
     // bet wingo
@@ -222,6 +250,13 @@ const initWebRouter = (app) => {
 
     // admin
     router.get('/admin/manager/index', adminController.middlewareAdminController, adminController.adminPage); // get info account
+    router.get('/admin/manager/support', adminController.middlewareAdminController, adminController.supportPage); // get info account
+
+
+    router.get('/admin/supportData', adminController.supportPageData); // get info account
+    router.post('/admin/adminmsg', adminController.admin_msg); // get info account
+    
+    
     router.get('/admin/manager/index/3', adminController.middlewareAdminController, adminController.adminPage3); // get info account
     router.get('/admin/manager/index/5', adminController.middlewareAdminController, adminController.adminPage5); // get info account
     router.get('/admin/manager/index/10', adminController.middlewareAdminController, adminController.adminPage10); // get info account
